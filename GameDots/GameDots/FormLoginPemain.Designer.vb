@@ -51,7 +51,7 @@ Partial Class FormLoginPemain
         Me.txtNamapemain.Name = "txtNamapemain"
         Me.txtNamapemain.Size = New System.Drawing.Size(119, 20)
         Me.txtNamapemain.TabIndex = 3
-        Me.txtNamapemain.Text = "setiono"
+        Me.txtNamapemain.Text = "adi"
         '
         'txtPassword
         '
@@ -59,7 +59,7 @@ Partial Class FormLoginPemain
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(119, 20)
         Me.txtPassword.TabIndex = 4
-        Me.txtPassword.Text = "007"
+        Me.txtPassword.Text = "adi123"
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'lblIpServer
