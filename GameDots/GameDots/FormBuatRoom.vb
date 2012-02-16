@@ -49,7 +49,7 @@ Public Class FormBuatRoom
     Private Sub btnOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOk.Click
         ModuleClient.sendMessageToServer("CREATE_ROOM|" + txtNamaRoom.Text + ">" + cbxJumPemain.Text + ">" + cbxPapanKol.Text + ">" + cbxPapanBrs.Text + ">" + loggedUserName)
         'BuatRoom()
-        'instanceFormLobiGame.Show()
+        instanceFormLobiGame.Timer1.Enabled = True
         Close()
     End Sub
 

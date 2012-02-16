@@ -6,11 +6,12 @@ Module ModuleServer
     Dim clientsList As New Hashtable
     Dim compName As String = "Windows7Macbook"
     'Dim compName As String = "ADISETIONO-PC"
-    Private Sub broadcast(ByVal msg As String, ByVal uName As String, ByVal flag As Boolean)
+    Private Sub broadcastToAllClient(ByVal msg As String, ByVal uName As String, ByVal flag As Boolean)
         Dim Item As DictionaryEntry
         For Each Item In clientsList
             Dim broadcastSocket As TcpClient
             broadcastSocket = CType(Item.Value, TcpClient)
+            If Not broadcastSocket.Connected Then Continue For
             Dim broadcastStream As NetworkStream = broadcastSocket.GetStream()
             Dim broadcastBytes As [Byte]()
 
@@ -47,7 +48,7 @@ Module ModuleServer
 
                 clientsList(dataFromClient) = clientSocket
 
-                broadcast(dataFromClient + " Joined ", dataFromClient, False)
+                broadcastToAllClient(dataFromClient + " Joined ", dataFromClient, False)
 
                 msg(dataFromClient + " Joined Games Lobby ")
                 Dim client As New HandleClient
@@ -105,9 +106,11 @@ Module ModuleServer
 
 
                     If (messageType = "CHAT") Then
-                        broadcast(dataFromClient, clNo, True)
+                        broadcastToAllClient(dataFromClient, clNo, True)
                     ElseIf messageType = "CREATE_ROOM" Then
                         createRoom(messageData)
+                    ElseIf messageType = "QUERY_ROOM" Then
+                        queryRoom()
                     End If
                 Catch ex As Exception
                     If clientSocket IsNot Nothing Then clientSocket.Close()
@@ -133,6 +136,23 @@ Module ModuleServer
             cmd.ExecuteNonQuery()
             con.Close()
 
+        End Sub
+
+        Private Sub queryRoom()
+            Dim con As New SqlConnection
+            Dim cmd As New SqlCommand
+            Dim room As String = ""
+            con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
+            con.Open()
+            cmd.Connection = con
+            cmd.CommandText = "SELECT [nama_room] ,[user_pemain] FROM [adidots].[dbo].[room]"
+            Dim rd As SqlDataReader = cmd.ExecuteReader()
+            Do While rd.Read
+                room = rd.GetString(0) & " by " & rd.GetString(1) & ">" & room
+            Loop
+            room = room.Substring(0, room.Length - 1)
+            con.Close()
+            broadcastToAllClient("ROOM_QUERY_RESULT|" & room, clNo, False)
         End Sub
 
     End Class

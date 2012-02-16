@@ -117,7 +117,7 @@ Public Class FormLoginPemain
                     Else
                         'Jika Sama
                         'konek ke server game
-
+                        loggedUserName = txtNamapemain.Text
                         instanceFormLobiGame.Show()
                         ModuleClient.connectToServer(txtNamapemain.Text)
                         txtNamapemain.Text = ""

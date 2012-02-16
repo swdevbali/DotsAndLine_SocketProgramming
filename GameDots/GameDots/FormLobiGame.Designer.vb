@@ -22,6 +22,7 @@ Partial Class FormLobiGame
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLobiGame))
         Me.grpbxDftrPemain = New System.Windows.Forms.GroupBox()
         Me.lstInfoPemain = New System.Windows.Forms.ListBox()
@@ -36,6 +37,7 @@ Partial Class FormLobiGame
         Me.txtInputChat = New System.Windows.Forms.TextBox()
         Me.PictureBoxClose = New System.Windows.Forms.PictureBox()
         Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.grpbxDftrPemain.SuspendLayout()
         Me.grpbxDftrLobi.SuspendLayout()
         Me.grpbxChat.SuspendLayout()
@@ -177,6 +179,11 @@ Partial Class FormLobiGame
         Me.PictureBoxMinimize.TabIndex = 6
         Me.PictureBoxMinimize.TabStop = False
         '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
         'FormLobiGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -217,4 +224,5 @@ Partial Class FormLobiGame
     Friend WithEvents lstChat As System.Windows.Forms.ListBox
     Friend WithEvents lstInfoPemain As System.Windows.Forms.ListBox
     Friend WithEvents lstRoom As System.Windows.Forms.ListBox
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 End Class

@@ -6,7 +6,7 @@ Public Class FormLobiGame
     Private MouseDownY As Integer
 
     Private Sub FormLobiGame_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'query for room
+    
     End Sub
 
     Private Sub FormLobiGame_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown
@@ -71,7 +71,19 @@ Public Class FormLobiGame
         Else
             Dim newText As String = " >> " + ModuleClient.readData
             'MsgBox(newText)
-            lstChat.Items.Add(newText)
+            Dim broadcast() As String = ModuleClient.readData.Split("|")
+            If broadcast(0).Equals("ROOM_QUERY_RESULT") Then
+                Dim data As String = broadcast(1)
+                lstRoom.Items.Clear()
+                Dim room() As String = data.Split(">")
+
+                For i As Integer = 0 To room.Length - 1
+                    lstRoom.Items.Add(room(i))
+                Next
+            Else
+                lstChat.Items.Add(newText)
+            End If
+
         End If
     End Sub
 
@@ -82,4 +94,9 @@ Public Class FormLobiGame
     End Sub
 
     
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        Timer1.Enabled = False
+        'query for room
+        ModuleClient.sendMessageToServer("QUERY_ROOM|")
+    End Sub
 End Class
