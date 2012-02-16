@@ -4,7 +4,8 @@ Imports System.Data.SqlClient
 
 Module ModuleServer
     Dim clientsList As New Hashtable
-    Dim compName As String = "ADISETIONO-PC"
+    Dim compName As String = "Windows7Macbook"
+    'Dim compName As String = "ADISETIONO-PC"
     Private Sub broadcast(ByVal msg As String, ByVal uName As String, ByVal flag As Boolean)
         Dim Item As DictionaryEntry
         For Each Item In clientsList
@@ -121,13 +122,14 @@ Module ModuleServer
             Dim jumlah_pemain As String = data(1)
             Dim ukuran_papan_kol As String = data(2)
             Dim ukuran_papan_brs As String = data(3)
+            Dim user_pemain As String = data(4)
             Dim con As New SqlConnection
             Dim cmd As New SqlCommand
 
             con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
             con.Open()
             cmd.Connection = con
-            cmd.CommandText = "INSERT INTO room([nama_room],[jumlah_pemain],[ukuran_papan_col],[ukuran_papan_rows])VALUES('" & nama_room & "','" & jumlah_pemain & "', '" & ukuran_papan_kol & "', '" & ukuran_papan_brs & "')"
+            cmd.CommandText = "INSERT INTO room([nama_room],[jumlah_pemain],[ukuran_papan_col],[ukuran_papan_rows],user_pemain)VALUES('" & nama_room & "','" & jumlah_pemain & "', '" & ukuran_papan_kol & "', '" & ukuran_papan_brs & "','" & user_pemain & "')"
             cmd.ExecuteNonQuery()
             con.Close()
 

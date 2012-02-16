@@ -9,6 +9,8 @@ Module Main
 
     Public compName As String
     Public instanceFormLobiGame As New FormLobiGame
+
+    Public loggedUserName As String
     Sub TombolClose()
 
         'method tombol close form

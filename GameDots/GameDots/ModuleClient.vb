@@ -7,16 +7,13 @@ Module ModuleClient
     Public readData As String
     Dim infiniteC As Integer
 
-    Public Sub chat(ByVal s As String)
+    Public Sub sendMessageToServer(ByVal s As String)
         Dim outStream As Byte() = System.Text.Encoding.ASCII.GetBytes(s + "$")
         serverStream.Write(outStream, 0, outStream.Length)
         serverStream.Flush()
     End Sub
-
     Private Sub msg()
-
         instanceFormLobiGame.logChat()
-
     End Sub
 
     Public Sub connectToServer(ByVal username As String)

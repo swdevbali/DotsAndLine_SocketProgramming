@@ -5,6 +5,10 @@ Public Class FormLobiGame
     Private MouseDownX As Integer
     Private MouseDownY As Integer
 
+    Private Sub FormLobiGame_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'query for room
+    End Sub
+
     Private Sub FormLobiGame_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown
 
         If e.Button = MouseButtons.Left Then
@@ -56,7 +60,7 @@ Public Class FormLobiGame
     End Sub
 
     Private Sub btnKirimChat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnKirimChat.Click
-        ModuleClient.chat("CHAT > " + txtInputChat.Text + "$")
+        ModuleClient.sendMessageToServer("CHAT > " + txtInputChat.Text + "$")
         txtInputChat.Text = ""
         txtInputChat.Focus()
     End Sub
