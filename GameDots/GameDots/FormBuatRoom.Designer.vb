@@ -1,0 +1,228 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class FormBuatRoom
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBuatRoom))
+        Me.lblNamaRoom = New System.Windows.Forms.Label()
+        Me.lblJumPemain = New System.Windows.Forms.Label()
+        Me.lblUkuranPapan = New System.Windows.Forms.Label()
+        Me.txtNamaRoom = New System.Windows.Forms.TextBox()
+        Me.cbxJumPemain = New System.Windows.Forms.ComboBox()
+        Me.cbxPapanKol = New System.Windows.Forms.ComboBox()
+        Me.btnOk = New System.Windows.Forms.Button()
+        Me.btnKembali = New System.Windows.Forms.Button()
+        Me.PictureBoxClose = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox()
+        Me.cbxPapanBrs = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'lblNamaRoom
+        '
+        Me.lblNamaRoom.AutoSize = True
+        Me.lblNamaRoom.BackColor = System.Drawing.Color.Transparent
+        Me.lblNamaRoom.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNamaRoom.ForeColor = System.Drawing.Color.White
+        Me.lblNamaRoom.Location = New System.Drawing.Point(76, 75)
+        Me.lblNamaRoom.Name = "lblNamaRoom"
+        Me.lblNamaRoom.Size = New System.Drawing.Size(83, 20)
+        Me.lblNamaRoom.TabIndex = 0
+        Me.lblNamaRoom.Text = "Nama Room"
+        '
+        'lblJumPemain
+        '
+        Me.lblJumPemain.AutoSize = True
+        Me.lblJumPemain.BackColor = System.Drawing.Color.Transparent
+        Me.lblJumPemain.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblJumPemain.ForeColor = System.Drawing.Color.White
+        Me.lblJumPemain.Location = New System.Drawing.Point(76, 111)
+        Me.lblJumPemain.Name = "lblJumPemain"
+        Me.lblJumPemain.Size = New System.Drawing.Size(100, 20)
+        Me.lblJumPemain.TabIndex = 1
+        Me.lblJumPemain.Text = "Jumlah Pemain"
+        '
+        'lblUkuranPapan
+        '
+        Me.lblUkuranPapan.AutoSize = True
+        Me.lblUkuranPapan.BackColor = System.Drawing.Color.Transparent
+        Me.lblUkuranPapan.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUkuranPapan.ForeColor = System.Drawing.Color.White
+        Me.lblUkuranPapan.Location = New System.Drawing.Point(76, 151)
+        Me.lblUkuranPapan.Name = "lblUkuranPapan"
+        Me.lblUkuranPapan.Size = New System.Drawing.Size(92, 20)
+        Me.lblUkuranPapan.TabIndex = 2
+        Me.lblUkuranPapan.Text = "Ukuran Papan"
+        '
+        'txtNamaRoom
+        '
+        Me.txtNamaRoom.Location = New System.Drawing.Point(227, 75)
+        Me.txtNamaRoom.Name = "txtNamaRoom"
+        Me.txtNamaRoom.Size = New System.Drawing.Size(121, 20)
+        Me.txtNamaRoom.TabIndex = 3
+        '
+        'cbxJumPemain
+        '
+        Me.cbxJumPemain.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxJumPemain.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cbxJumPemain.FormattingEnabled = True
+        Me.cbxJumPemain.Items.AddRange(New Object() {"2", "3", "4"})
+        Me.cbxJumPemain.Location = New System.Drawing.Point(227, 110)
+        Me.cbxJumPemain.Name = "cbxJumPemain"
+        Me.cbxJumPemain.Size = New System.Drawing.Size(121, 21)
+        Me.cbxJumPemain.TabIndex = 4
+        '
+        'cbxPapanKol
+        '
+        Me.cbxPapanKol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxPapanKol.DropDownWidth = 64
+        Me.cbxPapanKol.FormattingEnabled = True
+        Me.cbxPapanKol.Items.AddRange(New Object() {"4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"})
+        Me.cbxPapanKol.Location = New System.Drawing.Point(227, 150)
+        Me.cbxPapanKol.Name = "cbxPapanKol"
+        Me.cbxPapanKol.Size = New System.Drawing.Size(121, 21)
+        Me.cbxPapanKol.TabIndex = 12
+        '
+        'btnOk
+        '
+        Me.btnOk.Location = New System.Drawing.Point(86, 233)
+        Me.btnOk.Name = "btnOk"
+        Me.btnOk.Size = New System.Drawing.Size(88, 31)
+        Me.btnOk.TabIndex = 6
+        Me.btnOk.Text = "OK"
+        Me.btnOk.UseMnemonic = False
+        Me.btnOk.UseVisualStyleBackColor = True
+        '
+        'btnKembali
+        '
+        Me.btnKembali.Location = New System.Drawing.Point(260, 233)
+        Me.btnKembali.Name = "btnKembali"
+        Me.btnKembali.Size = New System.Drawing.Size(88, 31)
+        Me.btnKembali.TabIndex = 7
+        Me.btnKembali.Text = "Kembali"
+        Me.btnKembali.UseVisualStyleBackColor = True
+        '
+        'PictureBoxClose
+        '
+        Me.PictureBoxClose.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBoxClose.BackgroundImage = CType(resources.GetObject("PictureBoxClose.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBoxClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxClose.Location = New System.Drawing.Point(322, 19)
+        Me.PictureBoxClose.Name = "PictureBoxClose"
+        Me.PictureBoxClose.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBoxClose.TabIndex = 8
+        Me.PictureBoxClose.TabStop = False
+        '
+        'PictureBoxMinimize
+        '
+        Me.PictureBoxMinimize.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBoxMinimize.BackgroundImage = CType(resources.GetObject("PictureBoxMinimize.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBoxMinimize.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxMinimize.Location = New System.Drawing.Point(359, 19)
+        Me.PictureBoxMinimize.Name = "PictureBoxMinimize"
+        Me.PictureBoxMinimize.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBoxMinimize.TabIndex = 9
+        Me.PictureBoxMinimize.TabStop = False
+        '
+        'cbxPapanBrs
+        '
+        Me.cbxPapanBrs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxPapanBrs.FormattingEnabled = True
+        Me.cbxPapanBrs.Items.AddRange(New Object() {"4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"})
+        Me.cbxPapanBrs.Location = New System.Drawing.Point(227, 187)
+        Me.cbxPapanBrs.Name = "cbxPapanBrs"
+        Me.cbxPapanBrs.Size = New System.Drawing.Size(121, 21)
+        Me.cbxPapanBrs.TabIndex = 13
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label1.Location = New System.Drawing.Point(175, 151)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(48, 20)
+        Me.Label1.TabIndex = 14
+        Me.Label1.Text = "Kolom"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Location = New System.Drawing.Point(177, 185)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(39, 20)
+        Me.Label2.TabIndex = 15
+        Me.Label2.Text = "Baris"
+        '
+        'FormBuatRoom
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(421, 299)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.cbxPapanBrs)
+        Me.Controls.Add(Me.PictureBoxMinimize)
+        Me.Controls.Add(Me.PictureBoxClose)
+        Me.Controls.Add(Me.btnKembali)
+        Me.Controls.Add(Me.btnOk)
+        Me.Controls.Add(Me.cbxPapanKol)
+        Me.Controls.Add(Me.cbxJumPemain)
+        Me.Controls.Add(Me.txtNamaRoom)
+        Me.Controls.Add(Me.lblUkuranPapan)
+        Me.Controls.Add(Me.lblJumPemain)
+        Me.Controls.Add(Me.lblNamaRoom)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "FormBuatRoom"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Buat Room"
+        Me.TransparencyKey = System.Drawing.SystemColors.ActiveBorder
+        CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+    Friend WithEvents lblNamaRoom As System.Windows.Forms.Label
+    Friend WithEvents lblJumPemain As System.Windows.Forms.Label
+    Friend WithEvents lblUkuranPapan As System.Windows.Forms.Label
+    Friend WithEvents txtNamaRoom As System.Windows.Forms.TextBox
+    Friend WithEvents cbxJumPemain As System.Windows.Forms.ComboBox
+    Friend WithEvents cbxPapanKol As System.Windows.Forms.ComboBox
+    Friend WithEvents btnOk As System.Windows.Forms.Button
+    Friend WithEvents btnKembali As System.Windows.Forms.Button
+    Friend WithEvents PictureBoxClose As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBoxMinimize As System.Windows.Forms.PictureBox
+    Friend WithEvents cbxPapanBrs As System.Windows.Forms.ComboBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+End Class

@@ -1,0 +1,220 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class FormLobiGame
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLobiGame))
+        Me.grpbxDftrPemain = New System.Windows.Forms.GroupBox()
+        Me.lstInfoPemain = New System.Windows.Forms.ListBox()
+        Me.BtnInfo = New System.Windows.Forms.Button()
+        Me.grpbxDftrLobi = New System.Windows.Forms.GroupBox()
+        Me.lstRoom = New System.Windows.Forms.ListBox()
+        Me.btnJoin = New System.Windows.Forms.Button()
+        Me.btnBuatRoom = New System.Windows.Forms.Button()
+        Me.grpbxChat = New System.Windows.Forms.GroupBox()
+        Me.lstChat = New System.Windows.Forms.ListBox()
+        Me.btnKirimChat = New System.Windows.Forms.Button()
+        Me.txtInputChat = New System.Windows.Forms.TextBox()
+        Me.PictureBoxClose = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox()
+        Me.grpbxDftrPemain.SuspendLayout()
+        Me.grpbxDftrLobi.SuspendLayout()
+        Me.grpbxChat.SuspendLayout()
+        CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'grpbxDftrPemain
+        '
+        Me.grpbxDftrPemain.BackColor = System.Drawing.Color.Transparent
+        Me.grpbxDftrPemain.Controls.Add(Me.lstInfoPemain)
+        Me.grpbxDftrPemain.Controls.Add(Me.BtnInfo)
+        Me.grpbxDftrPemain.ForeColor = System.Drawing.Color.White
+        Me.grpbxDftrPemain.Location = New System.Drawing.Point(36, 95)
+        Me.grpbxDftrPemain.Name = "grpbxDftrPemain"
+        Me.grpbxDftrPemain.Size = New System.Drawing.Size(214, 276)
+        Me.grpbxDftrPemain.TabIndex = 0
+        Me.grpbxDftrPemain.TabStop = False
+        Me.grpbxDftrPemain.Text = "Daftar Pemain"
+        '
+        'lstInfoPemain
+        '
+        Me.lstInfoPemain.FormattingEnabled = True
+        Me.lstInfoPemain.Location = New System.Drawing.Point(6, 48)
+        Me.lstInfoPemain.Name = "lstInfoPemain"
+        Me.lstInfoPemain.Size = New System.Drawing.Size(202, 212)
+        Me.lstInfoPemain.TabIndex = 3
+        '
+        'BtnInfo
+        '
+        Me.BtnInfo.ForeColor = System.Drawing.Color.Black
+        Me.BtnInfo.Location = New System.Drawing.Point(8, 19)
+        Me.BtnInfo.Name = "BtnInfo"
+        Me.BtnInfo.Size = New System.Drawing.Size(75, 23)
+        Me.BtnInfo.TabIndex = 2
+        Me.BtnInfo.Text = "Info"
+        Me.BtnInfo.UseVisualStyleBackColor = True
+        '
+        'grpbxDftrLobi
+        '
+        Me.grpbxDftrLobi.BackColor = System.Drawing.Color.Transparent
+        Me.grpbxDftrLobi.Controls.Add(Me.lstRoom)
+        Me.grpbxDftrLobi.Controls.Add(Me.btnJoin)
+        Me.grpbxDftrLobi.Controls.Add(Me.btnBuatRoom)
+        Me.grpbxDftrLobi.ForeColor = System.Drawing.Color.White
+        Me.grpbxDftrLobi.Location = New System.Drawing.Point(280, 95)
+        Me.grpbxDftrLobi.Name = "grpbxDftrLobi"
+        Me.grpbxDftrLobi.Size = New System.Drawing.Size(311, 276)
+        Me.grpbxDftrLobi.TabIndex = 1
+        Me.grpbxDftrLobi.TabStop = False
+        Me.grpbxDftrLobi.Text = "Daftar Room"
+        '
+        'lstRoom
+        '
+        Me.lstRoom.FormattingEnabled = True
+        Me.lstRoom.Location = New System.Drawing.Point(6, 48)
+        Me.lstRoom.Name = "lstRoom"
+        Me.lstRoom.Size = New System.Drawing.Size(299, 212)
+        Me.lstRoom.TabIndex = 5
+        '
+        'btnJoin
+        '
+        Me.btnJoin.ForeColor = System.Drawing.Color.Black
+        Me.btnJoin.Location = New System.Drawing.Point(87, 19)
+        Me.btnJoin.Name = "btnJoin"
+        Me.btnJoin.Size = New System.Drawing.Size(75, 23)
+        Me.btnJoin.TabIndex = 4
+        Me.btnJoin.Text = "Join"
+        Me.btnJoin.UseVisualStyleBackColor = True
+        '
+        'btnBuatRoom
+        '
+        Me.btnBuatRoom.ForeColor = System.Drawing.Color.Black
+        Me.btnBuatRoom.Location = New System.Drawing.Point(6, 19)
+        Me.btnBuatRoom.Name = "btnBuatRoom"
+        Me.btnBuatRoom.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuatRoom.TabIndex = 3
+        Me.btnBuatRoom.Text = "Buat Room"
+        Me.btnBuatRoom.UseVisualStyleBackColor = True
+        '
+        'grpbxChat
+        '
+        Me.grpbxChat.BackColor = System.Drawing.Color.Transparent
+        Me.grpbxChat.Controls.Add(Me.lstChat)
+        Me.grpbxChat.Controls.Add(Me.btnKirimChat)
+        Me.grpbxChat.Controls.Add(Me.txtInputChat)
+        Me.grpbxChat.ForeColor = System.Drawing.Color.White
+        Me.grpbxChat.Location = New System.Drawing.Point(36, 377)
+        Me.grpbxChat.Name = "grpbxChat"
+        Me.grpbxChat.Size = New System.Drawing.Size(555, 162)
+        Me.grpbxChat.TabIndex = 2
+        Me.grpbxChat.TabStop = False
+        Me.grpbxChat.Text = "Chat"
+        '
+        'lstChat
+        '
+        Me.lstChat.FormattingEnabled = True
+        Me.lstChat.Location = New System.Drawing.Point(6, 19)
+        Me.lstChat.Name = "lstChat"
+        Me.lstChat.Size = New System.Drawing.Size(538, 108)
+        Me.lstChat.TabIndex = 3
+        '
+        'btnKirimChat
+        '
+        Me.btnKirimChat.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnKirimChat.Location = New System.Drawing.Point(464, 134)
+        Me.btnKirimChat.Name = "btnKirimChat"
+        Me.btnKirimChat.Size = New System.Drawing.Size(85, 23)
+        Me.btnKirimChat.TabIndex = 2
+        Me.btnKirimChat.Text = "Kirim"
+        Me.btnKirimChat.UseVisualStyleBackColor = True
+        '
+        'txtInputChat
+        '
+        Me.txtInputChat.Location = New System.Drawing.Point(6, 136)
+        Me.txtInputChat.Name = "txtInputChat"
+        Me.txtInputChat.Size = New System.Drawing.Size(452, 20)
+        Me.txtInputChat.TabIndex = 1
+        '
+        'PictureBoxClose
+        '
+        Me.PictureBoxClose.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBoxClose.BackgroundImage = CType(resources.GetObject("PictureBoxClose.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBoxClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxClose.Location = New System.Drawing.Point(510, 40)
+        Me.PictureBoxClose.Name = "PictureBoxClose"
+        Me.PictureBoxClose.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBoxClose.TabIndex = 5
+        Me.PictureBoxClose.TabStop = False
+        '
+        'PictureBoxMinimize
+        '
+        Me.PictureBoxMinimize.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBoxMinimize.BackgroundImage = CType(resources.GetObject("PictureBoxMinimize.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBoxMinimize.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxMinimize.Location = New System.Drawing.Point(548, 40)
+        Me.PictureBoxMinimize.Name = "PictureBoxMinimize"
+        Me.PictureBoxMinimize.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBoxMinimize.TabIndex = 6
+        Me.PictureBoxMinimize.TabStop = False
+        '
+        'FormLobiGame
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(613, 570)
+        Me.Controls.Add(Me.PictureBoxMinimize)
+        Me.Controls.Add(Me.PictureBoxClose)
+        Me.Controls.Add(Me.grpbxChat)
+        Me.Controls.Add(Me.grpbxDftrLobi)
+        Me.Controls.Add(Me.grpbxDftrPemain)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "FormLobiGame"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "LobiGame"
+        Me.TransparencyKey = System.Drawing.SystemColors.ActiveBorder
+        Me.grpbxDftrPemain.ResumeLayout(False)
+        Me.grpbxDftrLobi.ResumeLayout(False)
+        Me.grpbxChat.ResumeLayout(False)
+        Me.grpbxChat.PerformLayout()
+        CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+    Friend WithEvents grpbxDftrPemain As System.Windows.Forms.GroupBox
+    Friend WithEvents grpbxDftrLobi As System.Windows.Forms.GroupBox
+    Friend WithEvents grpbxChat As System.Windows.Forms.GroupBox
+    Friend WithEvents btnKirimChat As System.Windows.Forms.Button
+    Friend WithEvents txtInputChat As System.Windows.Forms.TextBox
+    Friend WithEvents PictureBoxClose As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBoxMinimize As System.Windows.Forms.PictureBox
+    Friend WithEvents BtnInfo As System.Windows.Forms.Button
+    Friend WithEvents btnJoin As System.Windows.Forms.Button
+    Friend WithEvents btnBuatRoom As System.Windows.Forms.Button
+    Friend WithEvents lstChat As System.Windows.Forms.ListBox
+    Friend WithEvents lstInfoPemain As System.Windows.Forms.ListBox
+    Friend WithEvents lstRoom As System.Windows.Forms.ListBox
+End Class
