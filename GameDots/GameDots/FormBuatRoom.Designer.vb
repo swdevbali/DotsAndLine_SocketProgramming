@@ -28,14 +28,11 @@ Partial Class FormBuatRoom
         Me.lblUkuranPapan = New System.Windows.Forms.Label()
         Me.txtNamaRoom = New System.Windows.Forms.TextBox()
         Me.cbxJumPemain = New System.Windows.Forms.ComboBox()
-        Me.cbxPapanKol = New System.Windows.Forms.ComboBox()
+        Me.cbxPapan = New System.Windows.Forms.ComboBox()
         Me.btnOk = New System.Windows.Forms.Button()
         Me.btnKembali = New System.Windows.Forms.Button()
         Me.PictureBoxClose = New System.Windows.Forms.PictureBox()
         Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox()
-        Me.cbxPapanBrs = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -94,16 +91,16 @@ Partial Class FormBuatRoom
         Me.cbxJumPemain.Size = New System.Drawing.Size(121, 21)
         Me.cbxJumPemain.TabIndex = 4
         '
-        'cbxPapanKol
+        'cbxPapan
         '
-        Me.cbxPapanKol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxPapanKol.DropDownWidth = 64
-        Me.cbxPapanKol.FormattingEnabled = True
-        Me.cbxPapanKol.Items.AddRange(New Object() {"4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"})
-        Me.cbxPapanKol.Location = New System.Drawing.Point(227, 150)
-        Me.cbxPapanKol.Name = "cbxPapanKol"
-        Me.cbxPapanKol.Size = New System.Drawing.Size(121, 21)
-        Me.cbxPapanKol.TabIndex = 12
+        Me.cbxPapan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxPapan.DropDownWidth = 64
+        Me.cbxPapan.FormattingEnabled = True
+        Me.cbxPapan.Items.AddRange(New Object() {"4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"})
+        Me.cbxPapan.Location = New System.Drawing.Point(227, 150)
+        Me.cbxPapan.Name = "cbxPapan"
+        Me.cbxPapan.Size = New System.Drawing.Size(121, 21)
+        Me.cbxPapan.TabIndex = 12
         '
         'btnOk
         '
@@ -146,40 +143,6 @@ Partial Class FormBuatRoom
         Me.PictureBoxMinimize.TabIndex = 9
         Me.PictureBoxMinimize.TabStop = False
         '
-        'cbxPapanBrs
-        '
-        Me.cbxPapanBrs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxPapanBrs.FormattingEnabled = True
-        Me.cbxPapanBrs.Items.AddRange(New Object() {"4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"})
-        Me.cbxPapanBrs.Location = New System.Drawing.Point(227, 187)
-        Me.cbxPapanBrs.Name = "cbxPapanBrs"
-        Me.cbxPapanBrs.Size = New System.Drawing.Size(121, 21)
-        Me.cbxPapanBrs.TabIndex = 13
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(175, 151)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(48, 20)
-        Me.Label1.TabIndex = 14
-        Me.Label1.Text = "Kolom"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(177, 185)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 20)
-        Me.Label2.TabIndex = 15
-        Me.Label2.Text = "Baris"
-        '
         'FormBuatRoom
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -187,14 +150,11 @@ Partial Class FormBuatRoom
         Me.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(421, 299)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.cbxPapanBrs)
         Me.Controls.Add(Me.PictureBoxMinimize)
         Me.Controls.Add(Me.PictureBoxClose)
         Me.Controls.Add(Me.btnKembali)
         Me.Controls.Add(Me.btnOk)
-        Me.Controls.Add(Me.cbxPapanKol)
+        Me.Controls.Add(Me.cbxPapan)
         Me.Controls.Add(Me.cbxJumPemain)
         Me.Controls.Add(Me.txtNamaRoom)
         Me.Controls.Add(Me.lblUkuranPapan)
@@ -217,12 +177,9 @@ Partial Class FormBuatRoom
     Friend WithEvents lblUkuranPapan As System.Windows.Forms.Label
     Friend WithEvents txtNamaRoom As System.Windows.Forms.TextBox
     Friend WithEvents cbxJumPemain As System.Windows.Forms.ComboBox
-    Friend WithEvents cbxPapanKol As System.Windows.Forms.ComboBox
+    Friend WithEvents cbxPapan As System.Windows.Forms.ComboBox
     Friend WithEvents btnOk As System.Windows.Forms.Button
     Friend WithEvents btnKembali As System.Windows.Forms.Button
     Friend WithEvents PictureBoxClose As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBoxMinimize As System.Windows.Forms.PictureBox
-    Friend WithEvents cbxPapanBrs As System.Windows.Forms.ComboBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

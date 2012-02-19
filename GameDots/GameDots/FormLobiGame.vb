@@ -56,6 +56,13 @@ Public Class FormLobiGame
     End Sub
 
     Private Sub btnJoin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnJoin.Click
+        'Gameplay.init()
+        If lstRoom.Text = "" Then
+            MessageBox.Show("Pilih room terlebih dahulu")
+            Return
+        End If
+        FormGameDots.nama_room = lstRoom.Text.Trim
+        FormGameDots.init()
         FormGameDots.Show()
     End Sub
 

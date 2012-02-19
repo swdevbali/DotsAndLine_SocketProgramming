@@ -105,7 +105,7 @@ Partial Class FormLobiGame
         Me.btnJoin.Name = "btnJoin"
         Me.btnJoin.Size = New System.Drawing.Size(75, 23)
         Me.btnJoin.TabIndex = 4
-        Me.btnJoin.Text = "Join"
+        Me.btnJoin.Text = "Enter Room"
         Me.btnJoin.UseVisualStyleBackColor = True
         '
         'btnBuatRoom

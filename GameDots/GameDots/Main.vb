@@ -7,7 +7,7 @@ Module Main
     Public intResponse As Integer
     Public Username, Password As String
 
-    Public compName As String
+    Public compName As String = "localhost"
     Public instanceFormLobiGame As New FormLobiGame
 
     Public loggedUserName As String
