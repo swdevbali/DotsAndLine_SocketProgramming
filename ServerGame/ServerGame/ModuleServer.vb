@@ -122,16 +122,16 @@ Module ModuleServer
             Dim data() As String = messageData.Split(">")
             Dim nama_room As String = data(0)
             Dim jumlah_pemain As String = data(1)
-            Dim ukuran_papan_kol As String = data(2)
-            Dim ukuran_papan_brs As String = data(3)
-            Dim user_pemain As String = data(4)
+            Dim ukuran_papan As String = data(2)
+
+            Dim user_pemain As String = data(3)
             Dim con As New SqlConnection
             Dim cmd As New SqlCommand
 
             con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
             con.Open()
             cmd.Connection = con
-            cmd.CommandText = "INSERT INTO room([nama_room],[jumlah_pemain],[ukuran_papan_col],[ukuran_papan_rows],[user_pemain])VALUES('" & nama_room & "','" & jumlah_pemain & "', '" & ukuran_papan_kol & "', '" & ukuran_papan_brs & "','" & user_pemain & "')"
+            cmd.CommandText = "INSERT INTO room([nama_room],[jumlah_pemain],[ukuran_papan_col],[ukuran_papan_rows],[user_pemain])VALUES('" & nama_room & "','" & jumlah_pemain & "', '" & ukuran_papan & "','" & user_pemain & "')"
             cmd.ExecuteNonQuery()
             con.Close()
 
@@ -147,7 +147,7 @@ Module ModuleServer
             cmd.CommandText = "SELECT [nama_room] ,[user_pemain] FROM [adidots].[dbo].[room]"
             Dim rd As SqlDataReader = cmd.ExecuteReader()
             Do While rd.Read
-                room = rd.GetString(0) & " by " & rd.GetString(1) & ">" & room
+                room = rd.GetString(0) & ">" & room
             Loop
             room = room.Substring(0, room.Length - 1)
             con.Close()

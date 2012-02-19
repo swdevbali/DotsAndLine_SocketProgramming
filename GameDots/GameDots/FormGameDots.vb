@@ -1,4 +1,6 @@
-﻿Public Class FormGameDots
+﻿Imports System.Data.SqlClient
+
+Public Class FormGameDots
     Private IsFormBeingDragged As Boolean = False
     Private MouseDownX As Integer
     Private MouseDownY As Integer
@@ -11,6 +13,8 @@
     Dim ScaleWidth As Single
     Dim ScaleHeight As Single
     Dim OffSet As Single = 6
+    Friend Shared nama_room As String
+
     Private Sub ClickedOnPaper(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PB_Paper.MouseClick
         ' Was the Left button click?
         If e.Button = Windows.Forms.MouseButtons.Left Then
@@ -172,7 +176,7 @@
 #End Region
 
     Private Sub FormGameDots_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        GridPlaySize = 4 ' GridCombo.SelectedIndex
+        'GridPlaySize = 0 ' GridCombo.SelectedIndex
         Dots = GridSizes(GridPlaySize)
         RescaleGrid()
         DefineGrid()
@@ -240,4 +244,25 @@
         ' Add any initialization after the InitializeComponent() call.
         RescaleGrid()
     End Sub
+
+    Shared Sub init()
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
+        Dim room As String = ""
+        con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
+        con.Open()
+        cmd.Connection = con
+        cmd.CommandText = "SELECT [nama_room] ,[user_pemain],ukuran_papan FROM [adidots].[dbo].[room] where nama_room='Room_406'"
+        cmd.CommandText.Trim()
+        Dim rd As SqlDataReader = cmd.ExecuteReader()
+
+        rd.Read()
+        If rd.HasRows Then
+            Gameplay.GridPlaySize = CInt(rd.GetValue(2)) - 4 'karena dari combo box, 0=>4
+        End If
+
+        con.Close()
+
+    End Sub
+
 End Class

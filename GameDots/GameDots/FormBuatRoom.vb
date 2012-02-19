@@ -15,7 +15,7 @@ Public Class FormBuatRoom
         con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
         con.Open()
         cmd.Connection = con
-        cmd.CommandText = "INSERT INTO room([nama_room],[jumlah_pemain],[ukuran_papan_col],[ukuran_papan_rows])VALUES('" & txtNamaRoom.Text & "','" & cbxJumPemain.Text & "', '" & cbxPapanKol.Text & "', '" & cbxPapanBrs.Text & "')"
+        cmd.CommandText = "INSERT INTO room([nama_room],[jumlah_pemain],[ukuran_papan])VALUES('" & txtNamaRoom.Text & "','" & cbxJumPemain.Text & "', " & cbxPapan.Text & ")"
         cmd.ExecuteNonQuery()
         con.Close()
 
@@ -47,7 +47,7 @@ Public Class FormBuatRoom
         End If
     End Sub
     Private Sub btnOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOk.Click
-        ModuleClient.sendMessageToServer("CREATE_ROOM|" + txtNamaRoom.Text + ">" + cbxJumPemain.Text + ">" + cbxPapanKol.Text + ">" + cbxPapanBrs.Text + ">" + loggedUserName)
+        ModuleClient.sendMessageToServer("CREATE_ROOM|" + txtNamaRoom.Text + ">" + cbxJumPemain.Text + ">" + cbxPapan.Text + ">" + loggedUserName)
         'BuatRoom()
         instanceFormLobiGame.Timer1.Enabled = True
         Close()
