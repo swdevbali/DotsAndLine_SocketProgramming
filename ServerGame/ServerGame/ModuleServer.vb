@@ -4,8 +4,7 @@ Imports System.Data.SqlClient
 
 Module ModuleServer
     Dim clientsList As New Hashtable
-    'Dim compName As String = "Windows7Macbook"
-    Dim compName As String = "ADISETIONO-PC"
+    Dim compName As String = "localhost"
     Private Sub broadcastToAllClient(ByVal msg As String, ByVal uName As String, ByVal flag As Boolean)
         Dim Item As DictionaryEntry
         For Each Item In clientsList
