@@ -6,7 +6,7 @@ Public Class FormLobiGame
     Private MouseDownY As Integer
 
     Private Sub FormLobiGame_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-    
+
     End Sub
 
     Private Sub FormLobiGame_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown
