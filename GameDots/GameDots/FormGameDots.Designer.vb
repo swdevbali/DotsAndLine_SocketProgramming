@@ -23,34 +23,33 @@ Partial Class FormGameDots
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormGameDots))
-        Me.pbxBoardGame = New System.Windows.Forms.PictureBox
-        Me.btnMulai = New System.Windows.Forms.Button
-        Me.btnPetunjuk = New System.Windows.Forms.Button
-        Me.btnKeluar = New System.Windows.Forms.Button
-        Me.pbxPemainMerah = New System.Windows.Forms.PictureBox
-        Me.pbxPemainHijau = New System.Windows.Forms.PictureBox
-        Me.pbxPemainBiru = New System.Windows.Forms.PictureBox
-        Me.pbxPemainKuning = New System.Windows.Forms.PictureBox
-        Me.pbxWarnaGiliran = New System.Windows.Forms.PictureBox
-        Me.lblPemain1 = New System.Windows.Forms.Label
-        Me.lblPemain2 = New System.Windows.Forms.Label
-        Me.lblPemain3 = New System.Windows.Forms.Label
-        Me.lblPemain4 = New System.Windows.Forms.Label
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.Label7 = New System.Windows.Forms.Label
-        Me.Label8 = New System.Windows.Forms.Label
-        Me.Label9 = New System.Windows.Forms.Label
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.btnKirim = New System.Windows.Forms.Button
-        Me.txtInputChat = New System.Windows.Forms.TextBox
-        Me.txtHasilChat = New System.Windows.Forms.TextBox
-        Me.btnInvite = New System.Windows.Forms.Button
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.TextBox1 = New System.Windows.Forms.TextBox
-        Me.PictureBoxClose = New System.Windows.Forms.PictureBox
-        Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox
-        CType(Me.pbxBoardGame, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnMulai = New System.Windows.Forms.Button()
+        Me.btnPetunjuk = New System.Windows.Forms.Button()
+        Me.btnKeluar = New System.Windows.Forms.Button()
+        Me.pbxPemainMerah = New System.Windows.Forms.PictureBox()
+        Me.pbxPemainHijau = New System.Windows.Forms.PictureBox()
+        Me.pbxPemainBiru = New System.Windows.Forms.PictureBox()
+        Me.pbxPemainKuning = New System.Windows.Forms.PictureBox()
+        Me.pbxWarnaGiliran = New System.Windows.Forms.PictureBox()
+        Me.lblPemain1 = New System.Windows.Forms.Label()
+        Me.lblPemain2 = New System.Windows.Forms.Label()
+        Me.lblPemain3 = New System.Windows.Forms.Label()
+        Me.lblPemain4 = New System.Windows.Forms.Label()
+        Me.Lbl_ScoreRed = New System.Windows.Forms.Label()
+        Me.Lbl_ScoreBlue = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnKirim = New System.Windows.Forms.Button()
+        Me.txtInputChat = New System.Windows.Forms.TextBox()
+        Me.txtHasilChat = New System.Windows.Forms.TextBox()
+        Me.btnInvite = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.PictureBoxClose = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox()
+        Me.PB_Paper = New System.Windows.Forms.PictureBox()
         CType(Me.pbxPemainMerah, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxPemainHijau, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxPemainBiru, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,18 +59,8 @@ Partial Class FormGameDots
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PB_Paper, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'pbxBoardGame
-        '
-        Me.pbxBoardGame.BackColor = System.Drawing.Color.White
-        Me.pbxBoardGame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbxBoardGame.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxBoardGame.Location = New System.Drawing.Point(253, 72)
-        Me.pbxBoardGame.Name = "pbxBoardGame"
-        Me.pbxBoardGame.Size = New System.Drawing.Size(366, 360)
-        Me.pbxBoardGame.TabIndex = 0
-        Me.pbxBoardGame.TabStop = False
         '
         'btnMulai
         '
@@ -198,29 +187,29 @@ Partial Class FormGameDots
         Me.lblPemain4.TabIndex = 12
         Me.lblPemain4.Text = "Label4"
         '
-        'Label5
+        'Lbl_ScoreRed
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(170, 149)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(23, 20)
-        Me.Label5.TabIndex = 13
-        Me.Label5.Text = "00"
+        Me.Lbl_ScoreRed.AutoSize = True
+        Me.Lbl_ScoreRed.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_ScoreRed.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_ScoreRed.ForeColor = System.Drawing.Color.White
+        Me.Lbl_ScoreRed.Location = New System.Drawing.Point(170, 149)
+        Me.Lbl_ScoreRed.Name = "Lbl_ScoreRed"
+        Me.Lbl_ScoreRed.Size = New System.Drawing.Size(23, 20)
+        Me.Lbl_ScoreRed.TabIndex = 13
+        Me.Lbl_ScoreRed.Text = "00"
         '
-        'Label6
+        'Lbl_ScoreBlue
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(170, 206)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(23, 20)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "00"
+        Me.Lbl_ScoreBlue.AutoSize = True
+        Me.Lbl_ScoreBlue.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_ScoreBlue.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_ScoreBlue.ForeColor = System.Drawing.Color.White
+        Me.Lbl_ScoreBlue.Location = New System.Drawing.Point(170, 206)
+        Me.Lbl_ScoreBlue.Name = "Lbl_ScoreBlue"
+        Me.Lbl_ScoreBlue.Size = New System.Drawing.Size(23, 20)
+        Me.Lbl_ScoreBlue.TabIndex = 14
+        Me.Lbl_ScoreBlue.Text = "00"
         '
         'Label7
         '
@@ -349,12 +338,22 @@ Partial Class FormGameDots
         Me.PictureBoxMinimize.TabIndex = 24
         Me.PictureBoxMinimize.TabStop = False
         '
+        'PB_Paper
+        '
+        Me.PB_Paper.BackColor = System.Drawing.Color.White
+        Me.PB_Paper.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PB_Paper.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_Paper.Location = New System.Drawing.Point(253, 72)
+        Me.PB_Paper.Name = "PB_Paper"
+        Me.PB_Paper.Size = New System.Drawing.Size(366, 360)
+        Me.PB_Paper.TabIndex = 0
+        Me.PB_Paper.TabStop = False
+        '
         'FormGameDots
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(769, 669)
         Me.Controls.Add(Me.PictureBoxMinimize)
         Me.Controls.Add(Me.PictureBoxClose)
@@ -364,8 +363,8 @@ Partial Class FormGameDots
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Lbl_ScoreBlue)
+        Me.Controls.Add(Me.Lbl_ScoreRed)
         Me.Controls.Add(Me.lblPemain4)
         Me.Controls.Add(Me.lblPemain3)
         Me.Controls.Add(Me.lblPemain2)
@@ -378,14 +377,11 @@ Partial Class FormGameDots
         Me.Controls.Add(Me.btnKeluar)
         Me.Controls.Add(Me.btnPetunjuk)
         Me.Controls.Add(Me.btnMulai)
-        Me.Controls.Add(Me.pbxBoardGame)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Controls.Add(Me.PB_Paper)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormGameDots"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game Dots"
-        Me.TransparencyKey = System.Drawing.SystemColors.ActiveBorder
-        CType(Me.pbxBoardGame, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxPemainMerah, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxPemainHijau, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxPemainBiru, System.ComponentModel.ISupportInitialize).EndInit()
@@ -397,11 +393,11 @@ Partial Class FormGameDots
         Me.GroupBox2.PerformLayout()
         CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PB_Paper, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents pbxBoardGame As System.Windows.Forms.PictureBox
     Friend WithEvents btnMulai As System.Windows.Forms.Button
     Friend WithEvents btnPetunjuk As System.Windows.Forms.Button
     Friend WithEvents btnKeluar As System.Windows.Forms.Button
@@ -414,8 +410,8 @@ Partial Class FormGameDots
     Friend WithEvents lblPemain2 As System.Windows.Forms.Label
     Friend WithEvents lblPemain3 As System.Windows.Forms.Label
     Friend WithEvents lblPemain4 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_ScoreRed As System.Windows.Forms.Label
+    Friend WithEvents Lbl_ScoreBlue As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
@@ -428,4 +424,5 @@ Partial Class FormGameDots
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents PictureBoxClose As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBoxMinimize As System.Windows.Forms.PictureBox
+    Friend WithEvents PB_Paper As System.Windows.Forms.PictureBox
 End Class

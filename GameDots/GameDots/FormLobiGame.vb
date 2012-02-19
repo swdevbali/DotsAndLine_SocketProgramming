@@ -56,6 +56,7 @@ Public Class FormLobiGame
     End Sub
 
     Private Sub btnJoin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnJoin.Click
+        'Gameplay.init()
         FormGameDots.Show()
     End Sub
 
