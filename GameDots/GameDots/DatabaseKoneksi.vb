@@ -2,8 +2,8 @@
 
 
 Public Class DatabaseKoneksi
-    Dim computerName As String = "Windows7Macbook"
-    'Dim compName As String = "ADISETIONO-PC"
+    'Dim computerName As String = "Windows7Macbook"
+    Dim compName As String = "ADISETIONO-PC"
     Public Function open() As SqlClient.SqlConnection
 
         Dim conect As SqlConnection = Nothing

@@ -60,7 +60,7 @@ Public Class FormLobiGame
     End Sub
 
     Private Sub btnKirimChat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnKirimChat.Click
-        ModuleClient.sendMessageToServer("CHAT > " + txtInputChat.Text + "$")
+        ModuleClient.sendMessageToServer("CHAT|" + txtInputChat.Text + "$")
         txtInputChat.Text = ""
         txtInputChat.Focus()
     End Sub
@@ -99,4 +99,6 @@ Public Class FormLobiGame
         'query for room
         ModuleClient.sendMessageToServer("QUERY_ROOM|")
     End Sub
+
+   
 End Class
