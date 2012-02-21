@@ -23,23 +23,21 @@ Partial Class FormLoginAdmin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLoginAdmin))
-        Me.btnBatal = New System.Windows.Forms.Button
-        Me.btnOk = New System.Windows.Forms.Button
-        Me.txtPassword = New System.Windows.Forms.TextBox
-        Me.txtUsername = New System.Windows.Forms.TextBox
-        Me.txtIpserver = New System.Windows.Forms.TextBox
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.PictureBoxClose = New System.Windows.Forms.PictureBox
-        Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox
+        Me.btnBatal = New System.Windows.Forms.Button()
+        Me.btnOk = New System.Windows.Forms.Button()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBoxClose = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnBatal
         '
-        Me.btnBatal.Location = New System.Drawing.Point(334, 250)
+        Me.btnBatal.Location = New System.Drawing.Point(334, 211)
         Me.btnBatal.Name = "btnBatal"
         Me.btnBatal.Size = New System.Drawing.Size(88, 32)
         Me.btnBatal.TabIndex = 15
@@ -48,7 +46,7 @@ Partial Class FormLoginAdmin
         '
         'btnOk
         '
-        Me.btnOk.Location = New System.Drawing.Point(162, 250)
+        Me.btnOk.Location = New System.Drawing.Point(162, 211)
         Me.btnOk.Name = "btnOk"
         Me.btnOk.Size = New System.Drawing.Size(88, 32)
         Me.btnOk.TabIndex = 14
@@ -57,26 +55,20 @@ Partial Class FormLoginAdmin
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(268, 202)
+        Me.txtPassword.Location = New System.Drawing.Point(268, 163)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(154, 20)
         Me.txtPassword.TabIndex = 13
+        Me.txtPassword.Text = "admin007"
         '
         'txtUsername
         '
-        Me.txtUsername.Location = New System.Drawing.Point(268, 160)
+        Me.txtUsername.Location = New System.Drawing.Point(268, 121)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(154, 20)
         Me.txtUsername.TabIndex = 12
-        '
-        'txtIpserver
-        '
-        Me.txtIpserver.Location = New System.Drawing.Point(268, 120)
-        Me.txtIpserver.Name = "txtIpserver"
-        Me.txtIpserver.Size = New System.Drawing.Size(154, 20)
-        Me.txtIpserver.TabIndex = 11
-        Me.txtIpserver.Text = "localhost"
+        Me.txtUsername.Text = "admin"
         '
         'Label3
         '
@@ -84,7 +76,7 @@ Partial Class FormLoginAdmin
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(158, 200)
+        Me.Label3.Location = New System.Drawing.Point(158, 161)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(68, 20)
         Me.Label3.TabIndex = 10
@@ -96,23 +88,11 @@ Partial Class FormLoginAdmin
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(158, 158)
+        Me.Label2.Location = New System.Drawing.Point(158, 119)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(70, 20)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Username"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(158, 119)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 20)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "IP Server"
         '
         'PictureBoxClose
         '
@@ -147,10 +127,8 @@ Partial Class FormLoginAdmin
         Me.Controls.Add(Me.btnOk)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtUsername)
-        Me.Controls.Add(Me.txtIpserver)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormLoginAdmin"
@@ -167,10 +145,8 @@ Partial Class FormLoginAdmin
     Friend WithEvents btnOk As System.Windows.Forms.Button
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
     Friend WithEvents txtUsername As System.Windows.Forms.TextBox
-    Friend WithEvents txtIpserver As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBoxClose As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBoxMinimize As System.Windows.Forms.PictureBox
 

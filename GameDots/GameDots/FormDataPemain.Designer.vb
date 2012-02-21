@@ -269,6 +269,7 @@ Partial Class FormDataPemain
         Me.Controls.Add(Me.PemainDataGridView)
         Me.Controls.Add(Me.PemainBindingNavigator)
         Me.Name = "FormDataPemain"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Data Pemain"
         CType(Me.AdidotsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PemainBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

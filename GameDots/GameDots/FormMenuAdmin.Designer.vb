@@ -79,11 +79,12 @@ Partial Class FormMenuAdmin
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnKeluar)
         Me.Controls.Add(Me.btnDataAdmin)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FormMenuAdmin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Menu Admin"
-        Me.TransparencyKey = System.Drawing.SystemColors.ActiveBorder
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

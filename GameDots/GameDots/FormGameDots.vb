@@ -175,8 +175,17 @@ Public Class FormGameDots
     End Sub
 #End Region
 
+    Private Sub PictureBox2_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles PictureBox2.Paint
+        Select Case CurrentPlayer
+            Case Player.Red : Me.PictureBox2.BackColor = Color.Red
+            Case Player.Blue : Me.PictureBox2.BackColor = Color.Blue
+        End Select
+    End Sub
+
     Private Sub FormGameDots_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'GridPlaySize = 0 ' GridCombo.SelectedIndex
+        lblPemain1.Text = loggedUserName
+        lblPemain2.Text = loggedUserName
         Dots = GridSizes(GridPlaySize)
         RescaleGrid()
         DefineGrid()
@@ -224,11 +233,11 @@ Public Class FormGameDots
         FormInvitePemain.Show()
     End Sub
 
-    Private Sub PictureBoxClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxClose.Click
+    Private Sub PictureBoxClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         TombolClose()
     End Sub
 
-    Private Sub PictureBoxMinimize_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxMinimize.Click
+    Private Sub PictureBoxMinimize_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
@@ -252,7 +261,7 @@ Public Class FormGameDots
         con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
         con.Open()
         cmd.Connection = con
-        cmd.CommandText = "SELECT [nama_room] ,[user_pemain],ukuran_papan FROM [adidots].[dbo].[room] where nama_room='Room_406'"
+        cmd.CommandText = "SELECT [nama_room] ,[user_pemain],ukuran_papan FROM [adidots].[dbo].[room] where nama_room='Room456'"
         cmd.CommandText.Trim()
         Dim rd As SqlDataReader = cmd.ExecuteReader()
 

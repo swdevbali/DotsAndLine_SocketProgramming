@@ -154,17 +154,6 @@ Module ModuleServer
             broadcastToAllClient("ROOM_QUERY_RESULT|" & room, clNo, False)
         End Sub
 
-        Private Sub queryInfo()
-            Dim con As New SqlConnection
-            Dim cmd As New SqlCommand
-            Dim info As String = ""
-            con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
-            con.Open()
-            cmd.Connection = con
-            cmd.CommandText = "SELECT [user_pemain] FROM [adidots].[dbo].[statistik]"
-            Dim rd As SqlDataReader = cmd.ExecuteReader()
-
-        End Sub
     End Class
 
 

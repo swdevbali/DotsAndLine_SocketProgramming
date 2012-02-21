@@ -6,6 +6,8 @@ Public Class FormLobiGame
     Private MouseDownY As Integer
 
     Private Sub FormLobiGame_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'TODO: This line of code loads data into the 'AdidotsDataSet.statistik' table. You can move, or remove it, as needed.
+        Me.StatistikTableAdapter.Fill(Me.AdidotsDataSet.statistik)
 
     End Sub
 
@@ -106,6 +108,4 @@ Public Class FormLobiGame
         'query for room
         ModuleClient.sendMessageToServer("QUERY_ROOM|")
     End Sub
-
-   
 End Class

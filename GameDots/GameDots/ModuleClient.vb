@@ -41,8 +41,7 @@ Module ModuleClient
                 Dim inStream(10024) As Byte
                 buffSize = clientSocket.ReceiveBufferSize
                 serverStream.Read(inStream, 0, buffSize)
-                Dim returndata As String = _
-                System.Text.Encoding.ASCII.GetString(inStream)
+                Dim returndata As String = System.Text.Encoding.ASCII.GetString(inStream)
                 readData = "" + returndata
                 msg()
             Next

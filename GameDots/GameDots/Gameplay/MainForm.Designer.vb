@@ -23,15 +23,15 @@ Partial Class MainForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
-        Me.Lbl_ScoreRed = New System.Windows.Forms.Label
-        Me.Lbl_ScoreBlue = New System.Windows.Forms.Label
-        Me.Lbl_BluePlayer = New System.Windows.Forms.Label
-        Me.Lbl_RedPlayer = New System.Windows.Forms.Label
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox
-        Me.GridCombo = New System.Windows.Forms.ComboBox
-        Me.PB_Paper = New System.Windows.Forms.PictureBox
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Lbl_ScoreRed = New System.Windows.Forms.Label()
+        Me.Lbl_ScoreBlue = New System.Windows.Forms.Label()
+        Me.Lbl_BluePlayer = New System.Windows.Forms.Label()
+        Me.Lbl_RedPlayer = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.GridCombo = New System.Windows.Forms.ComboBox()
+        Me.PB_Paper = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_Paper, System.ComponentModel.ISupportInitialize).BeginInit()

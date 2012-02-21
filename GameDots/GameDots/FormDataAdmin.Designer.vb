@@ -259,6 +259,7 @@ Partial Class FormDataAdmin
         Me.Controls.Add(Me.AdminBindingNavigator)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "FormDataAdmin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormDataAdmin"
         CType(Me.AdidotsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AdminBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

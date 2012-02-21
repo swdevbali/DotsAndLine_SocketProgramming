@@ -22,40 +22,36 @@ Partial Class FormDataAdmin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim PasswordLabel As System.Windows.Forms.Label
         Dim User_adminLabel As System.Windows.Forms.Label
-        Dim Id_adminLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormDataAdmin))
-        Me.AdidotsDataSet = New AdminGame.adidotsDataSet
+        Me.AdidotsDataSet = New AdminGame.adidotsDataSet()
         Me.AdminBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.AdminTableAdapter = New AdminGame.adidotsDataSetTableAdapters.adminTableAdapter
+        Me.AdminTableAdapter = New AdminGame.adidotsDataSetTableAdapters.adminTableAdapter()
         Me.AdminBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator
-        Me.AdminBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton
-        Me.TableAdapterManager1 = New AdminGame.adidotsDataSetTableAdapters.TableAdapterManager
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
-        Me.Panel1 = New System.Windows.Forms.Panel
-        Me.PasswordTextBox = New System.Windows.Forms.TextBox
-        Me.User_adminTextBox = New System.Windows.Forms.TextBox
-        Me.Id_adminTextBox = New System.Windows.Forms.TextBox
-        Me.Panel2 = New System.Windows.Forms.Panel
-        Me.AdminDataGridView = New System.Windows.Forms.DataGridView
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        PasswordLabel = New System.Windows.Forms.Label
-        User_adminLabel = New System.Windows.Forms.Label
-        Id_adminLabel = New System.Windows.Forms.Label
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
+        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.AdminBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.TableAdapterManager1 = New AdminGame.adidotsDataSetTableAdapters.TableAdapterManager()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+        Me.User_adminTextBox = New System.Windows.Forms.TextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.AdminDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        PasswordLabel = New System.Windows.Forms.Label()
+        User_adminLabel = New System.Windows.Forms.Label()
         CType(Me.AdidotsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AdminBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AdminBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,15 +79,6 @@ Partial Class FormDataAdmin
         User_adminLabel.Size = New System.Drawing.Size(61, 13)
         User_adminLabel.TabIndex = 9
         User_adminLabel.Text = "user admin:"
-        '
-        'Id_adminLabel
-        '
-        Id_adminLabel.AutoSize = True
-        Id_adminLabel.Location = New System.Drawing.Point(145, 17)
-        Id_adminLabel.Name = "Id_adminLabel"
-        Id_adminLabel.Size = New System.Drawing.Size(49, 13)
-        Id_adminLabel.TabIndex = 7
-        Id_adminLabel.Text = "id admin:"
         '
         'AdidotsDataSet
         '
@@ -246,8 +233,6 @@ Partial Class FormDataAdmin
         Me.Panel1.Controls.Add(Me.PasswordTextBox)
         Me.Panel1.Controls.Add(User_adminLabel)
         Me.Panel1.Controls.Add(Me.User_adminTextBox)
-        Me.Panel1.Controls.Add(Id_adminLabel)
-        Me.Panel1.Controls.Add(Me.Id_adminTextBox)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
@@ -259,6 +244,7 @@ Partial Class FormDataAdmin
         Me.PasswordTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AdminBindingSource, "password", True))
         Me.PasswordTextBox.Location = New System.Drawing.Point(212, 91)
         Me.PasswordTextBox.Name = "PasswordTextBox"
+        Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PasswordTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PasswordTextBox.TabIndex = 12
         '
@@ -269,14 +255,6 @@ Partial Class FormDataAdmin
         Me.User_adminTextBox.Name = "User_adminTextBox"
         Me.User_adminTextBox.Size = New System.Drawing.Size(100, 20)
         Me.User_adminTextBox.TabIndex = 10
-        '
-        'Id_adminTextBox
-        '
-        Me.Id_adminTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AdminBindingSource, "id_admin", True))
-        Me.Id_adminTextBox.Location = New System.Drawing.Point(212, 14)
-        Me.Id_adminTextBox.Name = "Id_adminTextBox"
-        Me.Id_adminTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Id_adminTextBox.TabIndex = 8
         '
         'Panel2
         '
@@ -292,21 +270,13 @@ Partial Class FormDataAdmin
         Me.AdminDataGridView.AutoGenerateColumns = False
         Me.AdminDataGridView.BackgroundColor = System.Drawing.Color.White
         Me.AdminDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.AdminDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
+        Me.AdminDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2})
         Me.AdminDataGridView.DataSource = Me.AdminBindingSource
         Me.AdminDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AdminDataGridView.Location = New System.Drawing.Point(0, 0)
         Me.AdminDataGridView.Name = "AdminDataGridView"
         Me.AdminDataGridView.Size = New System.Drawing.Size(456, 291)
         Me.AdminDataGridView.TabIndex = 8
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "id_admin"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "id_admin"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 74
         '
         'DataGridViewTextBoxColumn2
         '
@@ -362,7 +332,6 @@ Partial Class FormDataAdmin
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents PasswordTextBox As System.Windows.Forms.TextBox
     Friend WithEvents User_adminTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Id_adminTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents AdminDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn

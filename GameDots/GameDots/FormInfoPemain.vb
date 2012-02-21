@@ -41,4 +41,10 @@
     Private Sub PictureBoxMinimize_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxMinimize.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+    Private Sub FormInfoPemain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'AdidotsDataSet.statistik' table. You can move, or remove it, as needed.
+
+
+    End Sub
 End Class

@@ -8,18 +8,6 @@ Public Class FormBuatRoom
     Private MouseDownX As Integer
     Private MouseDownY As Integer
 
-    Public Sub BuatRoom()
-        Dim con As New SqlConnection
-        Dim cmd As New SqlCommand
-
-        con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
-        con.Open()
-        cmd.Connection = con
-        cmd.CommandText = "INSERT INTO room([nama_room],[jumlah_pemain],[ukuran_papan])VALUES('" & txtNamaRoom.Text & "','" & cbxJumPemain.Text & "', " & cbxPapan.Text & ")"
-        cmd.ExecuteNonQuery()
-        con.Close()
-
-    End Sub
     Private Sub FormBuatRoom_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown
 
         If e.Button = MouseButtons.Left Then
@@ -48,7 +36,7 @@ Public Class FormBuatRoom
     End Sub
     Private Sub btnOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOk.Click
         ModuleClient.sendMessageToServer("CREATE_ROOM|" + txtNamaRoom.Text + ">" + cbxJumPemain.Text + ">" + cbxPapan.Text + ">" + loggedUserName)
-        'BuatRoom()
+    
         instanceFormLobiGame.Timer1.Enabled = True
         Close()
     End Sub

@@ -27,6 +27,8 @@ Partial Class FormLobiGame
         Me.grpbxDftrPemain = New System.Windows.Forms.GroupBox()
         Me.lstInfoPemain = New System.Windows.Forms.ListBox()
         Me.BtnInfo = New System.Windows.Forms.Button()
+        Me.StatistikBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AdidotsDataSet = New GameDots.adidotsDataSet()
         Me.grpbxDftrLobi = New System.Windows.Forms.GroupBox()
         Me.lstRoom = New System.Windows.Forms.ListBox()
         Me.btnJoin = New System.Windows.Forms.Button()
@@ -38,11 +40,16 @@ Partial Class FormLobiGame
         Me.PictureBoxClose = New System.Windows.Forms.PictureBox()
         Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.StatistikTableAdapter = New GameDots.adidotsDataSetTableAdapters.statistikTableAdapter()
+        Me.StatistikBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.grpbxDftrPemain.SuspendLayout()
+        CType(Me.StatistikBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AdidotsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpbxDftrLobi.SuspendLayout()
         Me.grpbxChat.SuspendLayout()
         CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StatistikBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grpbxDftrPemain
@@ -60,6 +67,8 @@ Partial Class FormLobiGame
         '
         'lstInfoPemain
         '
+        Me.lstInfoPemain.DataSource = Me.StatistikBindingSource
+        Me.lstInfoPemain.DisplayMember = "user_pemain"
         Me.lstInfoPemain.FormattingEnabled = True
         Me.lstInfoPemain.Location = New System.Drawing.Point(6, 48)
         Me.lstInfoPemain.Name = "lstInfoPemain"
@@ -75,6 +84,16 @@ Partial Class FormLobiGame
         Me.BtnInfo.TabIndex = 2
         Me.BtnInfo.Text = "Info"
         Me.BtnInfo.UseVisualStyleBackColor = True
+        '
+        'StatistikBindingSource
+        '
+        Me.StatistikBindingSource.DataMember = "statistik"
+        Me.StatistikBindingSource.DataSource = Me.AdidotsDataSet
+        '
+        'AdidotsDataSet
+        '
+        Me.AdidotsDataSet.DataSetName = "adidotsDataSet"
+        Me.AdidotsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'grpbxDftrLobi
         '
@@ -184,6 +203,15 @@ Partial Class FormLobiGame
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
+        'StatistikTableAdapter
+        '
+        Me.StatistikTableAdapter.ClearBeforeFill = True
+        '
+        'StatistikBindingSource1
+        '
+        Me.StatistikBindingSource1.DataMember = "statistik"
+        Me.StatistikBindingSource1.DataSource = Me.AdidotsDataSet
+        '
         'FormLobiGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -203,11 +231,14 @@ Partial Class FormLobiGame
         Me.Text = "LobiGame"
         Me.TransparencyKey = System.Drawing.SystemColors.ActiveBorder
         Me.grpbxDftrPemain.ResumeLayout(False)
+        CType(Me.StatistikBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AdidotsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpbxDftrLobi.ResumeLayout(False)
         Me.grpbxChat.ResumeLayout(False)
         Me.grpbxChat.PerformLayout()
         CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StatistikBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -224,5 +255,9 @@ Partial Class FormLobiGame
     Friend WithEvents lstChat As System.Windows.Forms.ListBox
     Friend WithEvents lstInfoPemain As System.Windows.Forms.ListBox
     Friend WithEvents lstRoom As System.Windows.Forms.ListBox
+    Friend WithEvents AdidotsDataSet As GameDots.adidotsDataSet
+    Friend WithEvents StatistikBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents StatistikTableAdapter As GameDots.adidotsDataSetTableAdapters.statistikTableAdapter
+    Friend WithEvents StatistikBindingSource1 As System.Windows.Forms.BindingSource
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
 End Class

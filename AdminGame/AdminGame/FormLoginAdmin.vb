@@ -75,11 +75,8 @@ Public Class FormLoginAdmin
         CheckUser()
         'mengharuskan user memasukkan username dan password
         If txtUsername.Text.Trim() = "" And txtPassword.Text.Trim() = "" Then
-            Msg = MsgBox("Masukan Ip server, User Name dan Password", MsgBoxStyle.Critical, "Pesan")
+            Msg = MsgBox("User Name dan Password", MsgBoxStyle.Critical, "Pesan")
             txtUsername.Focus()
-        ElseIf txtIpserver.Text = "" Then
-            Msg = MsgBox("Masukkan IP Server", MsgBoxStyle.Critical, "Pesan")
-            txtIpserver.Focus()
         ElseIf txtUsername.Text = "" Then
             Msg = MsgBox("Masukan UserName ", MsgBoxStyle.Critical, "Pesan")
             txtUsername.Focus()
