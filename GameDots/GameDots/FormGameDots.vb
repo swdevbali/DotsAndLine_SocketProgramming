@@ -13,7 +13,7 @@ Public Class FormGameDots
     Dim ScaleWidth As Single
     Dim ScaleHeight As Single
     Dim OffSet As Single = 6
-    Friend Shared nama_room As String
+    Public nama_room As String
 
     Private Sub ClickedOnPaper(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PB_Paper.MouseClick
         ' Was the Left button click?
@@ -116,8 +116,8 @@ Public Class FormGameDots
     End Sub
 
     Private Sub UpdateTheScores()
-        Lbl_ScoreRed.Text = RedScore.ToString
-        Lbl_ScoreBlue.Text = BlueScore.ToString
+        scorePemain1.Text = RedScore.ToString
+        scorePemain2.Text = BlueScore.ToString
     End Sub
 
 
@@ -182,16 +182,14 @@ Public Class FormGameDots
         End Select
     End Sub
 
+    Private Sub FormGameDots_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        instanceFormLobiGame = New FormLobiGame
+        instanceFormLobiGame.Show()
+    End Sub
+
     Private Sub FormGameDots_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'GridPlaySize = 0 ' GridCombo.SelectedIndex
-        lblPemain1.Text = loggedUserName
-        lblPemain2.Text = loggedUserName
-        Dots = GridSizes(GridPlaySize)
-        RescaleGrid()
-        DefineGrid()
-        clearboard()
-        resetscores()
-        Me.Refresh()
+        
     End Sub
     Private Sub FormGameDots_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown
 
@@ -252,26 +250,69 @@ Public Class FormGameDots
 
         ' Add any initialization after the InitializeComponent() call.
         RescaleGrid()
+
+       
     End Sub
 
-    Shared Sub init()
+    Public Sub init()
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
         Dim room As String = ""
+        Dim sql As String = "SELECT [nama_room] ,[user_pemain],ukuran_papan,jumlah_pemain FROM [adidots].[dbo].[room] where nama_room='PARAM1'"
+        sql = sql.Replace("PARAM1", Trim(nama_room))
         con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
         con.Open()
         cmd.Connection = con
-        cmd.CommandText = "SELECT [nama_room] ,[user_pemain],ukuran_papan FROM [adidots].[dbo].[room] where nama_room='Room456'"
+        cmd.CommandText = sql
         cmd.CommandText.Trim()
         Dim rd As SqlDataReader = cmd.ExecuteReader()
 
         rd.Read()
         If rd.HasRows Then
-            Gameplay.GridPlaySize = CInt(rd.GetValue(2)) - 4 'karena dari combo box, 0=>4
+            GridPlaySize = CInt(rd.GetValue(2)) - 4 'karena dari combo box, 0=>4
+            lblPemain3.Visible = False
+            pbxPemain3.Visible = False
+            scorePemain3.Visible = False
+
+            lblPemain4.Visible = False
+            pbxPemain4.Visible = False
+            scorePemain4.Visible = False
+
+
+            If rd.GetInt32(3) = 3 Then
+                lblPemain3.Visible = True
+                pbxPemain3.Visible = True
+                scorePemain3.Visible = True
+            End If
+
+            If rd.GetInt32(3) = 4 Then
+                lblPemain3.Visible = True
+                pbxPemain3.Visible = True
+                scorePemain3.Visible = True
+
+                lblPemain4.Visible = True
+                pbxPemain4.Visible = True
+                scorePemain4.Visible = True
+            End If
+
+            'NEXT : QUERY DETAIL PAPAN GAME INI
+            ModuleClient.sendMessageToServer("QUERY_GAME|" & nama_room)
+
         End If
 
+
+
+        Dots = GridSizes(GridPlaySize)
+        RescaleGrid()
+        DefineGrid()
+        clearboard()
+        resetscores()
+        Me.Refresh()
         con.Close()
 
     End Sub
 
+    Private Sub FormGameDots_PaddingChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PaddingChanged
+
+    End Sub
 End Class

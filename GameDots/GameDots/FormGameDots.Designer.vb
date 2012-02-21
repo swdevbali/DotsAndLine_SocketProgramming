@@ -26,18 +26,18 @@ Partial Class FormGameDots
         Me.btnMulai = New System.Windows.Forms.Button()
         Me.btnPetunjuk = New System.Windows.Forms.Button()
         Me.btnKeluar = New System.Windows.Forms.Button()
-        Me.pbxPemainMerah = New System.Windows.Forms.PictureBox()
-        Me.pbxPemainHijau = New System.Windows.Forms.PictureBox()
-        Me.pbxPemainBiru = New System.Windows.Forms.PictureBox()
-        Me.pbxPemainKuning = New System.Windows.Forms.PictureBox()
+        Me.pbxPemain1 = New System.Windows.Forms.PictureBox()
+        Me.pbxPemain2 = New System.Windows.Forms.PictureBox()
+        Me.pbxPemain3 = New System.Windows.Forms.PictureBox()
+        Me.pbxPemain4 = New System.Windows.Forms.PictureBox()
         Me.lblPemain1 = New System.Windows.Forms.Label()
         Me.lblPemain2 = New System.Windows.Forms.Label()
         Me.lblPemain3 = New System.Windows.Forms.Label()
         Me.lblPemain4 = New System.Windows.Forms.Label()
-        Me.Lbl_ScoreRed = New System.Windows.Forms.Label()
-        Me.Lbl_ScoreBlue = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.scorePemain1 = New System.Windows.Forms.Label()
+        Me.scorePemain2 = New System.Windows.Forms.Label()
+        Me.scorePemain3 = New System.Windows.Forms.Label()
+        Me.scorePemain4 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lstChatGame = New System.Windows.Forms.ListBox()
@@ -47,10 +47,10 @@ Partial Class FormGameDots
         Me.PB_Paper = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        CType(Me.pbxPemainMerah, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxPemainHijau, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxPemainBiru, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxPemainKuning, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxPemain1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxPemain2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxPemain3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxPemain4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PB_Paper, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,45 +88,45 @@ Partial Class FormGameDots
         Me.btnKeluar.Text = "Keluar"
         Me.btnKeluar.UseVisualStyleBackColor = True
         '
-        'pbxPemainMerah
+        'pbxPemain1
         '
-        Me.pbxPemainMerah.BackColor = System.Drawing.Color.White
-        Me.pbxPemainMerah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbxPemainMerah.Location = New System.Drawing.Point(65, 153)
-        Me.pbxPemainMerah.Name = "pbxPemainMerah"
-        Me.pbxPemainMerah.Size = New System.Drawing.Size(39, 34)
-        Me.pbxPemainMerah.TabIndex = 4
-        Me.pbxPemainMerah.TabStop = False
+        Me.pbxPemain1.BackColor = System.Drawing.Color.White
+        Me.pbxPemain1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbxPemain1.Location = New System.Drawing.Point(65, 153)
+        Me.pbxPemain1.Name = "pbxPemain1"
+        Me.pbxPemain1.Size = New System.Drawing.Size(39, 34)
+        Me.pbxPemain1.TabIndex = 4
+        Me.pbxPemain1.TabStop = False
         '
-        'pbxPemainHijau
+        'pbxPemain2
         '
-        Me.pbxPemainHijau.BackColor = System.Drawing.Color.White
-        Me.pbxPemainHijau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbxPemainHijau.Location = New System.Drawing.Point(65, 210)
-        Me.pbxPemainHijau.Name = "pbxPemainHijau"
-        Me.pbxPemainHijau.Size = New System.Drawing.Size(39, 34)
-        Me.pbxPemainHijau.TabIndex = 5
-        Me.pbxPemainHijau.TabStop = False
+        Me.pbxPemain2.BackColor = System.Drawing.Color.White
+        Me.pbxPemain2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbxPemain2.Location = New System.Drawing.Point(65, 210)
+        Me.pbxPemain2.Name = "pbxPemain2"
+        Me.pbxPemain2.Size = New System.Drawing.Size(39, 34)
+        Me.pbxPemain2.TabIndex = 5
+        Me.pbxPemain2.TabStop = False
         '
-        'pbxPemainBiru
+        'pbxPemain3
         '
-        Me.pbxPemainBiru.BackColor = System.Drawing.Color.White
-        Me.pbxPemainBiru.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbxPemainBiru.Location = New System.Drawing.Point(65, 275)
-        Me.pbxPemainBiru.Name = "pbxPemainBiru"
-        Me.pbxPemainBiru.Size = New System.Drawing.Size(39, 34)
-        Me.pbxPemainBiru.TabIndex = 6
-        Me.pbxPemainBiru.TabStop = False
+        Me.pbxPemain3.BackColor = System.Drawing.Color.White
+        Me.pbxPemain3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbxPemain3.Location = New System.Drawing.Point(65, 275)
+        Me.pbxPemain3.Name = "pbxPemain3"
+        Me.pbxPemain3.Size = New System.Drawing.Size(39, 34)
+        Me.pbxPemain3.TabIndex = 6
+        Me.pbxPemain3.TabStop = False
         '
-        'pbxPemainKuning
+        'pbxPemain4
         '
-        Me.pbxPemainKuning.BackColor = System.Drawing.Color.White
-        Me.pbxPemainKuning.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbxPemainKuning.Location = New System.Drawing.Point(65, 341)
-        Me.pbxPemainKuning.Name = "pbxPemainKuning"
-        Me.pbxPemainKuning.Size = New System.Drawing.Size(39, 34)
-        Me.pbxPemainKuning.TabIndex = 7
-        Me.pbxPemainKuning.TabStop = False
+        Me.pbxPemain4.BackColor = System.Drawing.Color.White
+        Me.pbxPemain4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbxPemain4.Location = New System.Drawing.Point(65, 341)
+        Me.pbxPemain4.Name = "pbxPemain4"
+        Me.pbxPemain4.Size = New System.Drawing.Size(39, 34)
+        Me.pbxPemain4.TabIndex = 7
+        Me.pbxPemain4.TabStop = False
         '
         'lblPemain1
         '
@@ -176,53 +176,53 @@ Partial Class FormGameDots
         Me.lblPemain4.TabIndex = 12
         Me.lblPemain4.Text = "Label4"
         '
-        'Lbl_ScoreRed
+        'scorePemain1
         '
-        Me.Lbl_ScoreRed.AutoSize = True
-        Me.Lbl_ScoreRed.BackColor = System.Drawing.Color.Transparent
-        Me.Lbl_ScoreRed.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_ScoreRed.ForeColor = System.Drawing.Color.Black
-        Me.Lbl_ScoreRed.Location = New System.Drawing.Point(184, 162)
-        Me.Lbl_ScoreRed.Name = "Lbl_ScoreRed"
-        Me.Lbl_ScoreRed.Size = New System.Drawing.Size(23, 20)
-        Me.Lbl_ScoreRed.TabIndex = 13
-        Me.Lbl_ScoreRed.Text = "00"
+        Me.scorePemain1.AutoSize = True
+        Me.scorePemain1.BackColor = System.Drawing.Color.Transparent
+        Me.scorePemain1.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.scorePemain1.ForeColor = System.Drawing.Color.Black
+        Me.scorePemain1.Location = New System.Drawing.Point(184, 162)
+        Me.scorePemain1.Name = "scorePemain1"
+        Me.scorePemain1.Size = New System.Drawing.Size(23, 20)
+        Me.scorePemain1.TabIndex = 13
+        Me.scorePemain1.Text = "00"
         '
-        'Lbl_ScoreBlue
+        'scorePemain2
         '
-        Me.Lbl_ScoreBlue.AutoSize = True
-        Me.Lbl_ScoreBlue.BackColor = System.Drawing.Color.Transparent
-        Me.Lbl_ScoreBlue.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_ScoreBlue.ForeColor = System.Drawing.Color.Black
-        Me.Lbl_ScoreBlue.Location = New System.Drawing.Point(184, 219)
-        Me.Lbl_ScoreBlue.Name = "Lbl_ScoreBlue"
-        Me.Lbl_ScoreBlue.Size = New System.Drawing.Size(23, 20)
-        Me.Lbl_ScoreBlue.TabIndex = 14
-        Me.Lbl_ScoreBlue.Text = "00"
+        Me.scorePemain2.AutoSize = True
+        Me.scorePemain2.BackColor = System.Drawing.Color.Transparent
+        Me.scorePemain2.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.scorePemain2.ForeColor = System.Drawing.Color.Black
+        Me.scorePemain2.Location = New System.Drawing.Point(184, 219)
+        Me.scorePemain2.Name = "scorePemain2"
+        Me.scorePemain2.Size = New System.Drawing.Size(23, 20)
+        Me.scorePemain2.TabIndex = 14
+        Me.scorePemain2.Text = "00"
         '
-        'Label7
+        'scorePemain3
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(184, 284)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(23, 20)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "00"
+        Me.scorePemain3.AutoSize = True
+        Me.scorePemain3.BackColor = System.Drawing.Color.Transparent
+        Me.scorePemain3.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.scorePemain3.ForeColor = System.Drawing.Color.Black
+        Me.scorePemain3.Location = New System.Drawing.Point(184, 284)
+        Me.scorePemain3.Name = "scorePemain3"
+        Me.scorePemain3.Size = New System.Drawing.Size(23, 20)
+        Me.scorePemain3.TabIndex = 15
+        Me.scorePemain3.Text = "00"
         '
-        'Label8
+        'scorePemain4
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(184, 348)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(23, 20)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "00"
+        Me.scorePemain4.AutoSize = True
+        Me.scorePemain4.BackColor = System.Drawing.Color.Transparent
+        Me.scorePemain4.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.scorePemain4.ForeColor = System.Drawing.Color.Black
+        Me.scorePemain4.Location = New System.Drawing.Point(184, 348)
+        Me.scorePemain4.Name = "scorePemain4"
+        Me.scorePemain4.Size = New System.Drawing.Size(23, 20)
+        Me.scorePemain4.TabIndex = 16
+        Me.scorePemain4.Text = "00"
         '
         'Label9
         '
@@ -325,18 +325,18 @@ Partial Class FormGameDots
         Me.Controls.Add(Me.btnInvite)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Lbl_ScoreBlue)
-        Me.Controls.Add(Me.Lbl_ScoreRed)
+        Me.Controls.Add(Me.scorePemain4)
+        Me.Controls.Add(Me.scorePemain3)
+        Me.Controls.Add(Me.scorePemain2)
+        Me.Controls.Add(Me.scorePemain1)
         Me.Controls.Add(Me.lblPemain4)
         Me.Controls.Add(Me.lblPemain3)
         Me.Controls.Add(Me.lblPemain2)
         Me.Controls.Add(Me.lblPemain1)
-        Me.Controls.Add(Me.pbxPemainKuning)
-        Me.Controls.Add(Me.pbxPemainBiru)
-        Me.Controls.Add(Me.pbxPemainHijau)
-        Me.Controls.Add(Me.pbxPemainMerah)
+        Me.Controls.Add(Me.pbxPemain4)
+        Me.Controls.Add(Me.pbxPemain3)
+        Me.Controls.Add(Me.pbxPemain2)
+        Me.Controls.Add(Me.pbxPemain1)
         Me.Controls.Add(Me.btnKeluar)
         Me.Controls.Add(Me.btnPetunjuk)
         Me.Controls.Add(Me.btnMulai)
@@ -349,10 +349,10 @@ Partial Class FormGameDots
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game Dots"
         Me.TransparencyKey = System.Drawing.SystemColors.ActiveCaption
-        CType(Me.pbxPemainMerah, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxPemainHijau, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxPemainBiru, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxPemainKuning, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxPemain1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxPemain2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxPemain3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxPemain4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PB_Paper, System.ComponentModel.ISupportInitialize).EndInit()
@@ -365,18 +365,18 @@ Partial Class FormGameDots
     Friend WithEvents btnMulai As System.Windows.Forms.Button
     Friend WithEvents btnPetunjuk As System.Windows.Forms.Button
     Friend WithEvents btnKeluar As System.Windows.Forms.Button
-    Friend WithEvents pbxPemainMerah As System.Windows.Forms.PictureBox
-    Friend WithEvents pbxPemainHijau As System.Windows.Forms.PictureBox
-    Friend WithEvents pbxPemainBiru As System.Windows.Forms.PictureBox
-    Friend WithEvents pbxPemainKuning As System.Windows.Forms.PictureBox
+    Friend WithEvents pbxPemain1 As System.Windows.Forms.PictureBox
+    Friend WithEvents pbxPemain2 As System.Windows.Forms.PictureBox
+    Friend WithEvents pbxPemain3 As System.Windows.Forms.PictureBox
+    Friend WithEvents pbxPemain4 As System.Windows.Forms.PictureBox
     Friend WithEvents lblPemain1 As System.Windows.Forms.Label
     Friend WithEvents lblPemain2 As System.Windows.Forms.Label
     Friend WithEvents lblPemain3 As System.Windows.Forms.Label
     Friend WithEvents lblPemain4 As System.Windows.Forms.Label
-    Friend WithEvents Lbl_ScoreRed As System.Windows.Forms.Label
-    Friend WithEvents Lbl_ScoreBlue As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents scorePemain1 As System.Windows.Forms.Label
+    Friend WithEvents scorePemain2 As System.Windows.Forms.Label
+    Friend WithEvents scorePemain3 As System.Windows.Forms.Label
+    Friend WithEvents scorePemain4 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents txtInputChat As System.Windows.Forms.TextBox

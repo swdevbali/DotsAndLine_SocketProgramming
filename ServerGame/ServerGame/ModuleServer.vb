@@ -131,7 +131,7 @@ Module ModuleServer
             con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
             con.Open()
             cmd.Connection = con
-            cmd.CommandText = "INSERT INTO room([nama_room],[jumlah_pemain],[ukuran_papan_col],[ukuran_papan_rows],[user_pemain])VALUES('" & nama_room & "','" & jumlah_pemain & "', '" & ukuran_papan & "','" & user_pemain & "')"
+            cmd.CommandText = "INSERT INTO room([nama_room],[jumlah_pemain],[ukuran_papan],[user_pemain])VALUES('" & nama_room & "','" & jumlah_pemain & "', '" & ukuran_papan & "','" & user_pemain & "')"
             cmd.ExecuteNonQuery()
             con.Close()
 
@@ -144,7 +144,7 @@ Module ModuleServer
             con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
             con.Open()
             cmd.Connection = con
-            cmd.CommandText = "SELECT [nama_room] ,[user_pemain] FROM [adidots].[dbo].[room]"
+            cmd.CommandText = "SELECT [nama_room] ,[user_pemain] FROM [adidots].[dbo].[room] order by nama_room"
             Dim rd As SqlDataReader = cmd.ExecuteReader()
             Do While rd.Read
                 room = rd.GetString(0) & ">" & room

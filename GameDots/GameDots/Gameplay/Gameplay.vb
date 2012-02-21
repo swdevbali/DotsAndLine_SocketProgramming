@@ -61,7 +61,7 @@ Module Gameplay
             Cells(i).CellOwner = Player.Nobody : Cells(i).CellUsed = False
         Next
         CurrentPlayer = Player.Blue
-        FormGameDots.Refresh()
+        instanceGameDot.Refresh()
     End Sub
 
     Public Sub resetscores()

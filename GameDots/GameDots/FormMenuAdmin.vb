@@ -16,6 +16,6 @@
 
  
     Private Sub FormMenuAdmin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        instanceFormLobiGame.Timer1.Dispose()
+        instanceFormLobiGame.Timer1.Enabled = False
     End Sub
 End Class

@@ -1,4 +1,6 @@
-﻿Public Class FormInfoPemain
+﻿Imports System.Data.SqlClient
+
+Public Class FormInfoPemain
     Private IsFormBeingDragged As Boolean = False
     Private MouseDownX As Integer
     Private MouseDownY As Integer
@@ -41,10 +43,21 @@
     Private Sub PictureBoxMinimize_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxMinimize.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
-
+    Public user_pemain As String
     Private Sub FormInfoPemain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'AdidotsDataSet.statistik' table. You can move, or remove it, as needed.
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
+        Dim room As String = ""
+        con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
+        con.Open()
+        cmd.Connection = con
+        cmd.CommandText = "SELECT * FROM STATISTIK WHERE USER_PEMAIN='" & user_pemain & "'"
+        Dim rd As SqlDataReader = cmd.ExecuteReader()
+        If rd.Read Then
 
+        End If
+        con.Close()
 
     End Sub
 End Class

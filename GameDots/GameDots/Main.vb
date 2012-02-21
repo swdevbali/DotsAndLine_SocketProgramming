@@ -9,7 +9,7 @@ Module Main
 
     Public compName As String = "localhost"
     Public instanceFormLobiGame As New FormLobiGame
-
+    Public instanceGameDot As New FormGameDots
     Public loggedUserName As String
     Sub TombolClose()
 
@@ -18,9 +18,9 @@ Module Main
 
             'Application.Exit()
             instanceFormLobiGame.Show()
-            FormGameDots.Close()
+            instanceGameDot.Close()
         Else
-            FormGameDots.Show()
+            instanceGameDot.Show()
         End If
     End Sub
 End Module
