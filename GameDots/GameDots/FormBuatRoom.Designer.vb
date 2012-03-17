@@ -24,10 +24,8 @@ Partial Class FormBuatRoom
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBuatRoom))
         Me.lblNamaRoom = New System.Windows.Forms.Label()
-        Me.lblJumPemain = New System.Windows.Forms.Label()
         Me.lblUkuranPapan = New System.Windows.Forms.Label()
         Me.txtNamaRoom = New System.Windows.Forms.TextBox()
-        Me.cbxJumPemain = New System.Windows.Forms.ComboBox()
         Me.cbxPapan = New System.Windows.Forms.ComboBox()
         Me.btnOk = New System.Windows.Forms.Button()
         Me.btnKembali = New System.Windows.Forms.Button()
@@ -43,23 +41,11 @@ Partial Class FormBuatRoom
         Me.lblNamaRoom.BackColor = System.Drawing.Color.Transparent
         Me.lblNamaRoom.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNamaRoom.ForeColor = System.Drawing.Color.White
-        Me.lblNamaRoom.Location = New System.Drawing.Point(76, 75)
+        Me.lblNamaRoom.Location = New System.Drawing.Point(82, 105)
         Me.lblNamaRoom.Name = "lblNamaRoom"
         Me.lblNamaRoom.Size = New System.Drawing.Size(83, 20)
         Me.lblNamaRoom.TabIndex = 0
         Me.lblNamaRoom.Text = "Nama Room"
-        '
-        'lblJumPemain
-        '
-        Me.lblJumPemain.AutoSize = True
-        Me.lblJumPemain.BackColor = System.Drawing.Color.Transparent
-        Me.lblJumPemain.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblJumPemain.ForeColor = System.Drawing.Color.White
-        Me.lblJumPemain.Location = New System.Drawing.Point(76, 111)
-        Me.lblJumPemain.Name = "lblJumPemain"
-        Me.lblJumPemain.Size = New System.Drawing.Size(100, 20)
-        Me.lblJumPemain.TabIndex = 1
-        Me.lblJumPemain.Text = "Jumlah Pemain"
         '
         'lblUkuranPapan
         '
@@ -67,7 +53,7 @@ Partial Class FormBuatRoom
         Me.lblUkuranPapan.BackColor = System.Drawing.Color.Transparent
         Me.lblUkuranPapan.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUkuranPapan.ForeColor = System.Drawing.Color.White
-        Me.lblUkuranPapan.Location = New System.Drawing.Point(76, 151)
+        Me.lblUkuranPapan.Location = New System.Drawing.Point(82, 148)
         Me.lblUkuranPapan.Name = "lblUkuranPapan"
         Me.lblUkuranPapan.Size = New System.Drawing.Size(92, 20)
         Me.lblUkuranPapan.TabIndex = 2
@@ -75,36 +61,25 @@ Partial Class FormBuatRoom
         '
         'txtNamaRoom
         '
-        Me.txtNamaRoom.Location = New System.Drawing.Point(227, 75)
+        Me.txtNamaRoom.Location = New System.Drawing.Point(233, 105)
         Me.txtNamaRoom.Name = "txtNamaRoom"
         Me.txtNamaRoom.Size = New System.Drawing.Size(121, 20)
         Me.txtNamaRoom.TabIndex = 3
-        '
-        'cbxJumPemain
-        '
-        Me.cbxJumPemain.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxJumPemain.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cbxJumPemain.FormattingEnabled = True
-        Me.cbxJumPemain.Items.AddRange(New Object() {"2", "3", "4"})
-        Me.cbxJumPemain.Location = New System.Drawing.Point(227, 110)
-        Me.cbxJumPemain.Name = "cbxJumPemain"
-        Me.cbxJumPemain.Size = New System.Drawing.Size(121, 21)
-        Me.cbxJumPemain.TabIndex = 4
         '
         'cbxPapan
         '
         Me.cbxPapan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxPapan.DropDownWidth = 64
         Me.cbxPapan.FormattingEnabled = True
-        Me.cbxPapan.Items.AddRange(New Object() {"4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"})
-        Me.cbxPapan.Location = New System.Drawing.Point(227, 150)
+        Me.cbxPapan.Items.AddRange(New Object() {"4", "5", "6", "7", "8", "9", "10"})
+        Me.cbxPapan.Location = New System.Drawing.Point(233, 147)
         Me.cbxPapan.Name = "cbxPapan"
         Me.cbxPapan.Size = New System.Drawing.Size(121, 21)
         Me.cbxPapan.TabIndex = 12
         '
         'btnOk
         '
-        Me.btnOk.Location = New System.Drawing.Point(86, 233)
+        Me.btnOk.Location = New System.Drawing.Point(92, 196)
         Me.btnOk.Name = "btnOk"
         Me.btnOk.Size = New System.Drawing.Size(88, 31)
         Me.btnOk.TabIndex = 6
@@ -114,7 +89,7 @@ Partial Class FormBuatRoom
         '
         'btnKembali
         '
-        Me.btnKembali.Location = New System.Drawing.Point(260, 233)
+        Me.btnKembali.Location = New System.Drawing.Point(266, 196)
         Me.btnKembali.Name = "btnKembali"
         Me.btnKembali.Size = New System.Drawing.Size(88, 31)
         Me.btnKembali.TabIndex = 7
@@ -155,10 +130,8 @@ Partial Class FormBuatRoom
         Me.Controls.Add(Me.btnKembali)
         Me.Controls.Add(Me.btnOk)
         Me.Controls.Add(Me.cbxPapan)
-        Me.Controls.Add(Me.cbxJumPemain)
         Me.Controls.Add(Me.txtNamaRoom)
         Me.Controls.Add(Me.lblUkuranPapan)
-        Me.Controls.Add(Me.lblJumPemain)
         Me.Controls.Add(Me.lblNamaRoom)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -173,10 +146,8 @@ Partial Class FormBuatRoom
 
     End Sub
     Friend WithEvents lblNamaRoom As System.Windows.Forms.Label
-    Friend WithEvents lblJumPemain As System.Windows.Forms.Label
     Friend WithEvents lblUkuranPapan As System.Windows.Forms.Label
     Friend WithEvents txtNamaRoom As System.Windows.Forms.TextBox
-    Friend WithEvents cbxJumPemain As System.Windows.Forms.ComboBox
     Friend WithEvents cbxPapan As System.Windows.Forms.ComboBox
     Friend WithEvents btnOk As System.Windows.Forms.Button
     Friend WithEvents btnKembali As System.Windows.Forms.Button

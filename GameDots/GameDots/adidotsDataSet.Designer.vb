@@ -944,11 +944,9 @@ Partial Public Class adidotsDataSet
         
         Private columnnama_room As Global.System.Data.DataColumn
         
-        Private columnjumlah_pemain As Global.System.Data.DataColumn
+        Private columnukuran_papan As Global.System.Data.DataColumn
         
-        Private columnukuran_papan_col As Global.System.Data.DataColumn
-        
-        Private columnukuran_papan_rows As Global.System.Data.DataColumn
+        Private columnuser_pemain As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -995,25 +993,17 @@ Partial Public Class adidotsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property jumlah_pemainColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property ukuran_papanColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnjumlah_pemain
+                Return Me.columnukuran_papan
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ukuran_papan_colColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property user_pemainColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnukuran_papan_col
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ukuran_papan_rowsColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnukuran_papan_rows
+                Return Me.columnuser_pemain
             End Get
         End Property
         
@@ -1054,9 +1044,9 @@ Partial Public Class adidotsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddroomRow(ByVal nama_room As String, ByVal jumlah_pemain As Integer, ByVal ukuran_papan_col As Integer, ByVal ukuran_papan_rows As Integer) As roomRow
+        Public Overloads Function AddroomRow(ByVal nama_room As String, ByVal ukuran_papan As Integer, ByVal user_pemain As String) As roomRow
             Dim rowroomRow As roomRow = CType(Me.NewRow,roomRow)
-            Dim columnValuesArray() As Object = New Object() {nama_room, jumlah_pemain, ukuran_papan_col, ukuran_papan_rows}
+            Dim columnValuesArray() As Object = New Object() {nama_room, ukuran_papan, user_pemain}
             rowroomRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowroomRow)
             Return rowroomRow
@@ -1086,9 +1076,8 @@ Partial Public Class adidotsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnnama_room = MyBase.Columns("nama_room")
-            Me.columnjumlah_pemain = MyBase.Columns("jumlah_pemain")
-            Me.columnukuran_papan_col = MyBase.Columns("ukuran_papan_col")
-            Me.columnukuran_papan_rows = MyBase.Columns("ukuran_papan_rows")
+            Me.columnukuran_papan = MyBase.Columns("ukuran_papan")
+            Me.columnuser_pemain = MyBase.Columns("user_pemain")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1096,19 +1085,16 @@ Partial Public Class adidotsDataSet
         Private Sub InitClass()
             Me.columnnama_room = New Global.System.Data.DataColumn("nama_room", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnama_room)
-            Me.columnjumlah_pemain = New Global.System.Data.DataColumn("jumlah_pemain", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnjumlah_pemain)
-            Me.columnukuran_papan_col = New Global.System.Data.DataColumn("ukuran_papan_col", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnukuran_papan_col)
-            Me.columnukuran_papan_rows = New Global.System.Data.DataColumn("ukuran_papan_rows", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnukuran_papan_rows)
+            Me.columnukuran_papan = New Global.System.Data.DataColumn("ukuran_papan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnukuran_papan)
+            Me.columnuser_pemain = New Global.System.Data.DataColumn("user_pemain", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnuser_pemain)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnnama_room}, true))
             Me.columnnama_room.AllowDBNull = false
             Me.columnnama_room.Unique = true
             Me.columnnama_room.MaxLength = 50
-            Me.columnjumlah_pemain.AllowDBNull = false
-            Me.columnukuran_papan_col.AllowDBNull = false
-            Me.columnukuran_papan_rows.AllowDBNull = false
+            Me.columnukuran_papan.AllowDBNull = false
+            Me.columnuser_pemain.MaxLength = 10
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1674,36 +1660,41 @@ Partial Public Class adidotsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property jumlah_pemain() As Integer
+        Public Property ukuran_papan() As Integer
             Get
-                Return CType(Me(Me.tableroom.jumlah_pemainColumn),Integer)
+                Return CType(Me(Me.tableroom.ukuran_papanColumn),Integer)
             End Get
             Set
-                Me(Me.tableroom.jumlah_pemainColumn) = value
+                Me(Me.tableroom.ukuran_papanColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ukuran_papan_col() As Integer
+        Public Property user_pemain() As String
             Get
-                Return CType(Me(Me.tableroom.ukuran_papan_colColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableroom.user_pemainColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'user_pemain' in table 'room' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me(Me.tableroom.ukuran_papan_colColumn) = value
+                Me(Me.tableroom.user_pemainColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ukuran_papan_rows() As Integer
-            Get
-                Return CType(Me(Me.tableroom.ukuran_papan_rowsColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableroom.ukuran_papan_rowsColumn) = value
-            End Set
-        End Property
+        Public Function Isuser_pemainNull() As Boolean
+            Return Me.IsNull(Me.tableroom.user_pemainColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setuser_pemainNull()
+            Me(Me.tableroom.user_pemainColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -2726,42 +2717,38 @@ Namespace adidotsDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "room"
             tableMapping.ColumnMappings.Add("nama_room", "nama_room")
-            tableMapping.ColumnMappings.Add("jumlah_pemain", "jumlah_pemain")
-            tableMapping.ColumnMappings.Add("ukuran_papan_col", "ukuran_papan_col")
-            tableMapping.ColumnMappings.Add("ukuran_papan_rows", "ukuran_papan_rows")
+            tableMapping.ColumnMappings.Add("ukuran_papan", "ukuran_papan")
+            tableMapping.ColumnMappings.Add("user_pemain", "user_pemain")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.Odbc.OdbcCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [adidots].[dbo].[room] WHERE (([nama_room] = ?) AND ([jumlah_pemain] "& _ 
-                "= ?) AND ([ukuran_papan_col] = ?) AND ([ukuran_papan_rows] = ?))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [room] WHERE (([nama_room] = ?) AND ([ukuran_papan] = ?) AND ((? = 1 "& _ 
+                "AND [user_pemain] IS NULL) OR ([user_pemain] = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_nama_room", Global.System.Data.Odbc.OdbcType.VarChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "nama_room", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_jumlah_pemain", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "jumlah_pemain", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_ukuran_papan_col", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ukuran_papan_col", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_ukuran_papan_rows", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ukuran_papan_rows", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_ukuran_papan", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ukuran_papan", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("IsNull_user_pemain", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user_pemain", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_user_pemain", Global.System.Data.Odbc.OdbcType.VarChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user_pemain", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.Odbc.OdbcCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [adidots].[dbo].[room] ([nama_room], [jumlah_pemain], [ukuran_papan_c"& _ 
-                "ol], [ukuran_papan_rows]) VALUES (?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [room] ([nama_room], [ukuran_papan], [user_pemain]) VALUES (?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("nama_room", Global.System.Data.Odbc.OdbcType.VarChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "nama_room", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("jumlah_pemain", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "jumlah_pemain", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("ukuran_papan_col", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ukuran_papan_col", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("ukuran_papan_rows", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ukuran_papan_rows", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("ukuran_papan", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ukuran_papan", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("user_pemain", Global.System.Data.Odbc.OdbcType.VarChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user_pemain", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.Odbc.OdbcCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [adidots].[dbo].[room] SET [nama_room] = ?, [jumlah_pemain] = ?, [ukuran_p"& _ 
-                "apan_col] = ?, [ukuran_papan_rows] = ? WHERE (([nama_room] = ?) AND ([jumlah_pem"& _ 
-                "ain] = ?) AND ([ukuran_papan_col] = ?) AND ([ukuran_papan_rows] = ?))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [room] SET [nama_room] = ?, [ukuran_papan] = ?, [user_pemain] = ? WHERE (("& _ 
+                "[nama_room] = ?) AND ([ukuran_papan] = ?) AND ((? = 1 AND [user_pemain] IS NULL)"& _ 
+                " OR ([user_pemain] = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("nama_room", Global.System.Data.Odbc.OdbcType.VarChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "nama_room", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("jumlah_pemain", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "jumlah_pemain", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("ukuran_papan_col", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ukuran_papan_col", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("ukuran_papan_rows", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ukuran_papan_rows", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("ukuran_papan", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ukuran_papan", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("user_pemain", Global.System.Data.Odbc.OdbcType.VarChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user_pemain", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_nama_room", Global.System.Data.Odbc.OdbcType.VarChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "nama_room", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_jumlah_pemain", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "jumlah_pemain", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_ukuran_papan_col", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ukuran_papan_col", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_ukuran_papan_rows", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ukuran_papan_rows", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_ukuran_papan", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ukuran_papan", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("IsNull_user_pemain", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user_pemain", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_user_pemain", Global.System.Data.Odbc.OdbcType.VarChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user_pemain", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2777,8 +2764,7 @@ Namespace adidotsDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.Odbc.OdbcCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.Odbc.OdbcCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT nama_room, jumlah_pemain, ukuran_papan_col, ukuran_papan_rows FROM dbo.roo"& _ 
-                "m"
+            Me._commandCollection(0).CommandText = "SELECT nama_room, ukuran_papan, user_pemain FROM room"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2838,15 +2824,20 @@ Namespace adidotsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_nama_room As String, ByVal Original_jumlah_pemain As Integer, ByVal Original_ukuran_papan_col As Integer, ByVal Original_ukuran_papan_rows As Integer) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_nama_room As String, ByVal Original_ukuran_papan As Integer, ByVal Original_user_pemain As String) As Integer
             If (Original_nama_room Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_nama_room")
             Else
                 Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_nama_room,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_jumlah_pemain,Integer)
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_ukuran_papan_col,Integer)
-            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_ukuran_papan_rows,Integer)
+            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_ukuran_papan,Integer)
+            If (Original_user_pemain Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_user_pemain,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2866,15 +2857,18 @@ Namespace adidotsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal nama_room As String, ByVal jumlah_pemain As Integer, ByVal ukuran_papan_col As Integer, ByVal ukuran_papan_rows As Integer) As Integer
+        Public Overloads Overridable Function Insert(ByVal nama_room As String, ByVal ukuran_papan As Integer, ByVal user_pemain As String) As Integer
             If (nama_room Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("nama_room")
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(nama_room,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(1).Value = CType(jumlah_pemain,Integer)
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(ukuran_papan_col,Integer)
-            Me.Adapter.InsertCommand.Parameters(3).Value = CType(ukuran_papan_rows,Integer)
+            Me.Adapter.InsertCommand.Parameters(1).Value = CType(ukuran_papan,Integer)
+            If (user_pemain Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(user_pemain,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2894,23 +2888,31 @@ Namespace adidotsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal nama_room As String, ByVal jumlah_pemain As Integer, ByVal ukuran_papan_col As Integer, ByVal ukuran_papan_rows As Integer, ByVal Original_nama_room As String, ByVal Original_jumlah_pemain As Integer, ByVal Original_ukuran_papan_col As Integer, ByVal Original_ukuran_papan_rows As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal nama_room As String, ByVal ukuran_papan As Integer, ByVal user_pemain As String, ByVal Original_nama_room As String, ByVal Original_ukuran_papan As Integer, ByVal Original_user_pemain As String) As Integer
             If (nama_room Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("nama_room")
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(nama_room,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(jumlah_pemain,Integer)
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(ukuran_papan_col,Integer)
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(ukuran_papan_rows,Integer)
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ukuran_papan,Integer)
+            If (user_pemain Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(user_pemain,String)
+            End If
             If (Original_nama_room Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_nama_room")
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_nama_room,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_nama_room,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_jumlah_pemain,Integer)
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_ukuran_papan_col,Integer)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_ukuran_papan_rows,Integer)
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_ukuran_papan,Integer)
+            If (Original_user_pemain Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_user_pemain,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2930,8 +2932,8 @@ Namespace adidotsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal jumlah_pemain As Integer, ByVal ukuran_papan_col As Integer, ByVal ukuran_papan_rows As Integer, ByVal Original_nama_room As String, ByVal Original_jumlah_pemain As Integer, ByVal Original_ukuran_papan_col As Integer, ByVal Original_ukuran_papan_rows As Integer) As Integer
-            Return Me.Update(Original_nama_room, jumlah_pemain, ukuran_papan_col, ukuran_papan_rows, Original_nama_room, Original_jumlah_pemain, Original_ukuran_papan_col, Original_ukuran_papan_rows)
+        Public Overloads Overridable Function Update(ByVal ukuran_papan As Integer, ByVal user_pemain As String, ByVal Original_nama_room As String, ByVal Original_ukuran_papan As Integer, ByVal Original_user_pemain As String) As Integer
+            Return Me.Update(Original_nama_room, ukuran_papan, user_pemain, Original_nama_room, Original_ukuran_papan, Original_user_pemain)
         End Function
     End Class
     

@@ -16,7 +16,7 @@ Public Class FormGameDots
     Public nama_room As String
 
     Private Sub ClickedOnPaper(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PB_Paper.MouseClick
-        ' Was the Left button click?
+        ' Was the Left button click?                                            
         If e.Button = Windows.Forms.MouseButtons.Left Then
             For i As Integer = 0 To LineMax
                 HLines(i).LineHighlight = False : Vlines(i).LineHighlight = False
@@ -189,7 +189,7 @@ Public Class FormGameDots
 
     Private Sub FormGameDots_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'GridPlaySize = 0 ' GridCombo.SelectedIndex
-        
+
     End Sub
     Private Sub FormGameDots_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown
 
@@ -227,10 +227,6 @@ Public Class FormGameDots
         TombolClose()
     End Sub
 
-    Private Sub btnInvite_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnInvite.Click
-        FormInvitePemain.Show()
-    End Sub
-
     Private Sub PictureBoxClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         TombolClose()
     End Sub
@@ -251,16 +247,16 @@ Public Class FormGameDots
         ' Add any initialization after the InitializeComponent() call.
         RescaleGrid()
 
-       
+
     End Sub
 
     Public Sub init()
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
         Dim room As String = ""
-        Dim sql As String = "SELECT [nama_room] ,[user_pemain],ukuran_papan,jumlah_pemain FROM [adidots].[dbo].[room] where nama_room='PARAM1'"
+        Dim sql As String = "SELECT [nama_room] ,[user_pemain],[ukuran_papan] FROM [adidots].[dbo].[room] where nama_room='PARAM1'"
         sql = sql.Replace("PARAM1", Trim(nama_room))
-        con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
+        con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
         con.Open()
         cmd.Connection = con
         cmd.CommandText = sql
@@ -270,37 +266,12 @@ Public Class FormGameDots
         rd.Read()
         If rd.HasRows Then
             GridPlaySize = CInt(rd.GetValue(2)) - 4 'karena dari combo box, 0=>4
-            lblPemain3.Visible = False
-            pbxPemain3.Visible = False
-            scorePemain3.Visible = False
 
-            lblPemain4.Visible = False
-            pbxPemain4.Visible = False
-            scorePemain4.Visible = False
-
-
-            If rd.GetInt32(3) = 3 Then
-                lblPemain3.Visible = True
-                pbxPemain3.Visible = True
-                scorePemain3.Visible = True
-            End If
-
-            If rd.GetInt32(3) = 4 Then
-                lblPemain3.Visible = True
-                pbxPemain3.Visible = True
-                scorePemain3.Visible = True
-
-                lblPemain4.Visible = True
-                pbxPemain4.Visible = True
-                scorePemain4.Visible = True
-            End If
 
             'NEXT : QUERY DETAIL PAPAN GAME INI
             ModuleClient.sendMessageToServer("QUERY_GAME|" & nama_room)
 
         End If
-
-
 
         Dots = GridSizes(GridPlaySize)
         RescaleGrid()
@@ -314,5 +285,56 @@ Public Class FormGameDots
 
     Private Sub FormGameDots_PaddingChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PaddingChanged
 
+    End Sub
+
+    Sub play()
+        Show()
+        While StillRunning
+            If CountEmptyCells() = 0 Then
+                GameRunning = False
+                Dim messageText As String = ""
+                Select Case True
+                    Case RedScore = BlueScore : messageText = "Game Imbang!!!"
+                    Case RedScore < BlueScore : messageText = "Pemain Biru Menang!!!"
+                    Case RedScore > BlueScore : messageText = "Pemain Merah Menang!!!"
+                End Select
+                Dim result As DialogResult = MessageBox.Show(messageText & vbNewLine & "Mau Main Lagi??", "Dots & Boxes", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+                If result = DialogResult.No Then
+                    'Hide()
+                    StillRunning = False
+                Else
+                    resetscores()
+                    clearboard()
+                End If
+            End If
+            System.Windows.Forms.Application.DoEvents()
+        End While
+    End Sub
+
+    Public Sub logChat2()
+        If lstChat2.InvokeRequired Then
+            Me.Invoke(New MethodInvoker(AddressOf logChat2))
+        Else
+            Dim newText As String = " >> " + ModuleClient.readData
+            'MsgBox(newText)
+            Dim broadcast() As String = ModuleClient.readData.Split("|")
+
+            lstChat2.Items.Add(newText)
+        End If
+
+
+    End Sub
+
+    Private Sub btnKirimChat2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnKirimChat2.Click
+        ModuleClient.sendMessageToServer("CHAT|" + txtInputChat2.Text + "$")
+        txtInputChat2.Text = ""
+        txtInputChat2.Focus()
+    End Sub
+
+
+    Private Sub txtInputChat2_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtInputChat2.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnKirimChat2_Click(Nothing, Nothing)
+        End If
     End Sub
 End Class

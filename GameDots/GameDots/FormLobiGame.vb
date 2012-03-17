@@ -1,4 +1,6 @@
 ﻿Imports System.Net.Sockets
+Imports System.Data.SqlClient
+
 Public Class FormLobiGame
 
     Private IsFormBeingDragged As Boolean = False
@@ -7,8 +9,23 @@ Public Class FormLobiGame
 
     Private Sub FormLobiGame_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'TODO: This line of code loads data into the 'AdidotsDataSet.statistik' table. You can move, or remove it, as needed.
-        Me.StatistikTableAdapter.Fill(Me.AdidotsDataSet.statistik)
+        'Me.StatistikTableAdapter.Fill(Me.AdidotsDataSet.statistik)
 
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
+        Dim sql As String = "SELECT [user_pemain] FROM [adidots].[dbo].[statistik]"
+        con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
+
+        con.Open()
+        cmd.Connection = con
+        cmd.CommandText = sql
+        Dim rd As SqlDataReader = cmd.ExecuteReader
+        lstInfoPemain.Items.Clear()
+        While rd.Read
+            lstInfoPemain.Items.Add(rd.GetValue(0))
+        End While
+
+        lblPemainLogin.Text = loggedUserName
     End Sub
 
     Private Sub FormLobiGame_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown
@@ -37,7 +54,7 @@ Public Class FormLobiGame
             temp = Nothing
         End If
     End Sub
-  
+
     Private Sub PictureBoxClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxClose.Click
         'Me.Close()
         'Application.Exit()
@@ -50,6 +67,29 @@ Public Class FormLobiGame
     End Sub
 
     Private Sub BtnInfo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnInfo.Click
+        If lstInfoPemain.Text = "" Then
+            MessageBox.Show("Pilih room terlebih dahulu")
+            Return
+        End If
+        Dim username As String = lstInfoPemain.Text
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
+        Dim sql As String = "SELECT [user_pemain],[jum_menang],[jum_imbang],[jum_kalah],[jum_point] FROM [adidots].[dbo].[statistik] where user_pemain='" & username & "'"
+        con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
+
+        con.Open()
+        cmd.Connection = con
+        cmd.CommandText = sql
+        Dim rd As SqlDataReader = cmd.ExecuteReader
+        rd.Read()
+
+        FormInfoPemain.lblNama_pemain.Text = rd.GetValue(0)
+        FormInfoPemain.lblJum_Menang.Text = rd.GetValue(1)
+        FormInfoPemain.lblJum_Imbang.Text = rd.GetValue(2)
+        FormInfoPemain.lblJum_Kalah.Text = rd.GetValue(3)
+        FormInfoPemain.lbl_jumPoin.Text = rd.GetValue(4)
+
+
         FormInfoPemain.Show()
     End Sub
 
@@ -66,7 +106,8 @@ Public Class FormLobiGame
         instanceGameDot.nama_room = lstRoom.Text
         instanceGameDot.init()
         Close()
-        instanceGameDot.Show()
+
+        instanceGameDot.play()
     End Sub
 
     Private Sub btnKirimChat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnKirimChat.Click
@@ -74,7 +115,7 @@ Public Class FormLobiGame
         txtInputChat.Text = ""
         txtInputChat.Focus()
     End Sub
-   
+
     Public Sub logChat()
         If lstChat.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf logChat))
@@ -103,11 +144,13 @@ Public Class FormLobiGame
         End If
     End Sub
 
-    
+
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         Timer1.Enabled = False
         'query for room
         ModuleClient.sendMessageToServer("QUERY_ROOM|")
         ModuleClient.sendMessageToServer("QUERY_USER_LOGIN|")
     End Sub
+
+   
 End Class

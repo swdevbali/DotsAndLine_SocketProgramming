@@ -49,7 +49,7 @@ Public Class FormInfoPemain
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
         Dim room As String = ""
-        con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
+        con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
         con.Open()
         cmd.Connection = con
         cmd.CommandText = "SELECT * FROM STATISTIK WHERE USER_PEMAIN='" & user_pemain & "'"
@@ -60,4 +60,5 @@ Public Class FormInfoPemain
         con.Close()
 
     End Sub
+
 End Class

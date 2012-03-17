@@ -7,7 +7,7 @@ Module Main
     Public intResponse As Integer
     Public Username, Password As String
 
-    Public compName As String = "localhost"
+    Public compName As String = "127.0.0.1"
     Public instanceFormLobiGame As New FormLobiGame
     Public instanceGameDot As New FormGameDots
     Public loggedUserName As String
@@ -17,7 +17,7 @@ Module Main
         If MessageBox.Show("Ente yakin mau keluar ??", "Dots & Lines", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
 
             'Application.Exit()
-            instanceFormLobiGame.Show()
+            'instanceFormLobiGame.Show()
             instanceGameDot.Close()
         Else
             instanceGameDot.Show()

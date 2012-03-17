@@ -14,11 +14,13 @@ Module ModuleClient
     End Sub
     Private Sub msg()
         instanceFormLobiGame.logChat()
+        instanceGameDot.logChat2()
     End Sub
 
     Public Sub connectToServer(ByVal username As String)
         readData = "Conected to Chat Server ..."
         msg()
+
         clientSocket.Connect("127.0.0.1", 8888)
         'Label1.Text = "Client Socket Program - Server Connected ..."
         serverStream = clientSocket.GetStream()

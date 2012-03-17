@@ -26,8 +26,8 @@ Partial Class FormLobiGame
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLobiGame))
         Me.grpbxDftrPemain = New System.Windows.Forms.GroupBox()
         Me.lstInfoPemain = New System.Windows.Forms.ListBox()
-        Me.AdidotsDataSet = New GameDots.adidotsDataSet()
         Me.BtnInfo = New System.Windows.Forms.Button()
+        Me.AdidotsDataSet = New GameDots.adidotsDataSet()
         Me.grpbxDftrLobi = New System.Windows.Forms.GroupBox()
         Me.lstRoom = New System.Windows.Forms.ListBox()
         Me.btnJoin = New System.Windows.Forms.Button()
@@ -39,6 +39,8 @@ Partial Class FormLobiGame
         Me.PictureBoxClose = New System.Windows.Forms.PictureBox()
         Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblPemainLogin = New System.Windows.Forms.Label()
         Me.grpbxDftrPemain.SuspendLayout()
         CType(Me.AdidotsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpbxDftrLobi.SuspendLayout()
@@ -52,6 +54,7 @@ Partial Class FormLobiGame
         Me.grpbxDftrPemain.BackColor = System.Drawing.Color.Transparent
         Me.grpbxDftrPemain.Controls.Add(Me.lstInfoPemain)
         Me.grpbxDftrPemain.Controls.Add(Me.BtnInfo)
+        Me.grpbxDftrPemain.Font = New System.Drawing.Font("Constantia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpbxDftrPemain.ForeColor = System.Drawing.Color.White
         Me.grpbxDftrPemain.Location = New System.Drawing.Point(36, 95)
         Me.grpbxDftrPemain.Name = "grpbxDftrPemain"
@@ -68,11 +71,6 @@ Partial Class FormLobiGame
         Me.lstInfoPemain.Size = New System.Drawing.Size(202, 212)
         Me.lstInfoPemain.TabIndex = 3
         '
-        'AdidotsDataSet
-        '
-        Me.AdidotsDataSet.DataSetName = "adidotsDataSet"
-        Me.AdidotsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'BtnInfo
         '
         Me.BtnInfo.ForeColor = System.Drawing.Color.Black
@@ -83,12 +81,18 @@ Partial Class FormLobiGame
         Me.BtnInfo.Text = "Info"
         Me.BtnInfo.UseVisualStyleBackColor = True
         '
+        'AdidotsDataSet
+        '
+        Me.AdidotsDataSet.DataSetName = "adidotsDataSet"
+        Me.AdidotsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'grpbxDftrLobi
         '
         Me.grpbxDftrLobi.BackColor = System.Drawing.Color.Transparent
         Me.grpbxDftrLobi.Controls.Add(Me.lstRoom)
         Me.grpbxDftrLobi.Controls.Add(Me.btnJoin)
         Me.grpbxDftrLobi.Controls.Add(Me.btnBuatRoom)
+        Me.grpbxDftrLobi.Font = New System.Drawing.Font("Constantia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpbxDftrLobi.ForeColor = System.Drawing.Color.White
         Me.grpbxDftrLobi.Location = New System.Drawing.Point(280, 95)
         Me.grpbxDftrLobi.Name = "grpbxDftrLobi"
@@ -131,6 +135,7 @@ Partial Class FormLobiGame
         Me.grpbxChat.Controls.Add(Me.lstChat)
         Me.grpbxChat.Controls.Add(Me.btnKirimChat)
         Me.grpbxChat.Controls.Add(Me.txtInputChat)
+        Me.grpbxChat.Font = New System.Drawing.Font("Constantia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpbxChat.ForeColor = System.Drawing.Color.White
         Me.grpbxChat.Location = New System.Drawing.Point(36, 377)
         Me.grpbxChat.Name = "grpbxChat"
@@ -161,7 +166,7 @@ Partial Class FormLobiGame
         '
         Me.txtInputChat.Location = New System.Drawing.Point(6, 136)
         Me.txtInputChat.Name = "txtInputChat"
-        Me.txtInputChat.Size = New System.Drawing.Size(452, 20)
+        Me.txtInputChat.Size = New System.Drawing.Size(452, 21)
         Me.txtInputChat.TabIndex = 1
         '
         'PictureBoxClose
@@ -191,6 +196,30 @@ Partial Class FormLobiGame
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(140, 75)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(286, 16)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Selamat Bergabung Di Lobi Game Bung "
+        '
+        'lblPemainLogin
+        '
+        Me.lblPemainLogin.AutoSize = True
+        Me.lblPemainLogin.BackColor = System.Drawing.Color.Transparent
+        Me.lblPemainLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPemainLogin.ForeColor = System.Drawing.Color.White
+        Me.lblPemainLogin.Location = New System.Drawing.Point(418, 75)
+        Me.lblPemainLogin.Name = "lblPemainLogin"
+        Me.lblPemainLogin.Size = New System.Drawing.Size(55, 16)
+        Me.lblPemainLogin.TabIndex = 8
+        Me.lblPemainLogin.Text = "Label2"
+        '
         'FormLobiGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -198,6 +227,8 @@ Partial Class FormLobiGame
         Me.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(613, 570)
+        Me.Controls.Add(Me.lblPemainLogin)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBoxMinimize)
         Me.Controls.Add(Me.PictureBoxClose)
         Me.Controls.Add(Me.grpbxChat)
@@ -217,6 +248,7 @@ Partial Class FormLobiGame
         CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents grpbxDftrPemain As System.Windows.Forms.GroupBox
@@ -234,4 +266,6 @@ Partial Class FormLobiGame
     Friend WithEvents lstRoom As System.Windows.Forms.ListBox
     Friend WithEvents AdidotsDataSet As GameDots.adidotsDataSet
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblPemainLogin As System.Windows.Forms.Label
 End Class

@@ -35,7 +35,7 @@ Public Class FormBuatRoom
         End If
     End Sub
     Private Sub btnOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOk.Click
-        ModuleClient.sendMessageToServer("CREATE_ROOM|" + txtNamaRoom.Text + ">" + cbxJumPemain.Text + ">" + cbxPapan.Text + ">" + loggedUserName)
+        ModuleClient.sendMessageToServer("CREATE_ROOM|" + txtNamaRoom.Text + ">" + cbxPapan.Text + ">" + loggedUserName)
     
         instanceFormLobiGame.Timer1.Enabled = True
         Close()

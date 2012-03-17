@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 
 Module ModuleServer
     Dim clientsList As New Hashtable
-    Dim compName As String = "localhost"
+    Dim compName As String = "127.0.0.1"
     Private Sub broadcastToAllClient(ByVal msg As String, ByVal uName As String, ByVal flag As Boolean)
         Dim Item As DictionaryEntry
         For Each Item In clientsList
@@ -121,17 +121,15 @@ Module ModuleServer
         Private Sub createRoom(ByVal messageData As String)
             Dim data() As String = messageData.Split(">")
             Dim nama_room As String = data(0)
-            Dim jumlah_pemain As String = data(1)
-            Dim ukuran_papan As String = data(2)
-
-            Dim user_pemain As String = data(3)
+            Dim ukuran_papan As String = data(1)
+            Dim user_pemain As String = data(2)
             Dim con As New SqlConnection
             Dim cmd As New SqlCommand
 
-            con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
+            con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
             con.Open()
             cmd.Connection = con
-            cmd.CommandText = "INSERT INTO room([nama_room],[jumlah_pemain],[ukuran_papan],[user_pemain])VALUES('" & nama_room & "','" & jumlah_pemain & "', '" & ukuran_papan & "','" & user_pemain & "')"
+            cmd.CommandText = "INSERT INTO room([nama_room],[ukuran_papan],[user_pemain])VALUES('" & nama_room & "', '" & ukuran_papan & "','" & user_pemain & "')"
             cmd.ExecuteNonQuery()
             con.Close()
 
@@ -141,7 +139,7 @@ Module ModuleServer
             Dim con As New SqlConnection
             Dim cmd As New SqlCommand
             Dim room As String = ""
-            con.ConnectionString = "Data Source=" & compName & ";Initial Catalog=adidots;Integrated Security=True"
+            con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
             con.Open()
             cmd.Connection = con
             cmd.CommandText = "SELECT [nama_room] ,[user_pemain] FROM [adidots].[dbo].[room] order by nama_room"

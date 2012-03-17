@@ -1,7 +1,7 @@
 Module Gameplay
     Public Const Invalid As Integer = -1
     Public Const DEBUG_ShowLine As Boolean = False
-    'Public mMain As FormGameDots
+    Public mMain As FormGameDots
     Public StillRunning As Boolean = True
     Public GameRunning As Boolean = True
     Public Dots As Integer = 25
@@ -13,7 +13,7 @@ Module Gameplay
 
     Public GridPlaySize As Integer = 0
     Public GridSizes() As Integer = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
-    Public CurrentPlayer As Player = Player.Blue
+    Public CurrentPlayer As Player = Player.Blue 'default player
 
     Public BlueScore As Integer = 0
     Public RedScore As Integer = 0
@@ -30,7 +30,7 @@ Module Gameplay
         resetscores()
         'mMain = New MainForm
 
-        ' mMain.Show()
+        'mMain.Show()
         While StillRunning
             If CountEmptyCells() = 0 Then
                 GameRunning = False
