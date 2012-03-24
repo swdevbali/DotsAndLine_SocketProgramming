@@ -45,7 +45,7 @@ Partial Class FormLoginAdmin
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(136, 20)
         Me.txtPassword.TabIndex = 1
-        Me.txtPassword.Text = "admin007"
+        Me.txtPassword.Text = "admin"
         '
         'lblUsername
         '

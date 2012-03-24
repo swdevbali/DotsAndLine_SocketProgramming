@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameDots.adidotsDataSet">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="GameDots.adidotsDataSet.pemainRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="GameDots.adidotsDataSet.roomRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="GameDots.adidotsDataSet.pemainRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="GameDots.adidotsDataSet.pemainRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="GameDots.adidotsDataSet.adminRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="GameDots.adidotsDataSet.pemainDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="GameDots.adidotsDataSet.roomRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="GameDots.adidotsDataSet.statistikRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="GameDots.adidotsDataSet.adminDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="GameDots.adidotsDataSet.roomDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="GameDots.adidotsDataSet.roomRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="GameDots.adidotsDataSet.statistikRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="GameDots.adidotsDataSet.statistikRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="GameDots.adidotsDataSet.statistikDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="GameDots.adidotsDataSet.adminRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="GameDots.adidotsDataSet.adminRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAA4AgAAJABAAARAExIAkCQBgAAgAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.DatabaseKoneksi">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>DatabaseKoneksi.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.FormBuatRoom">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAIAEASBAAAAAAACAgAACABgBhACAEAAQABAAAAA=</HashCode>
+      <FileName>FormBuatRoom.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.FormDataAdmin">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABGgAAAAAGCQgDQAAECAECgiQIAQAAAAACAAIAAAAQg=</HashCode>
+      <FileName>FormDataAdmin.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.FormDataPemain">
+    <Position X="11.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABGIAAAAAmCAgBAAAECAACoiQAAQQAAEAAKAIAAAAQA=</HashCode>
+      <FileName>FormDataPemain.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.FormGameDots">
+    <Position X="11.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADCJQEQAEKtFACAAEICIYQRPhhiIQB4AFEIACBAkQEA=</HashCode>
+      <FileName>FormGameDots.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.FormInfoPemain">
+    <Position X="0.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQCAAERESBAgDAAABCAAAACABgAgAAAEAAQADAAAAA=</HashCode>
+      <FileName>FormInfoPemain.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.FormLobiGame">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAABIUFCDAIAAAIACIAAgSABgAQA4BkBAQABiEAAg=</HashCode>
+      <FileName>FormLobiGame.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.FormLoginAdmin">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAECAAAAkAAACIAAACAEgACACQAhACQChIAAA=</HashCode>
+      <FileName>FormLoginAdmin.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.FormLoginPemain">
+    <Position X="13" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwQAEAAFCBAAQgAAACIQABKABgAAAGREgASQDggAAI=</HashCode>
+      <FileName>FormLoginPemain.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.FormMenuAdmin">
+    <Position X="16.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wABAAAAAACCEAAAAAICAAAADAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>FormMenuAdmin.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.FormMenuLogin">
+    <Position X="1.75" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QAAQAAAABCAEAAACAACAAAAjABgAAAQBAEAAABAAAAA=</HashCode>
+      <FileName>FormMenuLogin.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.FormPetunjuk">
+    <Position X="9.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIACBAAgAAgCCAAAACABgAAAAAEAAQAFAAAAA=</HashCode>
+      <FileName>FormPetunjuk.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.DotsCell">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAIEAAAkAAEAABAAAAEAAAAAAgAAAAQAAkAAg=</HashCode>
+      <FileName>Gameplay\DotCell.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.DotHLine">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAQAAAUAABACAAAAAAAAAACAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Gameplay\DotHLine.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.DotVLine">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAQgAAQAAAACAAAIAAAAAAAAAAAACAACAAAAAAA=</HashCode>
+      <FileName>Gameplay\DotVLine.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.MainForm">
+    <Position X="15" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACCAQgSAECIAACAAAICQYQRGgQAEQAgABESACFAEAAA=</HashCode>
+      <FileName>Gameplay\MainForm.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.SplashScreen">
+    <Position X="14.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAMAAAAACAAAACAAAAAAAAAEAAAAAEAAI=</HashCode>
+      <FileName>SplashScreen.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.adidotsDataSetTableAdapters.adminTableAdapter">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.adidotsDataSetTableAdapters.pemainTableAdapter">
+    <Position X="4" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.adidotsDataSetTableAdapters.roomTableAdapter">
+    <Position X="13" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.adidotsDataSetTableAdapters.statistikTableAdapter">
+    <Position X="18.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.adidotsDataSetTableAdapters.TableAdapterManager">
+    <Position X="18.75" Y="10" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="GameDots.adidotsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption" Collapsed="true">
+        <TypeIdentifier />
+      </Enum>
+      <Class Name="GameDots.adidotsDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAAECAgAABABAkBIAAAMQAgAAACgAAAAQSAEAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.My.MyApplication">
+    <Position X="16.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameDots.My.MySettings">
+    <Position X="20.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAQAABAAIAAABAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Module Name="GameDots.Gameplay">
+    <Position X="7.5" Y="10.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="GameDots.Gameplay.Player">
+        <TypeIdentifier>
+          <NewMemberFileName>Gameplay\Gameplay.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EAAgABAAMGAAEAAAAAIEAIICAAAQBiIIAAAAkAIgIEI=</HashCode>
+      <FileName>Gameplay\Gameplay.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="GameDots.Main">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIQIAAAAAEAABBAACAAAAAACAAIA=</HashCode>
+      <FileName>Main.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="GameDots.ModuleClient">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAQAAAABAAAIAAAAAAAIQAAAAgAAA=</HashCode>
+      <FileName>ModuleClient.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="GameDots.My.MySettingsProperty">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="GameDots.My.Resources.Resources">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAACAAAAAAAAAAABEAAAAREAAAAAAAAAAAABCIA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

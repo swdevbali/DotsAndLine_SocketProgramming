@@ -4,7 +4,9 @@ Imports System.Data.SqlClient
 
 Module ModuleServer
     Dim clientsList As New Hashtable
+    'Dim compName As String = "ADISETIONO-PC,1433"
     Dim compName As String = "127.0.0.1"
+    Dim roomList As New Hashtable
     Private Sub broadcastToAllClient(ByVal msg As String, ByVal uName As String, ByVal flag As Boolean)
         Dim Item As DictionaryEntry
         For Each Item In clientsList
@@ -110,6 +112,7 @@ Module ModuleServer
                         createRoom(messageData)
                     ElseIf messageType = "QUERY_ROOM" Then
                         queryRoom()
+                   
                     End If
                 Catch ex As Exception
                     If clientSocket IsNot Nothing Then clientSocket.Close()
@@ -142,7 +145,7 @@ Module ModuleServer
             con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
             con.Open()
             cmd.Connection = con
-            cmd.CommandText = "SELECT [nama_room] ,[user_pemain] FROM [adidots].[dbo].[room] order by nama_room"
+            cmd.CommandText = "SELECT [nama_room],[user_pemain] FROM [adidots].[dbo].[room] order by nama_room"
             Dim rd As SqlDataReader = cmd.ExecuteReader()
             Do While rd.Read
                 room = rd.GetString(0) & ">" & room
@@ -151,6 +154,8 @@ Module ModuleServer
             con.Close()
             broadcastToAllClient("ROOM_QUERY_RESULT|" & room, clNo, False)
         End Sub
+
+
 
     End Class
 

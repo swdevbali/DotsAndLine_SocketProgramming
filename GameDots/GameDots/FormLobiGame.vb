@@ -131,6 +131,16 @@ Public Class FormLobiGame
                 For i As Integer = 0 To room.Length - 1
                     lstRoom.Items.Add(room(i))
                 Next
+            ElseIf broadcast(0).Equals("GAME_QUERY_RESULT") Then
+                Dim data As String = broadcast(1)
+                Dim message() As String = data.Split(">")
+                Dim master = message(0).Split("=")(1)
+                If master = loggedUserName Then
+                    loggedPlayer = Player.Red
+                    CurrentPlayer = loggedPlayer
+                Else
+                    loggedPlayer = Player.Blue
+                End If
             Else
                 lstChat.Items.Add(newText)
             End If
