@@ -21,7 +21,7 @@ Module ModuleClient
         readData = "Conected to Chat Server ..."
         msg()
 
-        clientSocket.Connect("192.168.1.2", 8888)
+        clientSocket.Connect("192.168.1.1", 8888)
         'Label1.Text = "Client Socket Program - Server Connected ..."
         serverStream = clientSocket.GetStream()
 
