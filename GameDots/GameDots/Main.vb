@@ -8,7 +8,7 @@ Module Main
     Public Username, Password As String
 
     'Public compName As String = "ADISETIONO-PC,1433"
-    Public compName As String = "127.0.0.1"
+    Public compName As String = "192.168.1.2,1433"
     Public instanceFormLobiGame As New FormLobiGame
     Public instanceGameDot As New FormGameDots
     Public loggedUserName As String
