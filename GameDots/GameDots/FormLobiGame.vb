@@ -14,7 +14,7 @@ Public Class FormLobiGame
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
         Dim sql As String = "SELECT [user_pemain] FROM [adidots].[dbo].[statistik]"
-        con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
+        con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;User Id=sa;Password=adminadmin"
 
         con.Open()
         cmd.Connection = con

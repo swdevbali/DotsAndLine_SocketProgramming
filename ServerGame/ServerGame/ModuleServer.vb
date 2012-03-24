@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 
 Module ModuleServer
     Dim clientsList As New Hashtable
-    Dim compName As String = "127.0.0.1"
+    Dim compName As String = "192.168.1.1"
     Dim roomList As New Hashtable
     Private Sub broadcastToAllClient(ByVal msg As String, ByVal uName As String, ByVal flag As Boolean)
         Dim Item As DictionaryEntry
