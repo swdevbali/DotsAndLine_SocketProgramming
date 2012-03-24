@@ -4,7 +4,6 @@ Imports System.Data.SqlClient
 
 Module ModuleServer
     Dim clientsList As New Hashtable
-    'Dim compName As String = "ADISETIONO-PC,1433"
     Dim compName As String = "127.0.0.1"
     Dim roomList As New Hashtable
     Private Sub broadcastToAllClient(ByVal msg As String, ByVal uName As String, ByVal flag As Boolean)
@@ -112,7 +111,8 @@ Module ModuleServer
                         createRoom(messageData)
                     ElseIf messageType = "QUERY_ROOM" Then
                         queryRoom()
-                   
+                    ElseIf messageType = "QUERY_GAME" Then
+                        queryGame(messageData)
                     End If
                 Catch ex As Exception
                     If clientSocket IsNot Nothing Then clientSocket.Close()
@@ -135,9 +135,7 @@ Module ModuleServer
             cmd.CommandText = "INSERT INTO room([nama_room],[ukuran_papan],[user_pemain])VALUES('" & nama_room & "', '" & ukuran_papan & "','" & user_pemain & "')"
             cmd.ExecuteNonQuery()
             con.Close()
-
         End Sub
-
         Private Sub queryRoom()
             Dim con As New SqlConnection
             Dim cmd As New SqlCommand
@@ -155,9 +153,11 @@ Module ModuleServer
             broadcastToAllClient("ROOM_QUERY_RESULT|" & room, clNo, False)
         End Sub
 
-
-
+        Private Sub queryGame(ByVal messageData As String)
+            Dim data() As String = messageData.Split(">")
+            Dim nama_room As String = data(0)
+            Dim username As String = data(1)
+            'broadcastToAllClient("GAME_QUERY_RESULT|" & , clNo, False)
+        End Sub
     End Class
-
-
 End Module

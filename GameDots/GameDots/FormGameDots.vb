@@ -158,7 +158,6 @@ Public Class FormGameDots
         Next
 
     End Sub
-
     Private Sub drawDots(ByRef g As Graphics)
         For y As Integer = 0 To (Dots - 1)
             For x As Integer = 0 To (Dots - 1)
@@ -166,22 +165,17 @@ Public Class FormGameDots
             Next
         Next
     End Sub
-
-
     Private Sub RescaleGrid()
         ScaleWidth = (Me.PB_Paper.Width - (OffSet * 2)) / (Dots - 1)
         ScaleHeight = (Me.PB_Paper.Height - (OffSet * 2)) / (Dots - 1)
-
     End Sub
 #End Region
-
     Private Sub PictureBox2_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles PictureBox2.Paint
         Select Case CurrentPlayer
             Case Player.Red : Me.PictureBox2.BackColor = Color.Red
             Case Player.Blue : Me.PictureBox2.BackColor = Color.Blue
         End Select
     End Sub
-
     Private Sub FormGameDots_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         instanceFormLobiGame = New FormLobiGame
         instanceFormLobiGame.Show()
@@ -268,6 +262,8 @@ Public Class FormGameDots
             GridPlaySize = CInt(rd.GetValue(2)) - 4 'karena dari combo box, 0=>4
             'NEXT : QUERY DETAIL PAPAN GAME INI : sudah ada master / belum, state terkini game, dsb
             ModuleClient.sendMessageToServer("QUERY_GAME|" & nama_room & ">" & loggedUserName)
+
+            'utamanya, ambil state dari variabel Cells()
         End If
 
         Dots = GridSizes(GridPlaySize)
