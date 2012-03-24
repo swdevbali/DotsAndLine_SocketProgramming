@@ -4,12 +4,16 @@ Module Gameplay
     Public mMain As FormGameDots
     Public StillRunning As Boolean = True
     Public GameRunning As Boolean = True
+
+
+    'SHARED VARIABLE, must be in server
     Public Dots As Integer = 25
     Public Cells() As DotsCell
     Public CellMax As Integer
     Public LineMax As Integer
     Public Vlines() As DotVLine
     Public HLines() As DotHLine
+    'SHARED VARIABLE, must be in server
 
     Public GridPlaySize As Integer = 0
     Public GridSizes() As Integer = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}

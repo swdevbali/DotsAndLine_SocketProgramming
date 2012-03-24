@@ -106,7 +106,6 @@ Public Class FormLobiGame
         instanceGameDot.nama_room = lstRoom.Text
         instanceGameDot.init()
         Close()
-
         instanceGameDot.play()
     End Sub
 
