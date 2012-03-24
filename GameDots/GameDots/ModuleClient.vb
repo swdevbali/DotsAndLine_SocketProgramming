@@ -9,6 +9,7 @@ Module ModuleClient
 
     Public Sub sendMessageToServer(ByVal s As String)
         Dim outStream As Byte() = System.Text.Encoding.ASCII.GetBytes(s + "$")
+        If serverStream Is Nothing Then Return
         serverStream.Write(outStream, 0, outStream.Length)
         serverStream.Flush()
     End Sub

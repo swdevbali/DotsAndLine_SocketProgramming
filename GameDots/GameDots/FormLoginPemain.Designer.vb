@@ -43,7 +43,7 @@ Partial Class FormLoginPemain
         Me.txtIpserver.Name = "txtIpserver"
         Me.txtIpserver.Size = New System.Drawing.Size(119, 20)
         Me.txtIpserver.TabIndex = 2
-        Me.txtIpserver.Text = "127.0.0.1"
+        Me.txtIpserver.Text = "192.168.1.1"
         '
         'txtNamapemain
         '

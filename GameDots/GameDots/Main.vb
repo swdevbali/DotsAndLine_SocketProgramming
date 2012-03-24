@@ -6,9 +6,7 @@ Module Main
     Public Msg As Integer
     Public intResponse As Integer
     Public Username, Password As String
-
-    'Public compName As String = "ADISETIONO-PC,1433"
-    Public compName As String = "192.168.1.1,1433"
+    Public compName As String = "192.168.1.1"
     Public instanceFormLobiGame As New FormLobiGame
     Public instanceGameDot As New FormGameDots
     Public loggedUserName As String
