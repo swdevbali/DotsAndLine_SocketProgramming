@@ -8,13 +8,14 @@ Public Class FormLobiGame
     Private MouseDownY As Integer
 
     Private Sub FormLobiGame_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'TODO: This line of code loads data into the 'AdidotsDataSet.statistik' table. You can move, or remove it, as needed.
-        'Me.StatistikTableAdapter.Fill(Me.AdidotsDataSet.statistik)
+        
 
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
         Dim sql As String = "SELECT [user_pemain] FROM [adidots].[dbo].[statistik]"
-        con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;User Id=sa;Password=adminadmin"
+
+        con.ConnectionString = "Data Source=" & compName & ",1433;Initial Catalog=adidots;User Id=sa;Password=adminadmin"
+
 
         con.Open()
         cmd.Connection = con
@@ -25,7 +26,9 @@ Public Class FormLobiGame
             lstInfoPemain.Items.Add(rd.GetValue(0))
         End While
 
+        Timer1.Enabled = True
         lblPemainLogin.Text = loggedUserName
+
     End Sub
 
     Private Sub FormLobiGame_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown
@@ -56,9 +59,6 @@ Public Class FormLobiGame
     End Sub
 
     Private Sub PictureBoxClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxClose.Click
-        'Me.Close()
-        'Application.Exit()
-        'TombolClose()
         End
     End Sub
 
@@ -71,11 +71,14 @@ Public Class FormLobiGame
             MessageBox.Show("Pilih room terlebih dahulu")
             Return
         End If
+
+
         Dim username As String = lstInfoPemain.Text
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
         Dim sql As String = "SELECT [user_pemain],[jum_menang],[jum_imbang],[jum_kalah],[jum_point] FROM [adidots].[dbo].[statistik] where user_pemain='" & username & "'"
-        con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
+
+        con.ConnectionString = "Data Source=" & compName & ",1433;Initial Catalog=adidots;User Id=sa;Password=adminadmin"
 
         con.Open()
         cmd.Connection = con
@@ -94,6 +97,7 @@ Public Class FormLobiGame
     End Sub
 
     Private Sub btnBuatRoom_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuatRoom.Click
+
         FormBuatRoom.Show()
     End Sub
 
@@ -102,11 +106,13 @@ Public Class FormLobiGame
             MessageBox.Show("Pilih room terlebih dahulu")
             Return
         End If
+
         instanceGameDot = New FormGameDots
         instanceGameDot.nama_room = lstRoom.Text
         instanceGameDot.init()
         Close()
         instanceGameDot.play()
+
     End Sub
 
     Private Sub btnKirimChat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnKirimChat.Click
@@ -126,6 +132,9 @@ Public Class FormLobiGame
                 Dim data As String = broadcast(1)
                 lstRoom.Items.Clear()
                 Dim room() As String = data.Split(">")
+                'Dim server() As String
+
+                'untuk menampilkan data room di lstRoom
 
                 For i As Integer = 0 To room.Length - 1
                     lstRoom.Items.Add(room(i))
@@ -161,5 +170,5 @@ Public Class FormLobiGame
         ModuleClient.sendMessageToServer("QUERY_USER_LOGIN|")
     End Sub
 
-   
+
 End Class

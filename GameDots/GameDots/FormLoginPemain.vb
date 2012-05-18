@@ -4,9 +4,9 @@ Imports System.Data.OleDb
 Imports System.Data
 Imports System.Data.SqlClient
 
-Public Class FormLoginPemain
-    
 
+Public Class FormLoginPemain
+   
     Dim MyConnection As New DatabaseKoneksi
     Dim objConnection As SqlConnection
     Dim objCommand As SqlCommand
@@ -118,13 +118,15 @@ Public Class FormLoginPemain
                         'Jika Sama
                         'konek ke server game
                         loggedUserName = txtNamapemain.Text
+
                         instanceFormLobiGame.Show()
                         ModuleClient.connectToServer(txtNamapemain.Text)
                         txtNamapemain.Text = ""
                         txtPassword.Text = ""
-                        Hide()
+
+                        Me.Close()
                     End If
-                    End If
+                End If
             Catch When Err.Number <> 0
                 MsgBox("Tidak dapat melakukan proses" & vbCrLf & Err.Description)
             End Try
@@ -133,6 +135,7 @@ Public Class FormLoginPemain
     End Sub
 
     Private Sub BtnBatal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnBatal.Click
+
         FormMenuLogin.Show()
         Me.Hide()
     End Sub
@@ -141,5 +144,11 @@ Public Class FormLoginPemain
         If e.KeyCode = Keys.Enter Then
             BtnLogin_Click(Nothing, Nothing)
         End If
+    End Sub
+
+    Private Sub FormLoginPemain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+       
+
+
     End Sub
 End Class

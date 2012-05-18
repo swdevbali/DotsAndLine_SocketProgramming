@@ -13,6 +13,10 @@ Public Class FormLoginAdmin
     Dim objDataTable As New DataTable
     Dim mProcess As String
 
+    Private IsFormBeingDragged As Boolean = False
+    Private MouseDownX As Integer
+    Private MouseDownY As Integer
+
     Sub CheckUser()
         objDataTable.Clear()
         strSQL = ("SELECT * FROM [admin] WHERE [user_admin] " & " = '" & Trim(txtUsername.Text) & "' ")
@@ -73,7 +77,8 @@ Public Class FormLoginAdmin
                         Exit Sub
                     Else
                         'Jika Sama
-                        Me.Hide()
+
+                        Me.Close()
                         FormMenuAdmin.Show()
                         txtUsername.Text = ""
                         txtPassword.Text = ""
@@ -84,4 +89,42 @@ Public Class FormLoginAdmin
             End Try
         End If
     End Sub
+
+    Private Sub PictureBoxClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxClose.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub PictureBoxMinimize_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxMinimize.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+
+    Private Sub FormLoginAdmin_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
+        If e.Button = MouseButtons.Left Then
+            IsFormBeingDragged = True
+            MouseDownX = e.X
+            MouseDownY = e.Y
+        End If
+    End Sub
+
+    Private Sub FormLoginAdmin_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
+        If IsFormBeingDragged Then
+            Dim temp As Point = New Point()
+
+            temp.X = Me.Location.X + (e.X - MouseDownX)
+            temp.Y = Me.Location.Y + (e.Y - MouseDownY)
+            Me.Location = temp
+            temp = Nothing
+        End If
+    End Sub
+
+    Private Sub FormLoginAdmin_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
+        If e.Button = MouseButtons.Left Then
+            IsFormBeingDragged = False
+        End If
+    End Sub
+
+
+
+
 End Class

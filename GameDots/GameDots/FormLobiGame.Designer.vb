@@ -54,7 +54,7 @@ Partial Class FormLobiGame
         Me.grpbxDftrPemain.BackColor = System.Drawing.Color.Transparent
         Me.grpbxDftrPemain.Controls.Add(Me.lstInfoPemain)
         Me.grpbxDftrPemain.Controls.Add(Me.BtnInfo)
-        Me.grpbxDftrPemain.Font = New System.Drawing.Font("Constantia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grpbxDftrPemain.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpbxDftrPemain.ForeColor = System.Drawing.Color.White
         Me.grpbxDftrPemain.Location = New System.Drawing.Point(36, 95)
         Me.grpbxDftrPemain.Name = "grpbxDftrPemain"
@@ -65,14 +65,17 @@ Partial Class FormLobiGame
         '
         'lstInfoPemain
         '
+        Me.lstInfoPemain.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstInfoPemain.FormattingEnabled = True
+        Me.lstInfoPemain.ItemHeight = 14
         Me.lstInfoPemain.Location = New System.Drawing.Point(6, 48)
         Me.lstInfoPemain.Name = "lstInfoPemain"
-        Me.lstInfoPemain.Size = New System.Drawing.Size(202, 212)
+        Me.lstInfoPemain.Size = New System.Drawing.Size(202, 214)
         Me.lstInfoPemain.TabIndex = 3
         '
         'BtnInfo
         '
+        Me.BtnInfo.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnInfo.ForeColor = System.Drawing.Color.Black
         Me.BtnInfo.Location = New System.Drawing.Point(8, 19)
         Me.BtnInfo.Name = "BtnInfo"
@@ -92,7 +95,7 @@ Partial Class FormLobiGame
         Me.grpbxDftrLobi.Controls.Add(Me.lstRoom)
         Me.grpbxDftrLobi.Controls.Add(Me.btnJoin)
         Me.grpbxDftrLobi.Controls.Add(Me.btnBuatRoom)
-        Me.grpbxDftrLobi.Font = New System.Drawing.Font("Constantia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grpbxDftrLobi.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpbxDftrLobi.ForeColor = System.Drawing.Color.White
         Me.grpbxDftrLobi.Location = New System.Drawing.Point(280, 95)
         Me.grpbxDftrLobi.Name = "grpbxDftrLobi"
@@ -103,10 +106,12 @@ Partial Class FormLobiGame
         '
         'lstRoom
         '
+        Me.lstRoom.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstRoom.FormattingEnabled = True
+        Me.lstRoom.ItemHeight = 14
         Me.lstRoom.Location = New System.Drawing.Point(6, 48)
         Me.lstRoom.Name = "lstRoom"
-        Me.lstRoom.Size = New System.Drawing.Size(299, 212)
+        Me.lstRoom.Size = New System.Drawing.Size(299, 214)
         Me.lstRoom.TabIndex = 5
         '
         'btnJoin
@@ -116,18 +121,19 @@ Partial Class FormLobiGame
         Me.btnJoin.Name = "btnJoin"
         Me.btnJoin.Size = New System.Drawing.Size(75, 23)
         Me.btnJoin.TabIndex = 4
-        Me.btnJoin.Text = "Enter Room"
+        Me.btnJoin.Text = "Join"
         Me.btnJoin.UseVisualStyleBackColor = True
         '
         'btnBuatRoom
         '
+        Me.btnBuatRoom.BackColor = System.Drawing.Color.Transparent
         Me.btnBuatRoom.ForeColor = System.Drawing.Color.Black
         Me.btnBuatRoom.Location = New System.Drawing.Point(6, 19)
         Me.btnBuatRoom.Name = "btnBuatRoom"
         Me.btnBuatRoom.Size = New System.Drawing.Size(75, 23)
         Me.btnBuatRoom.TabIndex = 3
         Me.btnBuatRoom.Text = "Buat Room"
-        Me.btnBuatRoom.UseVisualStyleBackColor = True
+        Me.btnBuatRoom.UseVisualStyleBackColor = False
         '
         'grpbxChat
         '
@@ -135,7 +141,7 @@ Partial Class FormLobiGame
         Me.grpbxChat.Controls.Add(Me.lstChat)
         Me.grpbxChat.Controls.Add(Me.btnKirimChat)
         Me.grpbxChat.Controls.Add(Me.txtInputChat)
-        Me.grpbxChat.Font = New System.Drawing.Font("Constantia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grpbxChat.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpbxChat.ForeColor = System.Drawing.Color.White
         Me.grpbxChat.Location = New System.Drawing.Point(36, 377)
         Me.grpbxChat.Name = "grpbxChat"
@@ -146,10 +152,12 @@ Partial Class FormLobiGame
         '
         'lstChat
         '
+        Me.lstChat.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstChat.FormattingEnabled = True
+        Me.lstChat.ItemHeight = 14
         Me.lstChat.Location = New System.Drawing.Point(6, 19)
         Me.lstChat.Name = "lstChat"
-        Me.lstChat.Size = New System.Drawing.Size(538, 108)
+        Me.lstChat.Size = New System.Drawing.Size(538, 102)
         Me.lstChat.TabIndex = 3
         '
         'btnKirimChat
@@ -166,7 +174,7 @@ Partial Class FormLobiGame
         '
         Me.txtInputChat.Location = New System.Drawing.Point(6, 136)
         Me.txtInputChat.Name = "txtInputChat"
-        Me.txtInputChat.Size = New System.Drawing.Size(452, 21)
+        Me.txtInputChat.Size = New System.Drawing.Size(452, 22)
         Me.txtInputChat.TabIndex = 1
         '
         'PictureBoxClose

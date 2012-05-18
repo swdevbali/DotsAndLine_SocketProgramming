@@ -46,9 +46,9 @@ Partial Class FormDataPemain
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.PemainBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.PemainDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.User_pemainTextBox = New System.Windows.Forms.TextBox()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         User_pemainLabel = New System.Windows.Forms.Label()
         PasswordLabel = New System.Windows.Forms.Label()
         CType(Me.AdidotsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -233,6 +233,13 @@ Partial Class FormDataPemain
         Me.PemainDataGridView.Size = New System.Drawing.Size(445, 247)
         Me.PemainDataGridView.TabIndex = 1
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "user_pemain"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "user_pemain"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
         'User_pemainTextBox
         '
         Me.User_pemainTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemainBindingSource, "user_pemain", True))
@@ -250,13 +257,6 @@ Partial Class FormDataPemain
         Me.PasswordTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PasswordTextBox.TabIndex = 5
         '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "user_pemain"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "user_pemain"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
         'FormDataPemain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -268,6 +268,9 @@ Partial Class FormDataPemain
         Me.Controls.Add(Me.User_pemainTextBox)
         Me.Controls.Add(Me.PemainDataGridView)
         Me.Controls.Add(Me.PemainBindingNavigator)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FormDataPemain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Data Pemain"

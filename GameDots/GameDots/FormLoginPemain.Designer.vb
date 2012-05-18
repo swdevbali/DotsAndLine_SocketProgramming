@@ -43,7 +43,7 @@ Partial Class FormLoginPemain
         Me.txtIpserver.Name = "txtIpserver"
         Me.txtIpserver.Size = New System.Drawing.Size(119, 20)
         Me.txtIpserver.TabIndex = 2
-        Me.txtIpserver.Text = "192.168.1.1"
+        Me.txtIpserver.Text = "127.0.0.1"
         '
         'txtNamapemain
         '
@@ -142,7 +142,7 @@ Partial Class FormLoginPemain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(466, 323)
         Me.Controls.Add(Me.BtnBatal)
@@ -160,7 +160,7 @@ Partial Class FormLoginPemain
         Me.Name = "FormLoginPemain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LoginPemain"
-        Me.TransparencyKey = System.Drawing.SystemColors.ActiveBorder
+        Me.TransparencyKey = System.Drawing.SystemColors.InactiveBorder
         CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

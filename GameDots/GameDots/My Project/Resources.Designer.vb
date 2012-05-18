@@ -67,6 +67,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property Game_Dots() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Game Dots", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property Game_Dots1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Game Dots1", resourceCulture)

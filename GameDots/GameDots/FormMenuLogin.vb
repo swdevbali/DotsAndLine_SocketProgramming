@@ -2,6 +2,8 @@
     Private IsFormBeingDragged As Boolean = False
     Private MouseDownX As Integer
     Private MouseDownY As Integer
+    Dim f1 As FormMenuLogin
+
     Private Sub FormLoginPemain_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown
 
         If e.Button = MouseButtons.Left Then
@@ -30,17 +32,35 @@
     End Sub
    
     Private Sub btnKeluar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnKeluar.Click
+
         Application.Exit()
 
     End Sub
 
     Private Sub btnLoginPemain_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLoginPemain.Click
+
         FormLoginPemain.Show()
         Me.Hide()
+
     End Sub
 
     Private Sub btnLoginAdmin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLoginAdmin.Click
+
         FormLoginAdmin.Show()
         Me.Hide()
+
+    End Sub
+
+    Private Sub PictureBoxClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxClose.Click
+
+        Application.Exit()
+    End Sub
+
+    Private Sub PictureBoxMinimize_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxMinimize.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub FormMenuLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

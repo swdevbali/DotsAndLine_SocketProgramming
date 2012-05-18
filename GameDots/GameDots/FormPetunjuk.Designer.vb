@@ -23,9 +23,9 @@ Partial Class FormPetunjuk
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPetunjuk))
-        Me.buttonKembali = New System.Windows.Forms.Button
-        Me.PictureBoxClose = New System.Windows.Forms.PictureBox
-        Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox
+        Me.buttonKembali = New System.Windows.Forms.Button()
+        Me.PictureBoxClose = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()

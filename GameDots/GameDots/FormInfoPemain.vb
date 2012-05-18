@@ -32,7 +32,8 @@ Public Class FormInfoPemain
         End If
     End Sub
     Private Sub btnKembali_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnKembali.Click
-        Hide()
+
+        Close()
         instanceFormLobiGame.Show()
     End Sub
 
@@ -46,10 +47,15 @@ Public Class FormInfoPemain
     Public user_pemain As String
     Private Sub FormInfoPemain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'AdidotsDataSet.statistik' table. You can move, or remove it, as needed.
+
+
+
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
         Dim room As String = ""
-        con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
+
+        con.ConnectionString = "Data Source=" & compName & ",1433;Initial Catalog=adidots;User Id=sa;Password=adminadmin"
+        'con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
         con.Open()
         cmd.Connection = con
         cmd.CommandText = "SELECT * FROM STATISTIK WHERE USER_PEMAIN='" & user_pemain & "'"

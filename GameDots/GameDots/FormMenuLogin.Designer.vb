@@ -22,11 +22,16 @@ Partial Class FormMenuLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMenuLogin))
         Me.btnLoginAdmin = New System.Windows.Forms.Button()
         Me.btnLoginPemain = New System.Windows.Forms.Button()
         Me.btnKeluar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxMinimize = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxClose = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnLoginAdmin
@@ -67,13 +72,37 @@ Partial Class FormMenuLogin
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
+        'PictureBoxMinimize
+        '
+        Me.PictureBoxMinimize.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBoxMinimize.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxMinimize.Image = CType(resources.GetObject("PictureBoxMinimize.Image"), System.Drawing.Image)
+        Me.PictureBoxMinimize.Location = New System.Drawing.Point(415, 18)
+        Me.PictureBoxMinimize.Name = "PictureBoxMinimize"
+        Me.PictureBoxMinimize.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBoxMinimize.TabIndex = 11
+        Me.PictureBoxMinimize.TabStop = False
+        '
+        'PictureBoxClose
+        '
+        Me.PictureBoxClose.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBoxClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxClose.Image = CType(resources.GetObject("PictureBoxClose.Image"), System.Drawing.Image)
+        Me.PictureBoxClose.Location = New System.Drawing.Point(377, 18)
+        Me.PictureBoxClose.Name = "PictureBoxClose"
+        Me.PictureBoxClose.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBoxClose.TabIndex = 10
+        Me.PictureBoxClose.TabStop = False
+        '
         'FormMenuLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.BackgroundImage = Global.GameDots.My.Resources.Resources.Menu_Login1
-        Me.ClientSize = New System.Drawing.Size(470, 297)
+        Me.ClientSize = New System.Drawing.Size(470, 294)
+        Me.Controls.Add(Me.PictureBoxMinimize)
+        Me.Controls.Add(Me.PictureBoxClose)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnKeluar)
         Me.Controls.Add(Me.btnLoginPemain)
@@ -82,8 +111,10 @@ Partial Class FormMenuLogin
         Me.Name = "FormMenuLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Menu Login"
-        Me.TransparencyKey = System.Drawing.SystemColors.ActiveBorder
+        Me.TransparencyKey = System.Drawing.SystemColors.InactiveBorder
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxMinimize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -91,4 +122,6 @@ Partial Class FormMenuLogin
     Friend WithEvents btnLoginPemain As System.Windows.Forms.Button
     Friend WithEvents btnKeluar As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBoxMinimize As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBoxClose As System.Windows.Forms.PictureBox
 End Class

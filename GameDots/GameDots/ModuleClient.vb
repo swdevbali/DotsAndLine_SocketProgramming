@@ -19,10 +19,11 @@ Module ModuleClient
     End Sub
 
     Public Sub connectToServer(ByVal username As String)
-        readData = "Conected to Chat Server ..."
+        readData = "Conected to Game Server Dots and Lines..."
         msg()
 
-        clientSocket.Connect("192.168.1.1", 8888)
+        clientSocket.Connect("127.0.0.1", 8888)
+
         'Label1.Text = "Client Socket Program - Server Connected ..."
         serverStream = clientSocket.GetStream()
 

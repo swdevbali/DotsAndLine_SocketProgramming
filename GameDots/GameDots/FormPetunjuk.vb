@@ -30,7 +30,8 @@
         End If
     End Sub
     Private Sub buttonKembali_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles buttonKembali.Click
-        Hide()
+
+        Close()
     End Sub
 
     Private Sub PictureBoxClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxClose.Click

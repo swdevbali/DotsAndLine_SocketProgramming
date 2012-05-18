@@ -257,7 +257,9 @@ Partial Class FormDataAdmin
         Me.Controls.Add(Me.User_adminTextBox)
         Me.Controls.Add(Me.AdminDataGridView)
         Me.Controls.Add(Me.AdminBindingNavigator)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FormDataAdmin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormDataAdmin"
