@@ -117,6 +117,8 @@ Module ModuleServer
                         queryRoom()
                     ElseIf messageType = "QUERY_GAME" Then
                         queryGame(messageData)
+                    ElseIf messageType = "MOVE" Then
+
                     End If
                 Catch ex As Exception
                     If clientSocket IsNot Nothing Then clientSocket.Close()

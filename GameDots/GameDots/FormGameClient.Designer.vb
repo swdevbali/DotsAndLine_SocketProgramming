@@ -37,6 +37,7 @@ Partial Class FormGameClient
         Me.pbxPemain2 = New System.Windows.Forms.PictureBox()
         Me.pbxPemain1 = New System.Windows.Forms.PictureBox()
         Me.PB_Paper = New System.Windows.Forms.PictureBox()
+        Me.status = New System.Windows.Forms.StatusStrip()
         Me.grpbxChat.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxPemain2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -203,12 +204,21 @@ Partial Class FormGameClient
         Me.PB_Paper.TabIndex = 28
         Me.PB_Paper.TabStop = False
         '
+        'status
+        '
+        Me.status.Location = New System.Drawing.Point(0, 547)
+        Me.status.Name = "status"
+        Me.status.Size = New System.Drawing.Size(691, 22)
+        Me.status.TabIndex = 40
+        Me.status.Text = "StatusStrip1"
+        '
         'FormGameClient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(691, 549)
+        Me.ClientSize = New System.Drawing.Size(691, 569)
+        Me.Controls.Add(Me.status)
         Me.Controls.Add(Me.grpbxChat)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label9)
@@ -252,4 +262,5 @@ Partial Class FormGameClient
     Friend WithEvents btnKeluar As System.Windows.Forms.Button
     Friend WithEvents btnPetunjuk As System.Windows.Forms.Button
     Friend WithEvents PB_Paper As System.Windows.Forms.PictureBox
+    Friend WithEvents status As System.Windows.Forms.StatusStrip
 End Class

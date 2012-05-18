@@ -17,99 +17,127 @@ Public Class FormGameClient
     Public nama_room As String
     Dim ganti As Boolean = False
 
+    Dim MouseLocation As Point
+    Dim ok As Boolean = False
+    Public Sub MakeMove(ByVal Cell_No As Single, ByVal InCell_X As Single, ByVal InCell_Y As Single)
+        For i As Integer = 0 To LineMax
+            HLines(i).LineHighlight = False : Vlines(i).LineHighlight = False
+        Next
 
+        Dim CountOfMadeBoxes As Integer = 0
+        Dim MoveIsValid As Boolean = False
+        Select Case True
+            Case (InCell_X = 0) And (InCell_Y = 1)
+                If (Cells(Cell_No).LineBehind <> Invalid) And (Vlines(Cells(Cell_No).LineBehind).LineUsed = False) Then
+                    Vlines(Cells(Cell_No).LineBehind).LineUsed = True
+                    MoveIsValid = True
+                    DoesItMakeABox(CountOfMadeBoxes, Vlines(Cells(Cell_No).LineBehind).CellAhead)
+                    DoesItMakeABox(CountOfMadeBoxes, Vlines(Cells(Cell_No).LineBehind).CellBehind)
+                End If
+            Case (InCell_X = 2) And (InCell_Y = 1)
+                If (Cells(Cell_No).LineAhead <> Invalid) And (Vlines(Cells(Cell_No).LineAhead).LineUsed = False) Then
+                    Vlines(Cells(Cell_No).LineAhead).LineUsed = True
+                    MoveIsValid = True
+                    DoesItMakeABox(CountOfMadeBoxes, Vlines(Cells(Cell_No).LineAhead).CellAhead)
+                    DoesItMakeABox(CountOfMadeBoxes, Vlines(Cells(Cell_No).LineAhead).CellBehind)
+                    ModuleClient.sendMessageToServer("MOVE|" + Cell_No + ">" + InCell_X + ">" + InCell_Y)
+                    'server.SendMove(Cell_No, InCell_X, InCell_Y)
+                End If
+            Case (InCell_Y = 0) And (InCell_X = 1)
+                If (Cells(Cell_No).LineAbove <> Invalid) And (HLines(Cells(Cell_No).LineAbove).LineUsed = False) Then
+                    HLines(Cells(Cell_No).LineAbove).LineUsed = True
+                    MoveIsValid = True
+                    DoesItMakeABox(CountOfMadeBoxes, HLines(Cells(Cell_No).LineAbove).CellAbove)
+                    DoesItMakeABox(CountOfMadeBoxes, HLines(Cells(Cell_No).LineAbove).CellBelow)
+                End If
+            Case (InCell_Y = 2) And (InCell_X = 1)
+                If (Cells(Cell_No).LineBelow <> Invalid) And (HLines(Cells(Cell_No).LineBelow).LineUsed = False) Then
+                    HLines(Cells(Cell_No).LineBelow).LineUsed = True
+                    MoveIsValid = True
+                    DoesItMakeABox(CountOfMadeBoxes, HLines(Cells(Cell_No).LineBelow).CellAbove)
+                    DoesItMakeABox(CountOfMadeBoxes, HLines(Cells(Cell_No).LineBelow).CellBelow)
+                End If
+        End Select
 
-    Private Sub ClickedOnPaper(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PB_Paper.MouseClick
-        ' jika mouse tombol kiri di click?                                            
-        If e.Button = Windows.Forms.MouseButtons.Left Then
-            For i As Integer = 0 To LineMax
-                HLines(i).LineHighlight = False : Vlines(i).LineHighlight = False
-            Next
-            Dim MouseLocation As New Point(e.Location)
-            Dim Cell_X As Single = Math.Floor((MouseLocation.X - OffSet) / ScaleWidth)
-            Dim Cell_Y As Single = Math.Floor((MouseLocation.Y - OffSet) / ScaleHeight)
-            ' apakah diluar tujuan ?
-            If Cell_X >= (Dots - 1) Or Cell_Y >= (Dots - 1) Then Exit Sub
-            ' kemanakah posisi pointer berada di dalam cell?
-            Dim InCell_X As Single = Math.Floor(((MouseLocation.X - OffSet) Mod ScaleWidth) / (ScaleWidth / 3))
-            Dim InCell_Y As Single = Math.Floor(((MouseLocation.Y - OffSet) Mod ScaleHeight) / (ScaleHeight / 3))
-            ' Which cell is it?
-            Dim Cell_No As Integer = Math.Abs((Cell_Y * (Dots - 1)) + Cell_X)
-            Dim CountOfMadeBoxes As Integer = 0
-            Dim MoveIsValid As Boolean = False
-            Select Case True
-                Case (InCell_X = 0) And (InCell_Y = 1) ' kiri
-                    If (Cells(Cell_No).LineBehind <> Invalid) And (Vlines(Cells(Cell_No).LineBehind).LineUsed = False) Then
-                        Vlines(Cells(Cell_No).LineBehind).LineUsed = True
-                        MoveIsValid = True
-                        DoesItMakeABox(CountOfMadeBoxes, Vlines(Cells(Cell_No).LineBehind).CellAhead)
-                        DoesItMakeABox(CountOfMadeBoxes, Vlines(Cells(Cell_No).LineBehind).CellBehind)
-                    End If
-                Case (InCell_X = 2) And (InCell_Y = 1) ' kanan
-                    If (Cells(Cell_No).LineAhead <> Invalid) And (Vlines(Cells(Cell_No).LineAhead).LineUsed = False) Then
-                        Vlines(Cells(Cell_No).LineAhead).LineUsed = True
-                        MoveIsValid = True
-                        DoesItMakeABox(CountOfMadeBoxes, Vlines(Cells(Cell_No).LineAhead).CellAhead)
-                        DoesItMakeABox(CountOfMadeBoxes, Vlines(Cells(Cell_No).LineAhead).CellBehind)
-                    End If
-                Case (InCell_Y = 0) And (InCell_X = 1) ' atas
-                    If (Cells(Cell_No).LineAbove <> Invalid) And (HLines(Cells(Cell_No).LineAbove).LineUsed = False) Then
-                        HLines(Cells(Cell_No).LineAbove).LineUsed = True
-                        MoveIsValid = True
-                        DoesItMakeABox(CountOfMadeBoxes, HLines(Cells(Cell_No).LineAbove).CellAbove)
-                        DoesItMakeABox(CountOfMadeBoxes, HLines(Cells(Cell_No).LineAbove).CellBelow)
-                    End If
-                Case (InCell_Y = 2) And (InCell_X = 1) ' Bawah
-                    If (Cells(Cell_No).LineBelow <> Invalid) And (HLines(Cells(Cell_No).LineBelow).LineUsed = False) Then
-                        HLines(Cells(Cell_No).LineBelow).LineUsed = True
-                        MoveIsValid = True
-                        DoesItMakeABox(CountOfMadeBoxes, HLines(Cells(Cell_No).LineBelow).CellAbove)
-                        DoesItMakeABox(CountOfMadeBoxes, HLines(Cells(Cell_No).LineBelow).CellBelow)
-                    End If
+        If CountOfMadeBoxes = 0 And MoveIsValid = True Then
+
+            Select Case CurrentPlayer
+                Case Player.Red : CurrentPlayer = Player.Blue
+                Case Player.Blue : CurrentPlayer = Player.Red
             End Select
 
-            ' jika pindah valid dan the current player hasn't made any boxes
-            If CountOfMadeBoxes = 0 And MoveIsValid = True Then
-                ' Swap Players
-                Select Case CurrentPlayer
-                    Case Player.Red : CurrentPlayer = Player.Blue
+        End If
+        WorkOutScore()
+    End Sub
 
-                    Case Player.Blue : CurrentPlayer = Player.Red
-                End Select
+    Private Sub ClickedOnPaper(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PB_Paper.MouseClick
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            If CurrentPlayer = Player.Red Then
+                MouseLocation = New Point(e.Location)
+                Dim Cell_X As Single = Math.Floor((MouseLocation.X - OffSet) / ScaleWidth)
+                Dim Cell_Y As Single = Math.Floor((MouseLocation.Y - OffSet) / ScaleHeight)
+                Dim Cell_No As Single = Math.Abs((Cell_Y * (Dots - 1)) + Cell_X)
+
+                If Cell_X >= (Dots - 1) Or Cell_Y >= (Dots - 1) Then Exit Sub
+
+                Dim InCell_X As Single = Math.Floor(((MouseLocation.X - OffSet) Mod ScaleWidth) / (ScaleWidth / 3))
+                Dim InCell_Y As Single = Math.Floor(((MouseLocation.Y - OffSet) Mod ScaleHeight) / (ScaleHeight / 3))
+                If ok = True Then
+                    MakeMove(Cell_No, InCell_X, InCell_Y)
+                    ModuleClient.sendMessageToServer("MOVE|" + Cell_No + ">" + InCell_X + ">" + InCell_Y)
+                    'server.SendMove(Cell_No, InCell_X, InCell_Y)
+                    ganti = True
+                End If
+            Else
+                status.Text = "Giliran Player Biru"
             End If
-
-
-            WorkOutScore()
-            UpdateTheScores()
-
         End If
 
     End Sub
 
 
     Private Sub MouseOverPaper(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PB_Paper.MouseMove
+
         For i As Integer = 0 To LineMax
             HLines(i).LineHighlight = False : Vlines(i).LineHighlight = False
         Next
-        Dim MouseLocation As New Point(e.Location)
+        MouseLocation = New Point(e.Location)
         Dim Cell_X As Single = Math.Floor((MouseLocation.X - OffSet) / ScaleWidth)
         Dim Cell_Y As Single = Math.Floor((MouseLocation.Y - OffSet) / ScaleHeight)
-        ' Out of bounds?
+        Dim Cell_No As Single
+
         If Cell_X >= (Dots - 1) Or Cell_Y >= (Dots - 1) Then Exit Sub
-        ' Where in cell is pointer?
+
         Dim InCell_X As Single = Math.Floor(((MouseLocation.X - OffSet) Mod ScaleWidth) / (ScaleWidth / 3))
         Dim InCell_Y As Single = Math.Floor(((MouseLocation.Y - OffSet) Mod ScaleHeight) / (ScaleHeight / 3))
-        ' Which cell is it?
-        Dim Cell_No As Integer = Math.Abs((Cell_Y * (Dots - 1)) + Cell_X)
+
+        Cell_No = Math.Abs((Cell_Y * (Dots - 1)) + Cell_X)
         Select Case True
-            Case (InCell_X = 0) And (InCell_Y = 1) ' Left Middle
-                If (Cells(Cell_No).LineBehind <> Invalid) And (Vlines(Cells(Cell_No).LineBehind).LineUsed = False) Then Vlines(Cells(Cell_No).LineBehind).LineHighlight = True
-            Case (InCell_X = 2) And (InCell_Y = 1) ' Right Middle
-                If (Cells(Cell_No).LineAhead <> Invalid) And (Vlines(Cells(Cell_No).LineAhead).LineUsed = False) Then Vlines(Cells(Cell_No).LineAhead).LineHighlight = True
-            Case (InCell_Y = 0) And (InCell_X = 1) ' Top Middle
-                If (Cells(Cell_No).LineAbove <> Invalid) And (HLines(Cells(Cell_No).LineAbove).LineUsed = False) Then HLines(Cells(Cell_No).LineAbove).LineHighlight = True
-            Case (InCell_Y = 2) And (InCell_X = 1) ' Bottom Middle
-                If (Cells(Cell_No).LineBelow <> Invalid) And (HLines(Cells(Cell_No).LineBelow).LineUsed = False) Then HLines(Cells(Cell_No).LineBelow).LineHighlight = True
+            Case (InCell_X = 0) And (InCell_Y = 1)
+                If (Cells(Cell_No).LineBehind <> Invalid) And (Vlines(Cells(Cell_No).LineBehind).LineUsed = False) Then
+                    Vlines(Cells(Cell_No).LineBehind).LineHighlight = True
+                    ok = True
+                End If
+
+            Case (InCell_X = 2) And (InCell_Y = 1)
+                If (Cells(Cell_No).LineAhead <> Invalid) And (Vlines(Cells(Cell_No).LineAhead).LineUsed = False) Then
+                    Vlines(Cells(Cell_No).LineAhead).LineHighlight = True
+                    ok = True
+                End If
+
+            Case (InCell_Y = 0) And (InCell_X = 1)
+                If (Cells(Cell_No).LineAbove <> Invalid) And (HLines(Cells(Cell_No).LineAbove).LineUsed = False) Then
+                    HLines(Cells(Cell_No).LineAbove).LineHighlight = True
+                    ok = True
+                End If
+
+            Case (InCell_Y = 2) And (InCell_X = 1)
+                If (Cells(Cell_No).LineBelow <> Invalid) And (HLines(Cells(Cell_No).LineBelow).LineUsed = False) Then
+                    HLines(Cells(Cell_No).LineBelow).LineHighlight = True
+                    ok = True
+                End If
+            Case Else
+                ok = False
         End Select
         '  System.Windows.Forms.Application.DoEvents()
 
