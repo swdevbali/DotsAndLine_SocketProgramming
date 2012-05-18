@@ -14,7 +14,7 @@ Module ModuleClient
         serverStream.Flush()
     End Sub
     Private Sub msg()
-        instanceFormLobiGame.logChat()
+        instanceFormLobiGame.respondServer()
         instanceGameDot.logChat2()
     End Sub
 

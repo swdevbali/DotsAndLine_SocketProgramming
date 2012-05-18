@@ -110,9 +110,6 @@ Public Class FormLobiGame
         instanceGameDot = New FormGameDots
         instanceGameDot.nama_room = lstRoom.Text
         instanceGameDot.init()
-        Close()
-        instanceGameDot.play()
-
     End Sub
 
     Private Sub btnKirimChat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnKirimChat.Click
@@ -121,9 +118,9 @@ Public Class FormLobiGame
         txtInputChat.Focus()
     End Sub
 
-    Public Sub logChat()
+    Public Sub respondServer()
         If lstChat.InvokeRequired Then
-            Me.Invoke(New MethodInvoker(AddressOf logChat))
+            Me.Invoke(New MethodInvoker(AddressOf respondServer))
         Else
             Dim newText As String = " >> " + ModuleClient.readData
             'MsgBox(newText)
@@ -139,20 +136,34 @@ Public Class FormLobiGame
                 For i As Integer = 0 To room.Length - 1
                     lstRoom.Items.Add(room(i))
                 Next
+                'ElseIf broadcast(0).Equals("GAME_QUERY_RESULT") Then
+                '    Dim data As String = broadcast(1)
+                '    Dim message() As String = data.Split(">")
+                '    Dim master = message(0).Split("=")(1)
+                '    If master = loggedUserName Then
+                '        loggedPlayer = Player.Red
+                '        CurrentPlayer = loggedPlayer
+                '    Else
+                '        loggedPlayer = Player.Blue
+                '    End If
             ElseIf broadcast(0).Equals("GAME_QUERY_RESULT") Then
                 Dim data As String = broadcast(1)
                 Dim message() As String = data.Split(">")
-                Dim master = message(0).Split("=")(1)
-                If master = loggedUserName Then
-                    loggedPlayer = Player.Red
-                    CurrentPlayer = loggedPlayer
+
+                Dim playerSize As Integer = CInt(message(0).Split("=")(1))
+                Dim namaRoom As String = message(1).Split("=")(1)
+                Dim user As String = message(2).Split("=")(1)
+                If playerSize = 0 Then
+                    MsgBox("Room masih kosong. Silahkan masuk")
+                    Close()
+                    sendMessageToServer("ENTER_GAME|room=" + namaRoom + ">username=" + user)
+                    instanceGameDot.play()
                 Else
-                    loggedPlayer = Player.Blue
+                    MsgBox("Jumlah pemain = " + playerSize)
                 End If
             Else
                 lstChat.Items.Add(newText)
             End If
-
         End If
     End Sub
 

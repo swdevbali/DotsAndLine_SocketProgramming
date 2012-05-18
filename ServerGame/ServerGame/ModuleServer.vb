@@ -80,11 +80,11 @@ Module ModuleServer
             Me.clientSocket = inClientSocket
             Me.clNo = clineNo
             Me.clientsList = cList
-            Dim ctThread As Threading.Thread = New Threading.Thread(AddressOf doChat)
+            Dim ctThread As Threading.Thread = New Threading.Thread(AddressOf processServerCommand)
             ctThread.Start()
         End Sub
 
-        Private Sub doChat()
+        Private Sub processServerCommand()
             'Dim infiniteCounter As Integer
             Dim requestCount As Integer
             Dim bytesFrom(10024) As Byte
@@ -117,8 +117,10 @@ Module ModuleServer
                         queryRoom()
                     ElseIf messageType = "QUERY_GAME" Then
                         queryGame(messageData)
+                    ElseIf messageType = "ENTER_GAME" Then
+                        enterGame(messageData)
                     ElseIf messageType = "MOVE" Then
-
+                        'send move message to destined client
                     End If
                 Catch ex As Exception
                     If clientSocket IsNot Nothing Then clientSocket.Close()
@@ -166,7 +168,31 @@ Module ModuleServer
             Dim data() As String = messageData.Split(">")
             Dim nama_room As String = data(0)
             Dim username As String = data(1)
-            'broadcastToAllClient("GAME_QUERY_RESULT|" & , clNo, False)
+
+
+            Dim con As New SqlConnection
+            Dim cmd As New SqlCommand
+            Dim room As String = ""
+
+            con.ConnectionString = "Data Source=" & compName & ",1433;Initial Catalog=adidots;User Id=sa;Password=adminadmin"
+
+            con.Open()
+            cmd.Connection = con
+            cmd.CommandText = "SELECT [jumlah_pemain] FROM [adidots].[dbo].[room] where [adidots].[dbo].[room] = '" + nama_room + "'"
+            Dim rd As SqlDataReader = cmd.ExecuteReader()
+            rd.Read()
+
+            broadcastToAllClient("GAME_QUERY_RESULT|player_count=" + rd.GetInt32(0) + ">room=" + nama_room + ">username=" + username, username, False)
+            rd.Close()
+            cmd.Dispose()
         End Sub
+
+        Private Sub enterGame(ByVal messageData As String)
+            Dim data() As String = messageData.Split(">")
+            Dim nama_room As String = data(0).Split("=")(1)
+            Dim username As String = data(1).Split("=")(1)
+            MsgBox("enter game")
+        End Sub
+
     End Class
 End Module
