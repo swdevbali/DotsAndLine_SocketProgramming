@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 
 Module ModuleServer
     Dim clientsList As New Hashtable
-    Dim compName As String = "192.168.1.1"
+    Dim compName As String = "127.0.0.1"
     Dim roomList As New Hashtable
     Private Sub broadcastToAllClient(ByVal msg As String, ByVal uName As String, ByVal flag As Boolean)
         Dim Item As DictionaryEntry
@@ -15,6 +15,7 @@ Module ModuleServer
             Dim broadcastStream As NetworkStream = broadcastSocket.GetStream()
             Dim broadcastBytes As [Byte]()
 
+            'kirim message ke game client
             If flag = True Then
                 broadcastBytes = Encoding.ASCII.GetBytes(uName + " says : " + msg)
             Else
@@ -48,9 +49,11 @@ Module ModuleServer
 
                 clientsList(dataFromClient) = clientSocket
 
-                broadcastToAllClient(dataFromClient + " Joined ", dataFromClient, False)
+                'send message ke client game
+                broadcastToAllClient(dataFromClient + " Join ke Lobi Game ", dataFromClient, False)
 
-                msg(dataFromClient + " Joined Games Lobby ")
+                'send message ke server game
+                msg(dataFromClient + " Join ke Lobi Game ")
                 Dim client As New HandleClient
                 client.startClient(clientSocket, dataFromClient, clientsList)
             End If
@@ -91,6 +94,7 @@ Module ModuleServer
             Dim rCount As String
             requestCount = 0
 
+            'kirim message ke server game
             While (True)
                 Try
                     requestCount = requestCount + 1
@@ -129,7 +133,8 @@ Module ModuleServer
             Dim con As New SqlConnection
             Dim cmd As New SqlCommand
 
-            con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
+            con.ConnectionString = "Data Source=" & compName & ",1433;Initial Catalog=adidots;User Id=sa;Password=adminadmin"
+
             con.Open()
             cmd.Connection = con
             cmd.CommandText = "INSERT INTO room([nama_room],[ukuran_papan],[user_pemain])VALUES('" & nama_room & "', '" & ukuran_papan & "','" & user_pemain & "')"
@@ -140,7 +145,9 @@ Module ModuleServer
             Dim con As New SqlConnection
             Dim cmd As New SqlCommand
             Dim room As String = ""
-            con.ConnectionString = "Data Source=" & compName & ";Network Library=DBMSSOCN;Initial Catalog=adidots;Integrated Security=True"
+
+            con.ConnectionString = "Data Source=" & compName & ",1433;Initial Catalog=adidots;User Id=sa;Password=adminadmin"
+
             con.Open()
             cmd.Connection = con
             cmd.CommandText = "SELECT [nama_room],[user_pemain] FROM [adidots].[dbo].[room] order by nama_room"
