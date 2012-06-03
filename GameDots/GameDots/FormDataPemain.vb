@@ -1,6 +1,7 @@
 ﻿Public Class FormDataPemain
 
     Private Sub PemainBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PemainBindingNavigatorSaveItem.Click
+
         Me.Validate()
         Me.PemainBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.AdidotsDataSet)

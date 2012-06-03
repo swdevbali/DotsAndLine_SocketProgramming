@@ -46,9 +46,9 @@ Partial Class FormDataPemain
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.PemainBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.PemainDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.User_pemainTextBox = New System.Windows.Forms.TextBox()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         User_pemainLabel = New System.Windows.Forms.Label()
         PasswordLabel = New System.Windows.Forms.Label()
         CType(Me.AdidotsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,12 +119,11 @@ Partial Class FormDataPemain
         '
         'BindingNavigatorAddNewItem
         '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(71, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Tambah"
         '
         'BindingNavigatorCountItem
         '
@@ -135,12 +134,11 @@ Partial Class FormDataPemain
         '
         'BindingNavigatorDeleteItem
         '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(61, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Hapus"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -204,11 +202,10 @@ Partial Class FormDataPemain
         '
         'PemainBindingNavigatorSaveItem
         '
-        Me.PemainBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.PemainBindingNavigatorSaveItem.Image = CType(resources.GetObject("PemainBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.PemainBindingNavigatorSaveItem.Name = "PemainBindingNavigatorSaveItem"
-        Me.PemainBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
-        Me.PemainBindingNavigatorSaveItem.Text = "Save Data"
+        Me.PemainBindingNavigatorSaveItem.Size = New System.Drawing.Size(67, 22)
+        Me.PemainBindingNavigatorSaveItem.Text = "Simpan"
         '
         'PemainDataGridView
         '
@@ -233,13 +230,6 @@ Partial Class FormDataPemain
         Me.PemainDataGridView.Size = New System.Drawing.Size(445, 247)
         Me.PemainDataGridView.TabIndex = 1
         '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "user_pemain"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "user_pemain"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
         'User_pemainTextBox
         '
         Me.User_pemainTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemainBindingSource, "user_pemain", True))
@@ -256,6 +246,13 @@ Partial Class FormDataPemain
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PasswordTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PasswordTextBox.TabIndex = 5
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "user_pemain"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Nama Pemain"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         '
         'FormDataPemain
         '

@@ -44,9 +44,9 @@ Partial Class FormDataAdmin
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.AdminBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.AdminDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.User_adminTextBox = New System.Windows.Forms.TextBox()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         User_adminLabel = New System.Windows.Forms.Label()
         PasswordLabel = New System.Windows.Forms.Label()
         CType(Me.AdidotsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,18 +111,17 @@ Partial Class FormDataAdmin
         Me.AdminBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.AdminBindingNavigator.Name = "AdminBindingNavigator"
         Me.AdminBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.AdminBindingNavigator.Size = New System.Drawing.Size(423, 25)
+        Me.AdminBindingNavigator.Size = New System.Drawing.Size(424, 25)
         Me.AdminBindingNavigator.TabIndex = 0
         Me.AdminBindingNavigator.Text = "BindingNavigator1"
         '
         'BindingNavigatorAddNewItem
         '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(71, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Tambah"
         '
         'BindingNavigatorCountItem
         '
@@ -133,12 +132,11 @@ Partial Class FormDataAdmin
         '
         'BindingNavigatorDeleteItem
         '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(61, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Hapus"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -202,11 +200,10 @@ Partial Class FormDataAdmin
         '
         'AdminBindingNavigatorSaveItem
         '
-        Me.AdminBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.AdminBindingNavigatorSaveItem.Image = CType(resources.GetObject("AdminBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.AdminBindingNavigatorSaveItem.Name = "AdminBindingNavigatorSaveItem"
-        Me.AdminBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
-        Me.AdminBindingNavigatorSaveItem.Text = "Save Data"
+        Me.AdminBindingNavigatorSaveItem.Size = New System.Drawing.Size(67, 22)
+        Me.AdminBindingNavigatorSaveItem.Text = "Simpan"
         '
         'AdminDataGridView
         '
@@ -220,13 +217,6 @@ Partial Class FormDataAdmin
         Me.AdminDataGridView.Name = "AdminDataGridView"
         Me.AdminDataGridView.Size = New System.Drawing.Size(424, 196)
         Me.AdminDataGridView.TabIndex = 1
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "user_admin"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "user_admin"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         '
         'User_adminTextBox
         '
@@ -245,12 +235,19 @@ Partial Class FormDataAdmin
         Me.PasswordTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PasswordTextBox.TabIndex = 5
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "user_admin"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Nama Admin"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
         'FormDataAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(423, 342)
+        Me.ClientSize = New System.Drawing.Size(424, 342)
         Me.Controls.Add(PasswordLabel)
         Me.Controls.Add(Me.PasswordTextBox)
         Me.Controls.Add(User_adminLabel)
@@ -262,7 +259,7 @@ Partial Class FormDataAdmin
         Me.MinimizeBox = False
         Me.Name = "FormDataAdmin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormDataAdmin"
+        Me.Text = "Form Data Admin"
         CType(Me.AdidotsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AdminBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AdminBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
@@ -291,7 +288,7 @@ Partial Class FormDataAdmin
     Friend WithEvents BindingNavigatorSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents AdminBindingNavigatorSaveItem As System.Windows.Forms.ToolStripButton
     Friend WithEvents AdminDataGridView As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents User_adminTextBox As System.Windows.Forms.TextBox
     Friend WithEvents PasswordTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

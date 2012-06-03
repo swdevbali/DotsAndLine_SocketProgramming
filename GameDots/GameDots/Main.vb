@@ -14,9 +14,6 @@ Module Main
     Public loggedUserName As String
     Public loggedPlayer As Player
 
-
-   
-
     Sub TombolClose()
 
         'method tombol close form
