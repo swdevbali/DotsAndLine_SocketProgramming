@@ -189,9 +189,9 @@ Module ModuleServer
 
         Private Sub enterGame(ByVal messageData As String)
             Dim data() As String = messageData.Split(">")
-            Dim nama_room As String = data(0).Split("=")(1)
+            Dim nama_room As String = data(0).Split("=")(0)
             Dim username As String = data(1).Split("=")(1)
-            MsgBox("enter game")
+            'MsgBox("enter game")
         End Sub
 
     End Class

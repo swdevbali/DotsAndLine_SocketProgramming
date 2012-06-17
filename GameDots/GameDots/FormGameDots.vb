@@ -358,8 +358,6 @@ Public Class FormGameDots
             btnKirimChat2_Click(Nothing, Nothing)
         End If
     End Sub
-
-  
     Private Sub PictureBoxClose_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Close()
     End Sub

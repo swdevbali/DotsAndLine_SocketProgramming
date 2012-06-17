@@ -44,9 +44,9 @@ Partial Class FormDataAdmin
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.AdminBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.AdminDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.User_adminTextBox = New System.Windows.Forms.TextBox()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         User_adminLabel = New System.Windows.Forms.Label()
         PasswordLabel = New System.Windows.Forms.Label()
         CType(Me.AdidotsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -218,6 +218,13 @@ Partial Class FormDataAdmin
         Me.AdminDataGridView.Size = New System.Drawing.Size(424, 196)
         Me.AdminDataGridView.TabIndex = 1
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "user_admin"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Nama Admin"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
         'User_adminTextBox
         '
         Me.User_adminTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AdminBindingSource, "user_admin", True))
@@ -234,13 +241,6 @@ Partial Class FormDataAdmin
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PasswordTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PasswordTextBox.TabIndex = 5
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "user_admin"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Nama Admin"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         '
         'FormDataAdmin
         '
