@@ -83,7 +83,7 @@ Public Class FormGameDots
                 Dim InCell_Y As Single = Math.Floor(((MouseLocation.Y - OffSet) Mod ScaleHeight) / (ScaleHeight / 3))
                 If ok = True Then
                     MakeMove(Cell_No, InCell_X, InCell_Y)
-                    'server.SendMove(Cell_No, InCell_X, InCell_Y)
+                    sendMessageToServer("MOVE|" & Username & ">" & Cell_No & ">" & InCell_X & ">" & InCell_Y)
                     ganti = True
                 End If
             Else
@@ -325,29 +325,32 @@ Public Class FormGameDots
 
     End Sub
 
-
+    Public playerSize As Integer
     Sub play()
         Show()
-        While StillRunning
-            If CountEmptyCells() = 0 Then
-                GameRunning = False
-                Dim messageText As String = ""
-                Select Case True
-                    Case RedScore = BlueScore : messageText = "Game Imbang!!!"
-                    Case RedScore < BlueScore : messageText = "Pemain Biru Menang!!!"
-                    Case RedScore > BlueScore : messageText = "Pemain Merah Menang!!!"
-                End Select
-                Dim result As DialogResult = MessageBox.Show(messageText & vbNewLine & "Mau Main Lagi??", "Dots & Lines", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
-                If result = DialogResult.No Then
-                    StillRunning = False
-                    Close()
-                Else
-                    resetscores()
-                    clearboard()
-                End If
+        If playerSize = 0 Then CurrentPlayer = Player.Blue Else CurrentPlayer = Player.Red
+        'While StillRunning
+        System.Windows.Forms.Application.DoEvents()
+        'ModuleClient.getMessage()
+        If CountEmptyCells() = 0 Then
+            GameRunning = False
+            Dim messageText As String = ""
+            Select Case True
+                Case RedScore = BlueScore : messageText = "Game Imbang!!!"
+                Case RedScore < BlueScore : messageText = "Pemain Biru Menang!!!"
+                Case RedScore > BlueScore : messageText = "Pemain Merah Menang!!!"
+            End Select
+            Dim result As DialogResult = MessageBox.Show(messageText & vbNewLine & "Mau Main Lagi??", "Dots & Lines", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+            If result = DialogResult.No Then
+                StillRunning = False
+                Close()
+            Else
+                resetscores()
+                clearboard()
             End If
-            System.Windows.Forms.Application.DoEvents()
-        End While
+        End If
+
+        'End While
     End Sub
 
     Public Sub logChat2()
@@ -382,6 +385,29 @@ Public Class FormGameDots
 
     Private Sub PictureBoxMinimize_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Sub respondServer()
+        If Me.InvokeRequired Then
+            Me.Invoke(New MethodInvoker(AddressOf respondServer))
+        Else
+
+            'MsgBox(newText)
+            Dim broadcast() As String = ModuleClient.readData.Split("|")
+            If broadcast(0).Equals("MOVE_RESULT") Then
+                Dim data() As String = broadcast(1).Split(">")
+                Dim username As String = data(0)
+                Dim Cell_No As String = data(1)
+                Dim InCell_X As String = data(2)
+                Dim InCell_Y As String = data(3)
+
+                If username <> loggedUserName Then
+                    instanceGameDot.MakeMove(Cell_No, InCell_X, InCell_Y)
+                    ganti = Not ganti
+                    If CurrentPlayer = Player.Blue Then CurrentPlayer = Player.Red Else CurrentPlayer = Player.Blue
+                End If
+            End If
+            End If
     End Sub
 
 

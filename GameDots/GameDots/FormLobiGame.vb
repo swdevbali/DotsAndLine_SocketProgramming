@@ -130,7 +130,7 @@ Public Class FormLobiGame
         If lstChat.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf respondServer))
         Else
-            Dim newText As String = " >> " + ModuleClient.readData
+
             'MsgBox(newText)
             Dim broadcast() As String = ModuleClient.readData.Split("|")
             If broadcast(0).Equals("ROOM_QUERY_RESULT") Then
@@ -158,36 +158,44 @@ Public Class FormLobiGame
                 Dim data As String = broadcast(1)
                 Dim message() As String = data.Split(">")
 
-                Dim playerSize As Integer = CInt(message(0).Split("=")(1))
+                instanceGameDot.playerSize = CInt(message(0).Split("=")(1))
                 Dim namaRoom As String = message(1).Split("=")(1)
                 Dim user As String = message(2).Split("=")(1)
-                If playerSize = 0 Then
-                    cmd.CommandText = "update [adidots].[dbo].[room] set [adidots].[dbo].[room].[jumlah_pemain]=1 where [adidots].[dbo].[room].nama_room='" & namaRoom & "'"
-                    cmd.ExecuteNonQuery()
+                If Username = loggedUserName Then
+                    If instanceGameDot.playerSize = 0 Then
+                        cmd.CommandText = "update [adidots].[dbo].[room] set [adidots].[dbo].[room].[jumlah_pemain]=1 where [adidots].[dbo].[room].nama_room='" & namaRoom & "'"
+                        cmd.ExecuteNonQuery()
 
-                    MsgBox("Anda masuk sebagai palyer 1! Selamat bermain Biru!")
-                    ModuleClient.sendMessageToServer("ENTER_GAME|room=" + namaRoom + ">username=" + user)
-                    Hide()
-                Else
-                    'TODO : masuk sbg player 2
-                    cmd.CommandText = "update [adidots].[dbo].[room] set [adidots].[dbo].[room].[jumlah_pemain]=[adidots].[dbo].[room].[jumlah_pemain]+1 where [adidots].[dbo].[room].nama_room='" & namaRoom & "'"
-                    cmd.ExecuteNonQuery()
+                        MsgBox("Anda masuk sebagai palyer 1! Selamat bermain Biru!")
+                        ModuleClient.sendMessageToServer("ENTER_GAME|room=" + namaRoom + ">username=" + user)
+                        Hide()
+                    Else
+                        'TODO : masuk sbg player 2
+                        cmd.CommandText = "update [adidots].[dbo].[room] set [adidots].[dbo].[room].[jumlah_pemain]=[adidots].[dbo].[room].[jumlah_pemain]+1 where [adidots].[dbo].[room].nama_room='" & namaRoom & "'"
+                        cmd.ExecuteNonQuery()
 
-                    MsgBox("Anda masuk sebagai player 2! Selamat bermain Merah!")
-                    ModuleClient.sendMessageToServer("ENTER_GAME|room=" + namaRoom + ">username=" + user)
-                    Hide()
+                        MsgBox("Anda masuk sebagai player 2! Selamat bermain Merah!")
+                        ModuleClient.sendMessageToServer("ENTER_GAME|room=" + namaRoom + ">username=" + user)
+                        Hide()
+                    End If
                 End If
             ElseIf broadcast(0).Equals("ENTER_GAME_RESULT") Then
-                Hide()
-                Dots = GridSizes(GridPlaySize)
-                instanceGameDot.RescaleGrid()
-                DefineGrid()
-                clearboard()
-                resetscores()
-                instanceGameDot.play()
+                If Username = loggedUserName Then
+                    Dim data As String = broadcast(1)
+                    Dim username As String = data
+                    'If username = loggedUserName Then
+                    Hide()
+                    Dots = GridSizes(GridPlaySize)
+                    instanceGameDot.RescaleGrid()
+                    DefineGrid()
+                    clearboard()
+                    resetscores()
+                    instanceGameDot.play()
+                End If
             Else
+                Dim newText As String = " >> " + ModuleClient.readData
                 lstChat.Items.Add(newText)
-            End If
+                End If
         End If
     End Sub
 

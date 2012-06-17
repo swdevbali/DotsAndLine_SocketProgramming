@@ -15,6 +15,7 @@ Module ModuleClient
     End Sub
     Private Sub msg()
         instanceFormLobiGame.respondServer()
+        instanceGameDot.respondServer()
         instanceGameDot.logChat2()
     End Sub
 
@@ -35,7 +36,7 @@ Module ModuleClient
         ctThread.Start()
     End Sub
 
-    Private Sub getMessage()
+    Public Sub getMessage()
 
         Try
             For infiniteCounter = 1 To 2
@@ -50,6 +51,7 @@ Module ModuleClient
                 msg()
             Next
         Catch e As Exception
+            Console.WriteLine(e.Message)
         End Try
     End Sub
 End Module

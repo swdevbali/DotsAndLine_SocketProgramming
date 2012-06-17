@@ -9,6 +9,7 @@ Module ModuleServer
     Private Sub broadcastToAllClient(ByVal msg As String, ByVal uName As String, ByVal flag As Boolean)
         Dim Item As DictionaryEntry
         For Each Item In clientsList
+            Console.WriteLine(Item)
             Dim broadcastSocket As TcpClient
             broadcastSocket = CType(Item.Value, TcpClient)
             If Not broadcastSocket.Connected Then Continue For
@@ -128,8 +129,6 @@ Module ModuleServer
                                 messageData = message(1)
                             End If
 
-
-
                             If (messageType = "CHAT") Then
                                 broadcastToAllClient(dataFromClient, clNo, True)
                             ElseIf messageType = "CREATE_ROOM" Then
@@ -141,7 +140,7 @@ Module ModuleServer
                             ElseIf messageType = "ENTER_GAME" Then
                                 enterGame(messageData)
                             ElseIf messageType = "MOVE" Then
-                                'send move message to destined client
+                                move(messageData)
                             End If
                         End If
                     End If
@@ -219,7 +218,18 @@ Module ModuleServer
             Dim username As String = data(1).Split("=")(1)
             Dim msgToSend As String
 
-            msgToSend = "ENTER_GAME_RESULT|ok"
+            msgToSend = "ENTER_GAME_RESULT|" & username
+            broadcastToAllClient(msgToSend, username, False)
+        End Sub
+
+        Private Sub move(ByVal messageData As Object)
+            Dim msgToSend As String
+            Dim data() As String = messageData.Split(">")
+            Dim username As String = data(0)
+            Dim Cell_No As String = data(1)
+            Dim InCell_X As String = data(2)
+            Dim InCell_Y As String = data(3)
+            msgToSend = "MOVE_RESULT|" & username & ">" & Cell_No & ">" & InCell_X & ">" & InCell_Y
             broadcastToAllClient(msgToSend, username, False)
         End Sub
 
