@@ -119,6 +119,14 @@ Public Class FormLobiGame
     End Sub
 
     Public Sub respondServer()
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
+     
+        con.ConnectionString = "Data Source=" & compName & ",1433;Initial Catalog=adidots;User Id=sa;Password=adminadmin"
+        con.Open()
+        cmd.Connection = con
+       
+
         If lstChat.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf respondServer))
         Else
@@ -154,14 +162,24 @@ Public Class FormLobiGame
                 Dim namaRoom As String = message(1).Split("=")(1)
                 Dim user As String = message(2).Split("=")(1)
                 If playerSize = 0 Then
+                    cmd.CommandText = "update [adidots].[dbo].[room] set [adidots].[dbo].[room].[jumlah_pemain]=1 where [adidots].[dbo].[room].nama_room='" & namaRoom & "'"
+                    cmd.ExecuteNonQuery()
+
                     MsgBox("Room masih kosong. Silahkan masuk")
-                    Close()
-                    sendMessageToServer("ENTER_GAME|room=" + namaRoom + ">username=" + user)
-                    instanceGameDot.play()
+                    ModuleClient.sendMessageToServer("ENTER_GAME|room=" + namaRoom + ">username=" + user)
+                    Hide()
                 Else
                     MsgBox("Jumlah pemain = " + playerSize)
                 End If
-
+            ElseIf broadcast(0).Equals("ENTER_GAME_RESULT") Then
+                Hide()
+                Dots = GridSizes(GridPlaySize)
+                FormGameDots.RescaleGrid()
+                DefineGrid()
+                clearboard()
+                resetscores()
+                instanceGameDot.play()
+                FormGameDots.Show()
             Else
                 lstChat.Items.Add(newText)
             End If

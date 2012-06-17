@@ -7,7 +7,6 @@ Module ModuleServer
     Dim compName As String = "127.0.0.1"
     Dim roomList As New Hashtable
     Private Sub broadcastToAllClient(ByVal msg As String, ByVal uName As String, ByVal flag As Boolean)
-        MsgBox("bc " + msg)
         Dim Item As DictionaryEntry
         For Each Item In clientsList
             Dim broadcastSocket As TcpClient
@@ -36,6 +35,14 @@ Module ModuleServer
         msg("Server Game Dots and Lines Sedang Berjalan ....")
         counter = 0
 
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
+
+        con.ConnectionString = "Data Source=" & compName & ",1433;Initial Catalog=adidots;User Id=sa;Password=adminadmin"
+        con.Open()
+        cmd.Connection = con
+        cmd.CommandText = "update [adidots].[dbo].[room] set [adidots].[dbo].[room].[jumlah_pemain]=0"
+        cmd.ExecuteNonQuery()
         While (True)
             counter += 1
             clientSocket = serverSocket.AcceptTcpClient()
@@ -99,33 +106,48 @@ Module ModuleServer
             While (True)
                 Try
                     requestCount = requestCount + 1
-                    Dim networkStream As NetworkStream = clientSocket.GetStream()
-                    networkStream.Read(bytesFrom, 0, CInt(clientSocket.ReceiveBufferSize))
-                    dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom)
-                    dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"))
-                    msg("From client - " + clNo + " : " + dataFromClient)
-                    rCount = Convert.ToString(requestCount)
-                    Dim message() As String = dataFromClient.Split("|")
-                    Dim messageType = message(0)
-                    Dim messageData = message(1)
+                    If (clientSocket.Connected) Then
+                        Dim networkStream As NetworkStream = clientSocket.GetStream()
+                        networkStream.Read(bytesFrom, 0, CInt(clientSocket.ReceiveBufferSize))
+                        dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom)
+                        Console.Write(dataFromClient.Length & " - indexof " & dataFromClient.IndexOf("$"))
+                        If (dataFromClient.Length > 0) Then
+                            If (dataFromClient.IndexOf("$") <> -1) Then
+                                dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"))
+                            End If
+
+                            msg("From client - " + clNo + " : " + dataFromClient)
+                            rCount = Convert.ToString(requestCount)
+                            Dim message() As String = dataFromClient.Split("|")
+                            Dim messageType = Nothing
+                            Dim messageData = Nothing
+                            If (message.Length = 1) Then
+                                messageType = message(0)
+                            Else
+                                messageType = message(0)
+                                messageData = message(1)
+                            End If
 
 
-                    If (messageType = "CHAT") Then
-                        broadcastToAllClient(dataFromClient, clNo, True)
-                    ElseIf messageType = "CREATE_ROOM" Then
-                        createRoom(messageData)
-                    ElseIf messageType = "QUERY_ROOM" Then
-                        queryRoom()
-                    ElseIf messageType = "QUERY_GAME" Then
-                        queryGame(messageData)
-                    ElseIf messageType = "ENTER_GAME" Then
-                        enterGame(messageData)
-                    ElseIf messageType = "MOVE" Then
-                        'send move message to destined client
+
+                            If (messageType = "CHAT") Then
+                                broadcastToAllClient(dataFromClient, clNo, True)
+                            ElseIf messageType = "CREATE_ROOM" Then
+                                createRoom(messageData)
+                            ElseIf messageType = "QUERY_ROOM" Then
+                                queryRoom()
+                            ElseIf messageType = "QUERY_GAME" Then
+                                queryGame(messageData)
+                            ElseIf messageType = "ENTER_GAME" Then
+                                enterGame(messageData)
+                            ElseIf messageType = "MOVE" Then
+                                'send move message to destined client
+                            End If
+                        End If
                     End If
                 Catch ex As Exception
                     If clientSocket IsNot Nothing Then clientSocket.Close()
-                    'Console.WriteLine(ex.ToString)
+                    Console.WriteLine(ex.ToString)
                 End Try
             End While
         End Sub
@@ -195,7 +217,10 @@ Module ModuleServer
             Dim data() As String = messageData.Split(">")
             Dim nama_room As String = data(0).Split("=")(0)
             Dim username As String = data(1).Split("=")(1)
-            'MsgBox("enter game")
+            Dim msgToSend As String
+
+            msgToSend = "ENTER_GAME_RESULT|ok"
+            broadcastToAllClient(msgToSend, username, False)
         End Sub
 
     End Class

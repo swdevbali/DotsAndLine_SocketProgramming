@@ -182,7 +182,7 @@ Public Class FormGameDots
             Next
         Next
     End Sub
-    Private Sub RescaleGrid()
+    Public Sub RescaleGrid()
         ScaleWidth = (Me.PB_Paper.Width - (OffSet * 2)) / (Dots - 1)
         ScaleHeight = (Me.PB_Paper.Height - (OffSet * 2)) / (Dots - 1)
     End Sub
@@ -292,18 +292,12 @@ Public Class FormGameDots
 
         rd.Read()
         If rd.HasRows Then
-            GridPlaySize = CInt(rd.GetValue(2)) - 4 'karena dari combo box, 0=>4
+            GridPlaySize = CInt(rd.GetValue(2)) - 4
             ModuleClient.sendMessageToServer("QUERY_GAME|" & nama_room & ">" & loggedUserName)
-            'NEXT : expect the result to be current state of that room!
+
         End If
 
-        Dots = GridSizes(GridPlaySize)
-        RescaleGrid()
-        DefineGrid()
-        clearboard()
-        resetscores()
-        Me.Refresh()
-        con.Close()
+       
 
     End Sub
 

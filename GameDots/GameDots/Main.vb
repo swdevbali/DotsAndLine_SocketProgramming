@@ -20,6 +20,8 @@ Module Main
         If MessageBox.Show("Ente yakin mau keluar ??", "Dots & Lines", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
 
             instanceGameDot.Close()
+            'FormLobiGame.Show()
+            FormLobiGame.Timer1.Enabled = True
         Else
             instanceGameDot.Show()
         End If
