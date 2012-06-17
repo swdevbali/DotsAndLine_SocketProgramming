@@ -294,7 +294,7 @@ Public Class FormGameServer
             GridPlaySize = CInt(rd.GetValue(2)) - 4 'karena dari combo box, 0=>4
             'NEXT : QUERY DETAIL PAPAN GAME INI : sudah ada master / belum, state terkini game, dsb
             ModuleClient.sendMessageToServer("QUERY_GAME|" & nama_room & ">" & loggedUserName)
-
+            MsgBox("Masuk ke game")
             'utamanya, ambil state dari variabel Cells()
         End If
 

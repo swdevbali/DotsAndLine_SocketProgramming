@@ -7,6 +7,7 @@ Module ModuleServer
     Dim compName As String = "127.0.0.1"
     Dim roomList As New Hashtable
     Private Sub broadcastToAllClient(ByVal msg As String, ByVal uName As String, ByVal flag As Boolean)
+        MsgBox("bc " + msg)
         Dim Item As DictionaryEntry
         For Each Item In clientsList
             Dim broadcastSocket As TcpClient
@@ -178,11 +179,14 @@ Module ModuleServer
 
             con.Open()
             cmd.Connection = con
-            cmd.CommandText = "SELECT [jumlah_pemain] FROM [adidots].[dbo].[room] where [adidots].[dbo].[room] = '" + nama_room + "'"
+            cmd.CommandText = "SELECT [jumlah_pemain] FROM [adidots].[dbo].[room] where [adidots].[dbo].[room].[nama_room] = '" + nama_room + "'"
             Dim rd As SqlDataReader = cmd.ExecuteReader()
             rd.Read()
 
-            broadcastToAllClient("GAME_QUERY_RESULT|player_count=" + rd.GetInt32(0) + ">room=" + nama_room + ">username=" + username, username, False)
+            Dim playerCount As Integer = IIf(IsDBNull(rd(0)), 0, rd(0))
+            Dim msgToSend As String = "GAME_QUERY_RESULT|player_count=" & playerCount & ">room=" & nama_room & ">username=" & username
+
+            broadcastToAllClient(msgToSend, username, False)
             rd.Close()
             cmd.Dispose()
         End Sub

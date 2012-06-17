@@ -161,6 +161,7 @@ Public Class FormLobiGame
                 Else
                     MsgBox("Jumlah pemain = " + playerSize)
                 End If
+
             Else
                 lstChat.Items.Add(newText)
             End If
