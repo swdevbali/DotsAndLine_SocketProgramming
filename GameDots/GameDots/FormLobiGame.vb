@@ -169,17 +169,16 @@ Public Class FormLobiGame
                     ModuleClient.sendMessageToServer("ENTER_GAME|room=" + namaRoom + ">username=" + user)
                     Hide()
                 Else
-                    MsgBox("Jumlah pemain = " + playerSize)
+                    MsgBox("Jumlah pemain = " & playerSize)
                 End If
             ElseIf broadcast(0).Equals("ENTER_GAME_RESULT") Then
                 Hide()
                 Dots = GridSizes(GridPlaySize)
-                FormGameDots.RescaleGrid()
+                instanceGameDot.RescaleGrid()
                 DefineGrid()
                 clearboard()
                 resetscores()
                 instanceGameDot.play()
-                FormGameDots.Show()
             Else
                 lstChat.Items.Add(newText)
             End If
