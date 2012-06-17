@@ -32,7 +32,7 @@ Partial Class FormGameDots
         Me.lblPemain2 = New System.Windows.Forms.Label()
         Me.scorePemain1 = New System.Windows.Forms.Label()
         Me.scorePemain2 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblStatus = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.txtInputChat2 = New System.Windows.Forms.TextBox()
         Me.btnKirimChat2 = New System.Windows.Forms.Button()
@@ -147,16 +147,16 @@ Partial Class FormGameDots
         Me.scorePemain2.TabIndex = 14
         Me.scorePemain2.Text = "00"
         '
-        'Label9
+        'lblStatus
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Arial Black", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(66, 296)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(0, 22)
-        Me.Label9.TabIndex = 17
+        Me.lblStatus.AutoSize = True
+        Me.lblStatus.BackColor = System.Drawing.Color.Transparent
+        Me.lblStatus.Font = New System.Drawing.Font("Arial Black", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStatus.ForeColor = System.Drawing.Color.Black
+        Me.lblStatus.Location = New System.Drawing.Point(66, 296)
+        Me.lblStatus.Name = "lblStatus"
+        Me.lblStatus.Size = New System.Drawing.Size(0, 22)
+        Me.lblStatus.TabIndex = 17
         '
         'PictureBox2
         '
@@ -236,7 +236,7 @@ Partial Class FormGameDots
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.grpbxChat)
         Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.lblStatus)
         Me.Controls.Add(Me.scorePemain2)
         Me.Controls.Add(Me.scorePemain1)
         Me.Controls.Add(Me.lblPemain2)
@@ -274,7 +274,7 @@ Partial Class FormGameDots
     Friend WithEvents lblPemain2 As System.Windows.Forms.Label
     Friend WithEvents scorePemain1 As System.Windows.Forms.Label
     Friend WithEvents scorePemain2 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents lblStatus As System.Windows.Forms.Label
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents txtInputChat2 As System.Windows.Forms.TextBox
     Friend WithEvents btnKirimChat2 As System.Windows.Forms.Button

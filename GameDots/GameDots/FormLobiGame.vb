@@ -165,11 +165,17 @@ Public Class FormLobiGame
                     cmd.CommandText = "update [adidots].[dbo].[room] set [adidots].[dbo].[room].[jumlah_pemain]=1 where [adidots].[dbo].[room].nama_room='" & namaRoom & "'"
                     cmd.ExecuteNonQuery()
 
-                    MsgBox("Room masih kosong. Silahkan masuk")
+                    MsgBox("Anda masuk sebagai palyer 1! Selamat bermain Biru!")
                     ModuleClient.sendMessageToServer("ENTER_GAME|room=" + namaRoom + ">username=" + user)
                     Hide()
                 Else
-                    MsgBox("Jumlah pemain = " & playerSize)
+                    'TODO : masuk sbg player 2
+                    cmd.CommandText = "update [adidots].[dbo].[room] set [adidots].[dbo].[room].[jumlah_pemain]=[adidots].[dbo].[room].[jumlah_pemain]+1 where [adidots].[dbo].[room].nama_room='" & namaRoom & "'"
+                    cmd.ExecuteNonQuery()
+
+                    MsgBox("Anda masuk sebagai player 2! Selamat bermain Merah!")
+                    ModuleClient.sendMessageToServer("ENTER_GAME|room=" + namaRoom + ">username=" + user)
+                    Hide()
                 End If
             ElseIf broadcast(0).Equals("ENTER_GAME_RESULT") Then
                 Hide()
